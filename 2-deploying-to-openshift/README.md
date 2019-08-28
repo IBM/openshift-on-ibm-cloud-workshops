@@ -9,19 +9,15 @@ There are [various ways to deploy applications to OpenShift](http://heidloff.net
 
 ## Prerequisites
 
-## 1. IBM Cloud Services
-
 An [IBM Cloud account](https://cloud.ibm.com/registration) is needed. We will use the following IBM Cloud service in this hands-on workshop:
 
 * [OpenShift on IBM Cloud](https://cloud.ibm.com/kubernetes/catalog/openshiftcluster)
-
-## 2. Tools on your Notebook
 
 In order to complete the workshop, you need to install [Docker Desktop](https://docs.docker.com/install/). Docker Desktop is available for Mac and Windows and the Docker Engine can be run natively on Linux.
 
 Several other tools are needed. There are different options to install these tools.
 
-### 2.1. Prebuilt Image
+### Tools - Option 1: Prebuilt Image
 
 There is an image on DockerHub with all required tools. This option works for Mac, Linux and Windows. To get started as quickly as possible, use this image.
 
@@ -42,7 +38,7 @@ $ cd openshift-on-ibm-cloud-workshops
 $ ROOT_FOLDER=$(pwd)
 ```
 
-### 2.2. Install Tools on your Notebook
+### Tools - Option 2: Install Tools on your Notebook
 
 This approach only works for Mac and Linux (see this [article](https://suedbroecker.net/2019/08/27/definition-of-a-dockerfile-to-use-bash-scripts-on-a-windows-10-machine-for-our-cloud-native-starter-workshop/) for more).
 
@@ -55,7 +51,13 @@ Install the following tools:
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 - Editor: For example [Visual Studio Code](https://code.visualstudio.com/) 
 
+Get the code:
 
+```
+$ git clone https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git
+$ cd openshift-on-ibm-cloud-workshops
+$ ROOT_FOLDER=$(pwd)
+```
 
 
 
