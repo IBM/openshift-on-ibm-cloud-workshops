@@ -34,12 +34,6 @@ RUN pwd
 RUN ls
 RUN echo $PATH
 
-# Deploying Java Microservices to OpenShift on IBM Cloud
-WORKDIR /usr/workshop
-RUN git clone https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git
-WORKDIR /usr/workshop/openshift-on-ibm-cloud-workshops
-RUN ls
-
 #Docker
 # WORKDIR /
 RUN curl -fsSL https://get.docker.com -o get-docker.sh
