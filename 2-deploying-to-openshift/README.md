@@ -23,9 +23,6 @@ There is an image on DockerHub with all required tools. This option works for Ma
 
 Run this command in a terminal:
 
-git clone https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git
-$ cd openshift-on-ibm-cloud-workshops
-
 ```
 $ docker run -ti nheidloff/openshift-workshop-tools:v1
 ```
