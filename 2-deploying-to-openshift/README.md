@@ -7,52 +7,53 @@ The microservice is kept as simple as possible, so that it can be used as a star
 There are [various ways to deploy applications to OpenShift](http://heidloff.net/article/deploying-open-liberty-microservices-openshift/). This workshop explains how to deploy microservices using the OpenShift CLI (command line tool) 'oc' as well as 'binary builds'.
 
 
-
-
 ## Prerequisites
 
 ## 1. IBM Cloud Services
 
-We will use the following IBM Cloud service in this hands-on workshop:
+An [IBM Cloud account](https://cloud.ibm.com/registration) is needed. We will use the following IBM Cloud service in this hands-on workshop:
 
 * [OpenShift on IBM Cloud](https://cloud.ibm.com/kubernetes/catalog/openshiftcluster)
 
+## 2. Tools on your Notebook
 
-## 2. Tools on your laptop
+In order to complete the workshop, you need to install [Docker Desktop](https://docs.docker.com/install/). Docker Desktop is available for Mac and Windows and the Docker Engine can be run natively on Linux.
 
-In order to complete the workshop, you will need the following tools installed on your laptop:
+Several other tools are needed. There are different options to install these tools.
 
-- IDE or Editor: [Visual Studio Code](https://code.visualstudio.com/) for example 
+### 2.1. Prebuilt Image
+
+There is an image on DockerHub with all required tools. This option works for Mac, Linux and Windows. To get started as quickly as possible, use this image.
+
+Run this command in a terminal:
+
+git clone https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git
+$ cd openshift-on-ibm-cloud-workshops
+
+```
+$ docker run -ti nheidloff/openshift-workshop-tools:v1
+```
+
+When the container has been started, run these commands to get the lastest version of the workshop:
+
+```
+$ git clone https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git
+$ cd openshift-on-ibm-cloud-workshops
+$ ROOT_FOLDER=$(pwd)
+```
+
+### 2.2. Install Tools on your Notebook
+
+This approach only works for Mac and Linux (see this [article](https://suedbroecker.net/2019/08/27/definition-of-a-dockerfile-to-use-bash-scripts-on-a-windows-10-machine-for-our-cloud-native-starter-workshop/) for more).
+
+Install the following tools:
+
+- [oc](https://cloud.ibm.com/docs/containers?topic=containers-cs_cli_install#cli_oc)
 - [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) 
 - [curl](https://curl.haxx.se/download.html)
 - [IBM Cloud CLI](https://cloud.ibm.com/docs/home/tools)
-- [Docker](https://docs.docker.com/v17.12/install/)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
-
-
-### 2.1 Options for Windows
-
-For Windows, you will need access to a Unix shell because you will execute predefined bash scripts and other CLI commands. 
-
-You have different options:
-
-1. [Use a workshop Docker image for Window 10](00-prerequisites-windows-10.md)
-    
-    We tested this option on a Windows 10 machine and documented it.
-
-2. [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
-
-3. IBM Docker image
-
-    There is a Docker image provided by IBM that contains most of the CLI tools needed
-    
-    * [Using IBM Cloud Developer Tools from a Docker Container](https://cloud.ibm.com/docs/cli?topic=cloud-cli-using-idt-from-docker). 
-    
-    _Note:_ You need to share the downloaded GitHub repo on your Windows filesystem with the running Docker image.
-
-4. Virtual Box
-
-    You can also use [VirtualBox](https://www.virtualbox.org) or [Hyper-V](https://docs.microsoft.com/de-de/virtualization/hyper-v-on-windows/about/) to create an [Ubuntu](https://www.osboxes.org/ubuntu/) VM and run the workshop directly in the VM in a Linux environment.
+- Editor: For example [Visual Studio Code](https://code.visualstudio.com/) 
 
 
 
