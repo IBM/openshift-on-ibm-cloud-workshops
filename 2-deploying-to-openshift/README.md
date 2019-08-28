@@ -37,7 +37,7 @@ $ ROOT_FOLDER=$(pwd)
 
 ### Tools - Option 2: Prebuilt Image with local Code
 
-In order to use local IDEs and editors to modify code and configuraton files, Docker volumes can be used. This option only works for Mac and Linux.
+In order to use local IDEs and editors to modify code and configuraton files, Docker volumes can be used. This option  works only for Mac and Linux.
 
 Run these commands in a terminal:
 
@@ -48,9 +48,9 @@ $ ROOT_FOLDER=$(pwd)
 $ docker run -v $ROOT_FOLDER/:/cloud-native-starter -it --rm nheidloff/openshift-workshop-tools:v1
 ```
 
-### Tools - Option 2: Install Tools on your Notebook
+### Tools - Option 3: Install Tools on your Notebook
 
-This approach only works for Mac and Linux (see this [article](https://suedbroecker.net/2019/08/27/definition-of-a-dockerfile-to-use-bash-scripts-on-a-windows-10-machine-for-our-cloud-native-starter-workshop/) for more).
+This approach works only for Mac and Linux (see this [article](https://suedbroecker.net/2019/08/27/definition-of-a-dockerfile-to-use-bash-scripts-on-a-windows-10-machine-for-our-cloud-native-starter-workshop/) for more).
 
 Install the following tools:
 
