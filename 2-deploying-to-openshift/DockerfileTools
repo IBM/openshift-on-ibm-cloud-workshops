@@ -55,7 +55,7 @@ RUN apt-get update
 RUN apt-get install -y kubectl
 
 # IBM Cloud CLI
-# RUN  curl -sL http://ibm.biz/idt-installer | bash # Full installation in not needed in that case
+# RUN  curl -sL http://ibm.biz/idt-installer | bash # Full installation is not needed in that case
 # https://cloud.ibm.com/docs/cli?topic=cloud-cli-install-ibmcloud-cli
 RUN  curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
 RUN ibmcloud plugin install container-service
