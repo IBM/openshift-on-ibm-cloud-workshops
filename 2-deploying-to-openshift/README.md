@@ -17,7 +17,7 @@ In order to complete the workshop, you need to install [Docker Desktop](https://
 
 Several other tools are needed. There are different options to install these tools.
 
-### Tools - Option 1: Prebuilt Image
+### Tools - Option 1: Prebuilt Image with Code in Container
 
 There is an image on DockerHub with all required tools. This option works for Mac, Linux and Windows. To get started as quickly as possible, use this image.
 
@@ -27,12 +27,25 @@ Run this command in a terminal:
 $ docker run -ti nheidloff/openshift-workshop-tools:v1
 ```
 
-When the container has been started, run these commands to get the lastest version of the workshop:
+After the container has been started, run these commands in the container to get the lastest version of the workshop:
 
 ```
 $ git clone https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git
 $ cd openshift-on-ibm-cloud-workshops
 $ ROOT_FOLDER=$(pwd)
+```
+
+### Tools - Option 2: Prebuilt Image with local Code
+
+In order to use local IDEs and editors to modify code and configuraton files, Docker volumes can be used. This option only works for Mac and Linux.
+
+Run these commands in a terminal:
+
+```
+$ git clone https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git
+$ cd openshift-on-ibm-cloud-workshops
+$ ROOT_FOLDER=$(pwd)
+$ docker run -v $ROOT_FOLDER/:/cloud-native-starter -it --rm nheidloff/openshift-workshop-tools:v1
 ```
 
 ### Tools - Option 2: Install Tools on your Notebook
