@@ -17,13 +17,86 @@ Our colleague Sai Vennam, IBM Cloud Developer Advocate, has created two videos o
 
 ### Part 2: Create cluster on the IBM Cloud
 
-Follow this
-https://cloud.ibm.com/docs/openshift?topic=openshift-getting-started
+To create your own OpenShift Cluster on IBM Cloud follow these steps. 
 
-Part 3: Red Hat tutorials - 55 - 65 mins
-1) Getting Started with OpenShift for Developers
-2) Deploying Applications From Images
-3) Deploying Applications From Source
+Note: This is not available with a IBM Cloud Lite Account!
 
-Part 4: 10 - 15 mins
+1. Log on to the IBM Cloud, go to the Catalaog, open section "Containers" and select "Red Hat OpenShift Cluster"
+
+![OS Catalog](images/os_cloud_catalog.png)
+
+2. In the next dialog simply click "Create"
+
+3. Fill out the form with
+   * a name (1)
+   * a region (2) like US or Europe
+   * single zone is perfect for this workshop (3)
+   * a datacenter of your choice (4)
+
+![OS Create 1g](images/os_create_cluster1.png)
+
+4. Continue with the form:
+    * Public or private & public endpoints will do (1)
+    * Virtual - shared (2)
+    * and the smallest flavor (3)
+
+![OS Create 1g](images/os_create_cluster2.png)   
+
+5. Finish:
+   * Reduce the number of nodes to 2 (1)
+   * Click "Create Cluster" (2)
+
+![OS Create 1g](images/os_create_cluster3.png)  
+
+The creation of the cluster takes at least 20 minutes, __during this time continue with Part 3 of this workshop doing some hands-on exercises.__
+
+The OpenShift cluster is completely set up when the worker nodes show a status of "Normal" in the "Worker Nodes" section __AND__
+
+![OS Create 1g](images/os_worker_rdy.png)
+
+there is a "Ingress subdomain" in the "Overview" of the cluster:
+
+![OS Create 1g](images/os_worker_rdy2.png)
+
+Access the OpenShift Web Console via the button in this dialog. 
+
+### Part 3: Red Hat tutorials 
+
+We will use the time while you are waiting for your OpenShift cluster to get ready. There is a lot of really good material at the Red Hat OpenShift [Interactive Learning Portal](https://learn.openshift.com/). You get access to a real OpenShift system during these tutorials.
+
+1) [Getting Started with OpenShift for Developers](https://learn.openshift.com/introduction/getting-started/)
+In this tutorial you will learn the fundamentals:
+   * Basics of the OpenShift platform and the Learning Portal environment (Katacoda)
+   * Using the `oc`CLI and the Web Console
+   * What is a project? Creating a project in OpenShift
+   * Deploying an app from a Docker image
+   * Scaling an app, self-healing
+   * What is a Route, creating a Route
+   * Using Source-to-Image to create an app
+
+
+2) [Deploying Applications From Images](https://learn.openshift.com/introduction/deploying-images/)
+This tutorial is about deploying an application from an existing image (from Docker Hub) and how OpenShift creates a deployment on Kubernetes without the developer touching any YAML files. It includes:
+
+   * Creating a Project
+   * Deploy a Docker image from the Web Console
+   * Create an external Route
+   * Delete an application (everything) from the command line using labels
+   * Deploy a Docker image from the command line
+   * Import an application image, work with image streams
+
+
+3) [Deploying Applications From Source](https://learn.openshift.com/introduction/deploying-python/)
+This tutorial uses a code repository on Github that holds a Python application. The Source-to-Image builder uses a Python template to create a Container image within OpenShift and deploys it, again without the developer touching any YAML files. Another method, binary build, creates the image from code on the developers workstation. These are the topics of this tutorial:  
+   * Create a Project
+   * Source-to-Image (S2I) of a Python project in Github
+   * Builder Logs
+   * Accessing the application
+   * Deleting the application via CLI
+   * S2I via `oc`command line, differences to Web Console
+   * Triggering a new build
+   * Binary build from a local code repository
+
+
+### Part 4: Deploy an application on OpenShift on the IBM Cloud
 Deploy one of the three Red Hat tutorials on the IBM Cloud
