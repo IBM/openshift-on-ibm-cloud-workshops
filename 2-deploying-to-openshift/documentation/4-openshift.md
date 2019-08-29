@@ -9,16 +9,16 @@ We will work in the **OpenShift web console** and in the **OpenShift CLI**. The 
 2. We will build the container image
 3. We will upload the container image to the internal **OpenShift container registry**
 4. We will define and apply a deployment configuration to create a Pod with our microservice
-5. We will define a service which route request to the Pod with our microservice
-
+5. We will define a service which route requests to the Pod with our microservice
 
 # 1. Build and save the container
 
 ## Step 1: Create a Open Shift project
 
 To work inside OpenShift we need a OpenShift project. 
-A [project allows](https://docs.openshift.com/container-platform/3.7/dev_guide/projects.html#overview) a community of users to organize and manage their content in isolation from other communities.
 Let us create one.
+
+_Note:_ A [project allows](https://docs.openshift.com/container-platform/3.7/dev_guide/projects.html#overview) a community of users to organize and manage their content in isolation from other communities.
 
 ```
 $ cd ${ROOT_FOLDER}/2-deploying-to-openshift
@@ -28,9 +28,9 @@ $ oc new-project cloud-native-starter
 **Ensure** you are logged on to your **Open Shift** cluster.
 [See details](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/2-deploying-to-openshift/documentation/1-prereqs.md#verify-access-to-openshift-on-the-ibm-cloud)
 
-## Step 2: Build and save the container the Open Shift registry
+## Step 2: Build and save the container the Open Shift Container Registry
 
-Now we want to build and save the container in the **Open Shift registry**.
+Now we want to build and save the container in the **Open Shift Container Registry**.
 We use these command to do that:
 
 1. Build the binary of the Docker image 
@@ -45,7 +45,7 @@ $ oc new-build --name authors --binary --strategy docker
 $ oc start-build authors --from-dir=.
 ```
 
-## Step 3: Verify the container image in the Open Shift registry UI
+## Step 3: Verify the container image in the Open Shift Container Registry UI
 
 1. Logon to IBM Cloud web console
 
@@ -83,6 +83,10 @@ The deployment will deploy the container to a Pod in Kubernetes.
 For more details we use the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/) for Pods.
 
 > A Pod is the basic building block of Kubernetes–the smallest and simplest unit in the Kubernetes object model that you create or deploy. A Pod represents processes running on your Cluster .
+
+Here is a simplified image for that topic:
+
+![docker images details](images/lab-4-deployment.png)
 
 Let's start with the **deployment yaml**. For more details we use will the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) for deployments.
 
