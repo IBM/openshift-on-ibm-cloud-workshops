@@ -23,7 +23,7 @@ The microservice is kept as simple as possible, so that it can be used as a star
 
 ![Meaningful image here]()
 
-> __IMPORTANT:__ An [IBM Cloud account](https://cloud.ibm.com/registration) is needed for these workshops! A free IBM Cloud Lite account is not sufficient, you cannot create an OpenShift cluster with a lite account.
+> __IMPORTANT: An [IBM Cloud account](https://cloud.ibm.com/registration) is needed for these workshops! A free IBM Cloud Lite account is not sufficient, you cannot create an OpenShift cluster with a lite account.__
 
 
 ## Other Resources

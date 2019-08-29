@@ -2,18 +2,18 @@
 
 To create your own OpenShift Cluster on IBM Cloud follow these steps. 
 
-__Note:__ This is not available with an IBM Cloud Lite Account!
+__Note:__ This is not available with a free IBM Cloud Lite Account!
 
-1. Log on to the IBM Cloud, go to the Catalog, open the category "Containers" and select "Red Hat OpenShift Cluster"
+1. Log on to the [IBM Cloud](https://cloud.ibm.com), go to the Catalog, open the category "Containers" and select "Red Hat OpenShift Cluster"
 
 ![OS Catalog](images/os_cloud_catalog.png)
 
 2. In the next dialog simply click "Create"
 
 3. Fill out the form with
-   * a name (1)
-   * a region (2) like North America or Central Europe
-   * single zone is perfect for this workshop (3)
+   * a Cluster name (1)
+   * a Geography or region (2) like North America, Europe, or Asia Pacific
+   * Single zone is perfect for this workshop (3)
    * a datacenter of your choice (4)
 
 ![OS Create 1g](images/os_create_cluster1.png)
@@ -26,7 +26,7 @@ __Note:__ This is not available with an IBM Cloud Lite Account!
 ![OS Create 1g](images/os_create_cluster2.png)   
 
 5. Finish:
-   * Reduce the number of nodes to 1 (1)
+   * Reduce the number of nodes to 1 (1) which is sufficient for this workshop
    * Click "Create Cluster" (2)
 
 ![OS Create 1g](images/os_create_cluster3.png)  
