@@ -96,3 +96,5 @@ $ oc get istag
 ```
 $ kubectl get pods
 ```
+
+__Continue with [Lab 2 - Running the Java Microservice locally](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/2-deploying-to-openshift/documentation/2-docker.md#lab-2---running-the-java-microservice-locally)__ 

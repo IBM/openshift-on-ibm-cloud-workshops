@@ -1,6 +1,6 @@
 # Lab 2 - Running the Java Microservice locally
 
-In this workshop we'll use a microservice that has been implemented with Java EE and [Eclipse MicroProfile](https://microprofile.io/).
+In this workshop we implement a microservice that has been implemented with Java EE and [Eclipse MicroProfile](https://microprofile.io/).
 
 The microservice has been kept as simple as possible, so that it can be used as a starting point for other microservices. It contains the following functionality:
 
@@ -11,9 +11,7 @@ The microservice has been kept as simple as possible, so that it can be used as 
 * Kubernetes yaml files: [deployment.yaml](../deployment/deployment.yaml) and [service.yaml](../deployment/service.yaml)
 * Sample REST GET endpoint: [AuthorsApplication.java](../src/main/java/com/ibm/authors/AuthorsApplication.java), [GetAuthor.java](../src/main/java/com/ibm/authors/GetAuthor.java) and [Author.java](../src/main/java/com/ibm/authors/Author.java)
 
-Note: If you want to use this code for your own microservice, remove the three Java files for the REST GET endpoint and rename the service in the pom.xml file and the yaml files.
-
-This service provides a REST API 'getauthor'. Normally we would implement also a database access, but in our case, we will only return sample data information. That sounds not a lot, but with this small sample we touch following topics:
+This service provides a REST API 'getauthor'. Normally we would use a database but in this example we just simulate with local sample data. With this small example we touch the following topics:
 
 •	Usage of [Maven](https://maven.apache.org/) for Java 
 
@@ -23,7 +21,7 @@ This service provides a REST API 'getauthor'. Normally we would implement also a
 
 •	[Health check](https://openliberty.io/guides/kubernetes-microprofile-health.html#adding-a-health-check-to-the-inventory-microservice) implementation using a MicroProfile for Kubernetes 
 
-•	Definition of a [Dockerfile](https://docs.docker.com/engine/reference/builder/) with the reuse for existing containers from the [Dockerhub](https://hub.docker.com)
+•	Definition of a [Dockerfile](https://docs.docker.com/engine/reference/builder/) with the reuse for existing containers from [Dockerhub](https://hub.docker.com)
 
 ## Definition of the Image
 
@@ -36,20 +34,20 @@ For the image we use a stack of open source components to run the Java microserv
 
 Read the article [How to build and run a Hello World Java Microservice](http://heidloff.net/article/how-to-build-and-run-a-hello-world-java-microservice/) to learn more.
 
-With the [Dockerfile](authors-java-jee/Dockerfile), we define the  how to build a container. For detailed information we use the [Dockerfile documentation](https://docs.docker.com/engine/reference/builder/)
+In the [Dockerfile](authors-java-jee/Dockerfile) we define how to build the container image. For detailed information check the [Dockerfile documentation](https://docs.docker.com/engine/reference/builder/)
 
-If we build a container, we usually start with an existing container image, which contains a minimum on configuration we need, for example: the OS, the Java version or even more. Therefore we examine [HockerHub](https://hub.docker.com/search?q=maven&type=image&image_filter=official) or we search in the internet, to find a starting point which fits to our needs. 
+When we build a new container image we usually start with an existing container image that already contains a minimum of the configuration we need, for example the OS, the Java version or even more. For this we search [DockerHub](https://hub.docker.com/search?q=maven&type=image&image_filter=official) or on the internet to find a starting point which fits to our needs. 
 
-Inside the Dockerfile we use **two stages** to build the container image. The reason for the two stages is, we have the objective to be **independed** of local environment settings, when we build our production services. With this concept, we don't have to ensure that **Java** and **Maven** (or wrong versions of them) is installed on the local machine of the developers.
+Inside of our Dockerfile we use two stages to build the container image. The reason for the two stages is that we want to be independend of an existing local environment when we build our production services. With this concept we don't have to ensure that e.g. Java and Maven or correct versions of them are installed on the local machine of the developers.
 
-In short words one container is only responsible to build the microservice, let us call this container **build environment container** and the other container will contain the microservice, we call this the **production** container.
+With this two stage approach there is one container responsible to build the microservice, let us call this container build environment container, and another container will contain the microservice itself, we call this the production container. Only this production container is later used.
 
 
-* **Build environment container**
+### Build environment container
 
-In the following Dockerfile extract, we can see how we create our **build environment container** based on the maven 3.5 image from the [dockerhub](https://hub.docker.com/_/maven/).
+In the following Dockerfile sample we can see how we create our build environment container based on the maven 3.5 image from [DockerHub](https://hub.docker.com/_/maven/).
 
-Here we use the **pom** file, we defined before, to build our **Authors service** with ```RUN mvn -f /usr/src/app/pom.xml clean package```.
+We use the pom file that we defined before to build our Authors service with `RUN mvn -f /usr/src/app/pom.xml clean package`.
 
 ```dockerfile
 FROM maven:3.5-jdk-8 as BUILD
@@ -59,13 +57,13 @@ COPY pom.xml /usr/src/app
 RUN mvn -f /usr/src/app/pom.xml clean package
 ```
 
-* **Production container**
+### Production container
 
-The starting point for the our **Production container** is the [OpenLiberty container](https://hub.docker.com/_/open-liberty).
+The starting point for the Production container is an [OpenLiberty container](https://hub.docker.com/_/open-liberty).
 
-We copy the **Authors service** code with the **server.xml** for the OpenLiberty server to this container.
+We copy the Authors service code together with the server.xml for the OpenLiberty server to this container.
 
-_REMEMBER:_ The **service.xml** contains the ports we use for our **Authors service**.
+_REMEMBER:_ The service.xml contains the ports we use for our Authors service.
 
 ```dockerfile
 FROM openliberty/open-liberty:microProfile2-java8-openj9 
@@ -73,9 +71,10 @@ FROM openliberty/open-liberty:microProfile2-java8-openj9
 COPY liberty/server.xml /config/
 COPY --from=BUILD /usr/src/app/target/authors.war /config/apps/
 ```
----
 
 ## Run the Container locally
+
+To test and see how the code works you can run the code locally as a Docker container:
 
 ```
 $ cd ${ROOT_FOLDER}/2-deploying-to-openshift
@@ -84,4 +83,10 @@ $ docker run -i --rm -p 3000:3000 authors
 $ open http://localhost:3000/openapi/ui/
 ```
 
-_Note:_ Remember, if you have choosen the **option one** for **Window 10** you  need to download or clone git clone ´´´https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git´´´ the project on your local PC.
+_Note:_ Remember, if you have choosen **Tools - Option 2** for **Window 10** you need to download or clone the project onto your local PC, first. 
+
+```
+git clone https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git
+```
+
+__Continue with [Lab 3 - Understanding the Java Implementation](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/2-deploying-to-openshift/documentation/3-java.md#lab-3---understanding-the-java-implementation)__
