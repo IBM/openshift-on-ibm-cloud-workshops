@@ -63,7 +63,7 @@ $ oc start-build authors --from-dir=.
 
 ![In the container registry you will find later the authors image](images/os-registry-06.png)
 
-8. In the container image details you will find the command, how you can pull the docker image to your local PC ```sudo docker pull docker-registry.default.svc:5000/cloud-native-starter/authors:latest```
+8. _Optional:_ Examine the container image details
 
 ![docker images details](images/os-registry-07.png)
 
@@ -114,7 +114,7 @@ spec:
         livenessProbe:
 ```
 
-This is the full [deployment.yaml](../deployment/deployment.yaml) file.
+This is the full [deployment.yaml](../deployment/deployment-os.yaml) file.
 
 ```yaml
 kind: Deployment
@@ -147,10 +147,23 @@ spec:
 
 ## Step 1: Apply the deployment
 
+1. Ensure you are in the ```{ROOT_FOLDER}/deploying-to-openshift/deployment```
+
 ```
 $ cd ${ROOT_FOLDER}/deploying-to-openshift/deployment
+```
+
+2. Apply the deployment to **OpenShift**
+
+```
 $ oc apply -f deployment-os.yaml
 ```
+
+## Step 2: Verify the deployment in OpenShift
+
+1. Logon to IBM Cloud web console
+
+2. 
 
 # 3. Apply the service.yaml
 
@@ -162,7 +175,7 @@ In the service we map the **NodePort** of the cluster to the port 3000 of the **
 
 ![authors-java-service-pod-container](images/authors-java-service-pod-container.png)
 
-In the [service.yaml](../deployment/service.yaml) we find our selector to the Pod **authors**. If the service is deployed, it is possible that our **Articles** service can find the **Authors** service.
+In the [service.yaml](../deployment/service-os.yaml) we find our selector to the Pod **authors**. If the service is deployed, it is possible that our **Articles** service can find the **Authors** service.
 
 ```yaml
 kind: Service
