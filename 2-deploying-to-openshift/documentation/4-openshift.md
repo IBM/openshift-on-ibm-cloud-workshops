@@ -1,4 +1,4 @@
-# Lab 4 - Deploying to OpenShift
+# Lab 4 - Deploying to OpenShift via 'oc' CLI
 
 We will work in the **OpenShift web console** and in the **OpenShift CLI**.
 
