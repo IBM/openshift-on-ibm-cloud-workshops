@@ -4,7 +4,7 @@ If you have only worked with "plain" Kubernetes you will be very surprised when 
 
 In this workshop we will show you how to create your own OpenShift cluster on the IBM Cloud, and how to use the `oc`CLI and the OpenShift Web Console.
 
-__IMPORTANT:__ An [IBM Cloud account](https://cloud.ibm.com/registration) is needed for this workshop! A free IBM Cloud Lite account is not sufficient, you cannot create an OpenShift cluster with a lite account.
+__Note:__ An [IBM Cloud account](https://cloud.ibm.com/registration) is needed for this workshop. A free IBM Cloud Lite account is not sufficient.
 
 ## Part 1: Introduction
 
