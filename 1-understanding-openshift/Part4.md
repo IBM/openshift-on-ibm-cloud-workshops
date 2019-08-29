@@ -1,10 +1,10 @@
 ## Part 4: Deploy an application on OpenShift on the IBM Cloud
 
-The setup of the OpenShift cluster must be complete to finish this workshop. It is completely set up when the worker node(s) show a status of "Normal" in the "Worker Nodes" section __AND__
+The setup of the OpenShift cluster must be completed to finish this workshop. It is completely set up when the worker node(s) show a status of "Normal" in the "Worker Nodes" section __AND__
 
 ![OS Create 1g](images/os_worker_rdy.png)
 
-there is a "Ingress subdomain" in the "Overview" of the cluster:
+if there is a "Ingress subdomain" displayed in the "Overview" of the cluster:
 
 ![OS Create 1g](images/os_worker_rdy3.png)
 
@@ -81,7 +81,7 @@ imagestream.image.openshift.io/blog-django-py
 route.route.openshift.io/blog-django-py
 ```
 
-11. Display all objects that are labelled with your app name, the list should be the same as before:
+11. Display all objects that are labeled with your app name, the list should be the same as before:
 
 ```
 $ oc get all -l app=blog-django-py -o name
@@ -209,4 +209,4 @@ Congratulation! You have completed this workshop!
 __Continue with the second workshop__ in this series: "[Deploying Java Microservices to OpenShift on IBM Cloud](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/tree/master/2-deploying-to-openshift#deploying-java-microservices-to-openshift-on-ibm-cloud)".
 
 
-__Back to the [overview](README.md)__
+__Back to the [overview](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops#openshift-on-ibm-cloud-workshops)__
