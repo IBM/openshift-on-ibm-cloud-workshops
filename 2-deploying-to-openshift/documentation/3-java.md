@@ -3,12 +3,11 @@
 
 ## 1. Usage of Maven for Java
 
-Let’s start with the [Maven](https://maven.apache.org/)
-project for our Java project.
+We begin with the [Maven](https://maven.apache.org/) part for our Java project.
 
 > Maven Apache Maven is a software project management and comprehension tool. Based on the concept of a **project object model** (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
 
-In the **pom** file we define the configuation of our Java project, with **dependencies**, **build** and **properties** including for example the complier information as you can see in the [pom file](../authors-java-jee/pom.xml) below.
+In the pom file we define the configuration of our Java project with dependencies, build, and properties including the compiler information as you can see in the [pom file](../authors-java-jee/pom.xml) below.
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -48,19 +47,18 @@ In the **pom** file we define the configuation of our Java project, with **depen
 	</properties>
 </project>
 ```
----
+
 
 ## 2. Configuration the Open Liberty Server
 
-Our **Authors** mircroserice runs later on **OpenLiberty** Server in a container on Kubernetes.
+Our Authors microservice will run on an OpenLiberty Server in a container on Kubernetes.
 
-We need to configure the **OpenLiberty** server a [server.xml](../authors-java-jee/liberty/server.xml) file. For our Java implementation we use the MicroProfile and with the feature definition in the **server.xml** we provide that information to our server.
-In the configuration we notice the entries ```webProfile-8.0``` and ```microProfile-2.1```.
-The server must be reached in the network; therefore, we define the  **httpEndpoint** including **http ports** we use for our microservice. For configuration details we can take a look into the [openliberty documentation](https://openliberty.io/docs/ref/config/).
+We need to configure the OpenLiberty server with a [server.xml](../authors-java-jee/liberty/server.xml) file. For our Java implementation we decided to use MicroProfile and within the feature definition in the server.xml we provide this information to our server with the entries `webProfile-8.0` and `microProfile-2.1`.
+The server must be reached in the network. Therefore we define the  httpEndpoint including httpPort we use for our microservice. For configuration details take a look into the [openliberty documentation](https://openliberty.io/docs/ref/config/).
 
-_IMPORTANT:_ We should remember these **ports** e.g. ```httpPort="3000"``` should be exposed in the **Dockerfile** for our container and mapped inside the **Kubernetes** deployment configurations.
+_IMPORTANT:_ We should remember that this port (`httpPort="3000"`) must be exposed in the Dockerfile for our container and mapped inside the Kubernetes deployment configuration.
 
-Also the name of the executable **web application** is definied in that **server.xml**.
+Also the name of the executable web application is definied in the server.xml.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -78,31 +76,21 @@ Also the name of the executable **web application** is definied in that **server
 </server>
 ```
 
----
 
 ## 3. Implementation of the REST GET endpoint with MicroProfile
 
-The sequence diagram below shows a simplified view how the **REST API** is used to get all articles. We will just replace the **Authors** microservice.
-
-![rest-api-sequencediagram](images/rest-api-sequencediagram.png)
-
 ### 3.1 MicroProfile basics
 
-In the most of the following classes we will use [MicroProfile](https://openliberty.io/docs/intro/microprofile.html).
+Some definitions:
 
 > Microservice architecture is a popular approach for building cloud-native applications in which each capability is developed as an independent service. It enables small, autonomous teams to develop, deploy, and scale their respective services independently.
 
-> **Eclipse MicroProfile** is a modular set of technologies designed so that you can write cloud-native Java™ microservices. In this introduction, learn how MicroProfile helps you develop and manage cloud-native microservices. Then, follow the Open Liberty MicroProfile guides to gain hands-on experience with MicroProfile so that you can build microservices with Open Liberty.
+> Eclipse MicroProfile is a modular set of technologies designed so that you can write cloud-native Java™ microservices. In this introduction, learn how MicroProfile helps you develop and manage cloud-native microservices. Then, follow the Open Liberty MicroProfile guides to gain hands-on experience with MicroProfile so that you can build microservices with Open Liberty.
 
-In the following image we see a list of MicroProfiles and the red marked profiles we will use in minimum in our lab.
 
-![microprofiles](images/microprofiles.png)
+### 3.2 Java classes needed to expose the Authors service
 
----
-
-### 3.2 Needed Java classes to **expose** the **Authors** service
-
-For the implementation of the **Authors** service to **expose** the REST API, we need basicly three classes:
+For the Authors service to expose the REST API we need to implement three classes:
 
 * [AuthorsApplication](../src/main/java/com/ibm/authors/AuthorsApplication.java) class repesents our web application.
 * [Author](../src/main/java/com/ibm/authors/Author.java) class repesents the data structure we use for the Author.
@@ -114,7 +102,7 @@ For the implementation of the **Authors** service to **expose** the REST API, we
 
 #### 3.2.1 **Class AuthorsApplication**
 
-Our web application does not implement any business or other logic, it simply needs to run on server with no UI. The AuthorsApplication class extends the [javax.ws.rs.core.Application](https://www.ibm.com/support/knowledgecenter/en/SSEQTP_9.0.0/com.ibm.websphere.base.doc/ae/twbs_jaxrs_configjaxrs11method.html) class to do this. With this extension the ```AuthorsApplication``` class provides access to the classes inside from the ```com.ibm.authors``` package during the runtime. With ```@ApplicationPath``` from MicroProfile we define the base path of the application.
+Our web application does not implement any business or other logic, it simply needs to run on a server with no UI. The AuthorsApplication class extends the [javax.ws.rs.core.Application](https://www.ibm.com/support/knowledgecenter/en/SSEQTP_9.0.0/com.ibm.websphere.base.doc/ae/twbs_jaxrs_configjaxrs11method.html) class to do this. With this extension the `AuthorsApplication` class provides access to the classes from the `com.ibm.authors` package at runtime. With `@ApplicationPath` from MicroProfile we define the base path of the application.
 
 ```java
 package com.ibm.authors;
@@ -127,11 +115,10 @@ public class AuthorsApplication extends Application {
 }
 ```
 
----
 
-#### 3.2.2 **Class Author**
+#### 3.2.2 Class Author
 
-This class simply repesents the data structure we use for the [Author](../src/main/java/com/ibm/authors/Author.java). No MircoProfile is used here.
+This class simply repesents the data structure we use for the [Author](../src/main/java/com/ibm/authors/Author.java). No MircoProfile feature is used here.
 
 ```java
 package com.ibm.authors;
@@ -143,13 +130,11 @@ public String blog;
 }
 ```
 
----
+#### 3.2.3 Class GetAuthor
 
-#### 3.2.3 **Class GetAuthor**
+This class implements the REST API response for our Authors microservice. We implement the REST client using the [MicroProfile REST Client](https://github.com/eclipse/microprofile-rest-client/blob/master/README.adoc). We use  `@Path` and `@Get` statements from [JAX-RS](https://jcp.org/en/jsr/detail?id=339) and for the [OpenAPI](https://www.openapis.org/) documentation `@OpenAPIDefinition` statements from [MicroProfile OpenAPI](https://github.com/eclipse/microprofile-open-api) which automatically creates an OpenAPI explorer.
 
-This class implements the REST API response for our microservice **Authors**. We implement our REST client with the [MicroProfile REST Client](https://github.com/eclipse/microprofile-rest-client/blob/master/README.adoc). In the code we use profiles following statements ```@Path```, ```@Get``` from [JAX-RS](https://jcp.org/en/jsr/detail?id=339) and form the [OpenAPI](https://www.openapis.org/) documentation ```@OpenAPIDefinition``` the [MicroProfile OpenAPI](https://github.com/eclipse/microprofile-open-api), which creates automatically an OpenAPI explorer.
-
-Let's remember the **server.xml** configuration, where we added the **MicroProfile** to the server, as you can see in the code below.
+Remember the server.xml configuration where we added MicroProfile to the server as you can see in the code below.
 
 ```xml
 <featureManager>
@@ -158,9 +143,9 @@ Let's remember the **server.xml** configuration, where we added the **MicroProfi
 </featureManager> 
 ```
 
-With the combination of the **server.xml** and our usage of **MicroProfile** in the **GetAuthor** class, we can access a **OpenAPI exlporer** with this URL ```http://host:http_port/openapi``` later.
+With the combination of the server.xml and our usage of MicroProfile features in the GetAuthor class we will be able to access an OpenAPI explorer with this URL `http://host:http_port/openapi` later.
 
-This is the source code of the [GetAuthors class](../src/main/java/com/ibm/authors/GetAuthor.java) with the used **MicroProfiles**.
+This is the source code of the [GetAuthors class](../src/main/java/com/ibm/authors/GetAuthor.java) with the mentioned MicroProfile features:
 
 ```java
 @ApplicationScoped
@@ -214,19 +199,20 @@ public class GetAuthor {
 }
 ```
 
+
 ### 3.3 Supporting live and readiness probes in Kubernetes with HealthCheck
 
-We add the class **HealthEndpoint** into the **Authors** package  as you can see in the following diagram.
+We have added the class HealthEndpoint into the Authors package as you can see in the following diagram.
 
 ![class diagramm HealthEndpoint](images/authors-java-classdiagram-02.png)
 
-Let's understand what we want to support:
+We want to support this [Kubernetes function](https://github.com/OpenLiberty/guide-kubernetes-microprofile-health#checking-the-health-of-microservices-on-kubernetes):
 
-> Kubernetes **provides liveness** and **readiness probes** that are used to check the health of your containers, you will work with readiness probes. These probes can check certain files in your containers, check a TCP socket, or make HTTP requests. **MicroProfile Health** exposes a **health endpoint** on your microservices. Kubernetes polls the endpoint as specified by the probes to react appropriately to any change in the microservice’s status. Read the Adding health reports to microservices guide to learn more about MicroProfile Health.
+> Kubernetes provides liveness and readiness probes that are used to check the health of your containers. These probes can check certain files in your containers, check a TCP socket, or make HTTP requests. MicroProfile Health exposes readiness and liveness endpoints on your microservices. Kubernetes polls these endpoints as specified by the probes to react appropriately to any change in the microservice’s status.
 
-For more information we can use the [Kubernetes Microprofile Health documentation](https://openliberty.io/guides/kubernetes-microprofile-health.html) and the documentation on [GitHub](https://github.com/eclipse/microprofile-health).
+For more information check the [Kubernetes Microprofile Health documentation](https://openliberty.io/guides/kubernetes-microprofile-health.html) and the documentation on [GitHub](https://github.com/eclipse/microprofile-health).
 
-This is the implementation for the Health Check for Kubernetes for the **Authors** service in the [HealthEndpoint class](../authors-java-jee/src/main/java/com/ibm/authors/HealthEndpoint.java)
+This is the implementation of the Health Check for Kubernetes in the [HealthEndpoint class](../authors-java-jee/src/main/java/com/ibm/authors/HealthEndpoint.java) of the Authors service:
 
 ```java
 @Health
@@ -240,17 +226,17 @@ public class HealthEndpoint implements HealthCheck {
 }
 ```
 
-The usage of **HealthEndpoint** we find in the deployment yaml, that we use for the deployment Kubernetes. In the following yaml extract, we see the ```livenessProbe``` definition.
+This HealthEndpoint is configured in the Kubernetes deployment yaml. In the following yaml extract we see the `livenessProbe` definition.
 
 ```yaml
-livenessProbe:
-    exec:
+    livenessProbe:
+      exec:
         command: ["sh", "-c", "curl -s http://localhost:3000/"]
-        initialDelaySeconds: 20
+      initialDelaySeconds: 20
     readinessProbe:
-        exec:
-            command: ["sh", "-c", "curl -s http://localhost:3000/health | grep -q authors"]
-        initialDelaySeconds: 40
+      exec:
+        command: ["sh", "-c", "curl -s http://localhost:3000/health | grep -q authors"]
+      initialDelaySeconds: 40
 ```
 
 ## Change the REST API Data and run the Container locally
@@ -264,4 +250,11 @@ $ docker run -i --rm -p 3000:3000 authors
 $ open http://localhost:3000/openapi/ui/
 ```
 
-_Note:_ Remember, if you have choosen the **option one** for **Window 10** you  need to download or clone git clone ´´´https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git´´´ the project on your local PC.
+_Note:_ Remember, if you have choosen **Option 2** for **Window 10** you need to download or clone the project onto your local PC, first. 
+
+```
+git clone https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git
+```
+
+
+__Continue with [Lab 4 - Deploying to OpenShift](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/2-deploying-to-openshift/documentation/4-openshift.md#lab-4---deploying-to-openshift)__
