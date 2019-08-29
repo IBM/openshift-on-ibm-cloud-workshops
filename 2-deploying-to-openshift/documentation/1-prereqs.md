@@ -6,9 +6,8 @@ An [IBM Cloud account](https://cloud.ibm.com/registration) is needed.
 
 Note: In order to run this workshop an IBM Cloud Lite account is not sufficient. This tutorial may incur costs. Use the [Pricing Calculator](https://cloud.ibm.com/estimator/review) to generate a cost estimate based on your projected usage.
 
-We will use the following IBM Cloud service in this hands-on workshop:
+We will use the [OpenShift on IBM Cloud](https://cloud.ibm.com/kubernetes/catalog/openshiftcluster) service on IBM Cloud in this hands-on workshop.
 
-* [OpenShift on IBM Cloud](https://cloud.ibm.com/kubernetes/catalog/openshiftcluster)
 
 Follow the [instructions](../../1-understanding-openshift#part-2-create-cluster-on-the-ibm-cloud) from the first workshop to set up an OpenShift cluster.
 
@@ -20,7 +19,7 @@ Several other tools are needed. There are different options to install these too
 
 ### Tools - Option 1: Prebuilt Image with local Code
 
-In order to use local IDEs and editors to modify code and configuraton files, Docker volumes can be used. This option  works only for Mac and Linux.
+There is an image on DockerHub with all required tools. In order to use local IDEs and editors to modify code and configuraton files a Docker volume is used. This option  works only for Mac and Linux.
 
 Run these commands in a terminal:
 
@@ -35,6 +34,9 @@ Inside your running Docker image you can access your the local project
 root@3f46c41f7303:/usr/local/bin# cd /cloud-native-starter/
 root@3f46c41f7303:/cloud-native-starter# ls
 ```
+
+_Note:_ With the `--rm` option in the docker run command the container is deleted once you exit. This is intended.
+
 
 ### Tools - Option 2: Prebuilt Image with Code in Container
 
@@ -54,7 +56,7 @@ $ cd openshift-on-ibm-cloud-workshops
 $ ROOT_FOLDER=$(pwd)
 ```
 
-_Note:_ For the Docker and Java lab you also need to download or clone the project on your local PC, if you using windows.
+_Note:_ If you using Windows you also need to download or clone the project to your local workstation for the upcoming Docker and Java lab.
 
 
 ### Tools - Option 3: Install Tools on your Notebook
@@ -80,7 +82,7 @@ $ ROOT_FOLDER=$(pwd)
 
 ## Verify Access to OpenShift on the IBM Cloud
 
-After you've created a new cluster, open the OpenShift console. From the dropdown menu in the upper right of the page, click 'Copy Login Command'. Paste the copied command in your terminal.
+After you've created a new cluster, open the OpenShift console. From the dropdown menu in the upper right of the page, click 'Copy Login Command'. Paste the copied command into your terminal.
 
 1. Verify 'oc' CLI
 
