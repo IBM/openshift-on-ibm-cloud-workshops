@@ -1,25 +1,4 @@
-[home](README.md)
-# Simplest possible Java service deployed on OpenShift on IBM Cloud
 
-!!! ** *** UNDER CONSTRUCTION *** ** !!!
-
-In that lab we will write and deploy an Authors microservice based on Java EE with MicroProfile.
-
-![architecture authors]()
-
-If you want to know more about the background of that microservice visit the [Let’s get started with cloud native Java applications on Kubernetes](https://github.com/IBM/cloud-native-starter/tree/master/workshop) in the [Cloud Native Starter project](https://github.com/IBM/cloud-native-starter).
-
-In that service we want to implement **REST API** for a ```getauthor`` request. Normally, we would implement also a database access, but in our case, we will only return sample data information. That sounds not a lot, but with this small sample we touch following topics:
-
-•	Usage of [Maven](https://maven.apache.org/) for Java 
-
-•	Configuration of an [OpenLiberty Server](https://openliberty.io)
-
-•	Implementation of a [REST GET endpoint with MicroProfile](https://openliberty.io/blog/2018/01/31/mpRestClient.html)
-
-•	[Health check](https://openliberty.io/guides/kubernetes-microprofile-health.html#adding-a-health-check-to-the-inventory-microservice) implementation using a MicroProfile for Kubernetes 
-
-•	Definition of a [Dockerfile](https://docs.docker.com/engine/reference/builder/) with the reuse for existing containers from the [Dockerhub](https://hub.docker.com)
 
 •	[TBD - OpenShift deployment configuration]()
 
@@ -296,47 +275,6 @@ livenessProbe:
 ---
 
 # 4. The Dockerfile and the usage of dockerhub
-
-With the [Dockerfile](authors-java-jee/Dockerfile), we define the  how to build a container. For detailed information we use the [Dockerfile documentation](https://docs.docker.com/engine/reference/builder/)
-
-If we build a container, we usually start with an existing container image, which contains a minimum on configuration we need, for example: the OS, the Java version or even more. Therefor we examine [dockerhub](https://hub.docker.com/search?q=maven&type=image&image_filter=official) or we search in the internet, to find a starting point which fits to our needs. We see a sample **maven** container image on dockerhub the following picture.
-
-![dockerhub maven container image](images/dockerhub.png)
-
-Inside the Dockerfile we use **two stages** to build the container image. The reason for the two stages is, we have the objective to be **independed** of local environment settings, when we build our production services. With this concept, we don't have to ensure that **Java** and **Maven** (or wrong versions of them) is installed on the local machine of the developers.
-
-In short words one container is only responsible to build the microservice, let us call this container **build environment container** and the other container will contain the microservice, we call this the **production** container.
-
-
-* **Build environment container**
-
-In the following Dockerfile extract, we can see how we create our **build environment container** based on the maven 3.5 image from the [dockerhub](https://hub.docker.com/_/maven/).
-
-Here we use the **pom** file, we defined before, to build our **Authors service** with ```RUN mvn -f /usr/src/app/pom.xml clean package```.
-
-```dockerfile
-FROM maven:3.5-jdk-8 as BUILD
- 
-COPY src /usr/src/app/src
-COPY pom.xml /usr/src/app
-RUN mvn -f /usr/src/app/pom.xml clean package
-```
-
-* **Production container**
-
-The starting point for the our **Production container** is the [OpenLiberty container](https://hub.docker.com/_/open-liberty).
-
-We copy the **Authors service** code with the **server.xml** for the OpenLiberty server to this container.
-
-_REMEMBER:_ The **service.xml** contains the ports we use for our **Authors service**.
-
-```dockerfile
-FROM openliberty/open-liberty:microProfile2-java8-openj9 
-
-COPY liberty/server.xml /config/
-COPY --from=BUILD /usr/src/app/target/authors.war /config/apps/
-```
----
 
 # 5.Kubernetes deployment configuration
 
