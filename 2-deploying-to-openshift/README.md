@@ -14,3 +14,4 @@ This workshop has five labs. It should take between 60 and 90 minutues to comple
 
 1. [Installing prerequisites](documentation/1-prereqs.md)
 2. [Running the Java microservice locally](documentation/2-docker.md)
+3. [Understanding the Java implementation](documentation/3-java.md)

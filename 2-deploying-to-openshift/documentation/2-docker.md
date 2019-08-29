@@ -4,12 +4,12 @@ In this workshop we'll use a microservice that has been implemented with Java EE
 
 The microservice has been kept as simple as possible, so that it can be used as a starting point for other microservices. It contains the following functionality:
 
-* Image with OpenJ9, OpenJDK, Open Liberty and MicroProfile: [Dockerfile](../../Dockerfile)
-* Maven project: [pom.xml](../../pom.xml)
-* Open Liberty server configuration: [server.xml](../../liberty/server.xml)
-* Health endpoint: [HealthEndpoint.java](../../src/main/java/com/ibm/authors/HealthEndpoint.java)
-* Kubernetes yaml files: [deployment.yaml](../../deployment/deployment.yaml) and [service.yaml](../../deployment/service.yaml)
-* Sample REST GET endpoint: [AuthorsApplication.java](../../src/main/java/com/ibm/authors/AuthorsApplication.java), [GetAuthor.java](../../src/main/java/com/ibm/authors/GetAuthor.java) and [Author.java](../../src/main/java/com/ibm/authors/Author.java)
+* Image with OpenJ9, OpenJDK, Open Liberty and MicroProfile: [Dockerfile](../Dockerfile)
+* Maven project: [pom.xml](../pom.xml)
+* Open Liberty server configuration: [server.xml](../liberty/server.xml)
+* Health endpoint: [HealthEndpoint.java](../src/main/java/com/ibm/authors/HealthEndpoint.java)
+* Kubernetes yaml files: [deployment.yaml](../deployment/deployment.yaml) and [service.yaml](../deployment/service.yaml)
+* Sample REST GET endpoint: [AuthorsApplication.java](../src/main/java/com/ibm/authors/AuthorsApplication.java), [GetAuthor.java](../src/main/java/com/ibm/authors/GetAuthor.java) and [Author.java](../src/main/java/com/ibm/authors/Author.java)
 
 Note: If you want to use this code for your own microservice, remove the three Java files for the REST GET endpoint and rename the service in the pom.xml file and the yaml files.
 
