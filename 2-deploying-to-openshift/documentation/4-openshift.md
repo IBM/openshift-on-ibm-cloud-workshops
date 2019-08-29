@@ -3,6 +3,14 @@
 
 We will work in the **OpenShift web console** and in the **OpenShift CLI**.
 
+![overview](images/lab-4-overview.png)
+
+1. We will build the container image
+2. We will upload the container image to the internal **OpenShift container registry**
+3. We will define and apply a deployment configuration to create a Pod with our microservice
+4. We will define a service which route request to the Pod with our microservice
+
+
 # 1. Build and save the container
 
 ## Step 1: Create a Open Shift project
