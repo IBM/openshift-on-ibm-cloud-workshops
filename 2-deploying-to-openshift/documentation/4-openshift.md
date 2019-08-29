@@ -20,18 +20,18 @@ $ oc new-project cloud-native-starter
 
 ## Step 2: Build and save the container the Open Shift registry
 
-Now we want to build and save the container the Open Shift registry.
+Now we want to build and save the container in the **Open Shift registry**.
 We use these command to do that:
 
 1. Build the binary of the Docker image 
 
 ```
 $ oc new-build --name authors --binary --strategy docker
-````
+```
 
 2. Upload the binary of the Docker image
 
-````
+```
 $ oc start-build authors --from-dir=.
 ```
 
