@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: authors
-        image: authors:1
+        image: docker-registry.default.svc:5000/cloud-native-starter/authors:latest
         ports:
         - containerPort: 3000
         livenessProbe:
