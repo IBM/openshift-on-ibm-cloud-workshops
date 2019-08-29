@@ -12,7 +12,7 @@ This repository holds a series of workshops (currently 2) that should help you a
 
 In this workshop we will show you how to create your own OpenShift cluster on the IBM Cloud, and how to use the `oc`CLI and the OpenShift Web Console to deploy applications.
 
-![OS Console](1-understanding-openshift/images/os_deploy_4.png)
+<kbd><img src="images/os_console.png" /></kbd>
 
 
 ### Workshop 2: [Deploying Java Microservices to OpenShift on IBM Cloud](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/tree/master/2-deploying-to-openshift#deploying-java-microservices-to-openshift-on-ibm-cloud)
