@@ -12,7 +12,7 @@ In order to run these workshops, you need an [IBM Cloud account](https://cloud.i
 
 ## Workshop 1: [Understanding OpenShift](1-understanding-openshift/README.md#understanding-openshift)
 
-In this workshop we will show you how to create your own OpenShift cluster on the IBM Cloud, and how to use the 'oc' CLI (command line interface) and the OpenShift Web Console to deploy applications.
+In this workshop we will show you how to create your own OpenShift cluster on the IBM Cloud, how to use the `oc` CLI (command line interface) and how to use the OpenShift Web Console to deploy applications.
 
 * Duration: 60 - 90 minutes
 * Audience: Beginner
