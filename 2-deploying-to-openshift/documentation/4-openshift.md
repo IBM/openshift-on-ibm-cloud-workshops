@@ -1,5 +1,6 @@
 # Lab 4 - Deploying to OpenShift
 
+
 We will work in the **OpenShift web console** and in the **OpenShift CLI**.
 
 # 1. Build and save the container
