@@ -12,7 +12,7 @@ This repository holds a series of workshops (currently 2) that should help you a
 
 In this workshop we will show you how to create your own OpenShift cluster on the IBM Cloud, and how to use the `oc`CLI and the OpenShift Web Console to deploy applications.
 
-![OS Console](1-understanding-openshift/images/os_deploy_4.png)
+<kbd><img src="images/os_console.png" /></kbd>
 
 
 ### Workshop 2: [Deploying Java Microservices to OpenShift on IBM Cloud](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/tree/master/2-deploying-to-openshift#deploying-java-microservices-to-openshift-on-ibm-cloud)
@@ -21,7 +21,7 @@ This workshop demonstrates how to build a microservice with Java and how to depl
 
 The microservice is kept as simple as possible, so that it can be used as a starting point for other microservices. The microservice has been developed with Java EE and Eclipse MicroProfile.
 
-<kbd><img src="images/workshop-2.jpg" /></kbd>
+
 
 > __IMPORTANT: An [IBM Cloud account](https://cloud.ibm.com/registration) is needed for these workshops! A free IBM Cloud Lite account is not sufficient, you cannot create an OpenShift cluster with a lite account.__
 
