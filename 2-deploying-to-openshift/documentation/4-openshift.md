@@ -167,6 +167,14 @@ $ oc apply -f deployment.yaml
 
 ![Select the Cloud-Native-Starter project and examine the deployment](images/os-deployment-01.png)
 
+3. Click on **#1** to open the details of the deployment
+
+![Click on #1 to open the details of the deployment](images/os-deployment-02.png)
+
+4. In the details you find the health check we defined before
+
+![In the details you find the health check we defined before](images/os-deployment-03.png)
+
 # 3. Apply the service.yaml
 
 After the definition of the **Pod** we need to define how to access the Pod, therefor we use a **service** in Kubernetes. For more details we use the [Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/service/) for service.
