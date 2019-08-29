@@ -156,14 +156,16 @@ $ cd ${ROOT_FOLDER}/deploying-to-openshift/deployment
 2. Apply the deployment to **OpenShift**
 
 ```
-$ oc apply -f deployment-os.yaml
+$ oc apply -f deployment.yaml
 ```
 
-## Step 2: Verify the deployment in OpenShift
+## Step 2: Verify the deployment in **OpenShift**
 
-1. Logon to IBM Cloud web console
+1. Logon to **IBM Cloud web console** and open your **OpenShift web console**
 
-2. 
+2. Select the **Cloud-Native-Starter** project and examine the deployment
+
+![Select the Cloud-Native-Starter project and examine the deployment](images/os-deployment-01.png)
 
 # 3. Apply the service.yaml
 
