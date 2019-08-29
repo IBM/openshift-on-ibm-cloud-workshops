@@ -79,8 +79,9 @@ COPY --from=BUILD /usr/src/app/target/authors.war /config/apps/
 
 ```
 $ cd ${ROOT_FOLDER}/2-deploying-to-openshift
-$ mvn package
 $ docker build -t authors .
 $ docker run -i --rm -p 3000:3000 authors
 $ open http://localhost:3000/openapi/ui/
 ```
+
+_Note:_ Remember, if you have choosen the **option one** for **Window 10** you  need to download or clone git clone ´´´https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git´´´ the project on your local PC.
