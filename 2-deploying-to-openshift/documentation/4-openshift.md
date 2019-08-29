@@ -218,11 +218,36 @@ spec:
 ---
 ```
 
+## Step 1: Apply the deployment
+
+1. Apply the service to **OpenShift**
 
 ```
 $ oc apply -f service.yaml
+```
+
+2. With oc [expose](https://docs.openshift.com/container-platform/3.6/dev_guide/routes.html) we create a route to our service in the OpenShift cluster.
+
+```
 $ oc expose svc/authors
-$ open http://$(oc get route authors -o jsonpath={.spec.host})/openapi/ui/
+```
+
+## Step 2: Test the microservice
+
+1. Exeute the command and copy the URL and open the Swagger UI in browser
+
+```
+$ echo http://$(oc get route authors -o jsonpath={.spec.host})/openapi/ui/
+$ http://authors-cloud-native-starter.openshift-devadv-eu-wor-160678-0001.us-south.containers.appdomain.cloud/openapi/ui/
+```
+
+The Swagger UI:
+
+![Swagger UI](images/authors-swagger-ui.png)
+
+
+
+```
 $ curl -X GET "http://$(oc get route authors -o jsonpath={.spec.host})/api/v1/getauthor?name=Niklas%20Heidloff" -H "accept: application/json"
 ```
 
