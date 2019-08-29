@@ -1,7 +1,62 @@
 # Lab 4 - Deploying to OpenShift
 
+We will work in the **OpenShift web console** and in the **OpenShift CLI**.
 
-## Kubernetes deployment configuration
+# 1. Build and save the container
+
+## Step 1: Create a Open Shift project
+
+To work inside OpenShift we need a OpenShift project.
+Let us create one.
+
+```
+$ cd ${ROOT_FOLDER}/2-deploying-to-openshift
+$ oc new-project cloud-native-starter
+```
+
+## Step 2: Build and save the container the Open Shift registry
+
+Now we want to build and save the container the Open Shift registry.
+We use these command to do that:
+
+```
+$ oc new-build --name authors --binary --strategy docker
+$ oc start-build authors --from-dir=.
+```
+
+## Step 3: Verify the container image in the Open Shift registry UI
+
+1. Logon to IBM Cloud web console
+
+2. Select **Open Shift** in the menu
+
+![Select Open Shift in the menu](images/os-registry-01.png)
+
+3. Chose **Clusters** and click on your **OpenShift cluster**
+
+![Chose Clusters and click on your OpenShift cluster](images/os-registry-02.png)
+
+4. Open the **OpenShift web console**
+
+![Open the OpenShift web console](images/os-registry-03.png)
+
+5. Select in **My Projects** the **default** project
+
+![Select in My Projects the default project](images/os-registry-04.png)
+
+6. Expand in **Overview** the **DEPLOYMENT registry-console** and click **Routes - External Traffic**
+
+![Expand in Overview the DEPLOYMENT registry-console and click Routes - External Traffic](images/os-registry-05.png)
+
+7. In the container registry you will find later the **authors** image and you can click on the latest label.
+
+![In the container registry you will find later the authors image](images/os-registry-06.png)
+
+8. In the container image details you will find the command, how you can pull the docker image to your local PC ```sudo docker pull docker-registry.default.svc:5000/cloud-native-starter/authors:latest```
+
+![docker images details](images/os-registry-07.png)
+
+# 2. Kubernetes deployment configuration
 
 Now we examine the **deployment** and **service** yaml. The yamls do contain the deployment of the container to a **Pod** and creation of the **Services** to access the **Authors mircoservice** in the Kubernetes Cluster. 
 
@@ -89,6 +144,8 @@ spec:
           initialDelaySeconds: 40
       restartPolicy: Always
 ```
+
+
 
 ### 2. Service
 
