@@ -135,36 +135,27 @@ Open the OpenShift Container Registry (OCR) in the IBM Cloud
 
 3. Chose **Clusters** and click on your **OpenShift cluster**
 
-[Chose Clusters and click on your OpenShift cluster](images/os-registry-02.png)
+![Chose Clusters and click on your OpenShift cluster](images/os-registry-02.png)
 
 4. Open the **OpenShift web console**
 
-[Open the OpenShift web console](images/os-registry-03.png)
+![Open the OpenShift web console](images/os-registry-03.png)
 
 5. Select in **My Projects** the **default** project
 
-[Select in My Projects the default project](images/os-registry-04.png)
+![Select in My Projects the default project](images/os-registry-04.png)
 
 6. Expand in **Overview** the **DEPLOYMENT registry-console** and click **Routes - External Traffic**
 
-[Expand in Overview the DEPLOYMENT registry-console and click Routes - External Traffic](images/os-registry-05.png)
+![Expand in Overview the DEPLOYMENT registry-console and click Routes - External Traffic](images/os-registry-05.png)
 
 7. In the container registry you will find later the **authors** image and you can click on the latest label.
 
-[In the container registry you will find later the authors image](images/os-registry-06.png)
+![In the container registry you will find later the authors image](images/os-registry-06.png)
 
-8. In the image details you will find the command, how you can pull the docker image to your local PC ```sudo docker pull docker-registry.default.svc:5000/cloud-native-starter/authors:latest```
+8. In the container image details you will find the command, how you can pull the docker image to your local PC ```sudo docker pull docker-registry.default.svc:5000/cloud-native-starter/authors:latest```
 
-[docker images details](images/os-registry-07.png)
-
-Expand in **Overview** the **DEPLOYMENT registry-console** and click **Routes - External Traffic**
-To access the OpenShift Container Registry (OCR) 
-
-In the follow image you can see the integrated docker registry in our Open Shift instance. (```docker-registry.default.svc:5000/cloud-native-starter/authors```)
-
-
-to be done: add description and screenshot
-
+![docker images details](images/os-registry-07.png)
 
 ## Deploy to OpenShift
 
