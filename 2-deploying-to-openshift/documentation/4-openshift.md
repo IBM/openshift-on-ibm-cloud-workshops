@@ -84,9 +84,9 @@ For more details we use the [Kubernetes documentation](https://kubernetes.io/doc
 
 > A Pod is the basic building block of Kubernetes–the smallest and simplest unit in the Kubernetes object model that you create or deploy. A Pod represents processes running on your Cluster .
 
-Here is a simplified image for that topic:
+Here is a simplified image for that topic. The Pod knows, because of the deployment, where the image is available he has to instantiate.
 
-![docker images details](images/lab-4-deployment.png)
+![deployment](images/lab-4-deployment.png)
 
 Let's start with the **deployment yaml**. For more details we use will the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) for deployments.
 
@@ -195,9 +195,9 @@ After the definition of the **Pod** we need to define how to access the Pod, the
 
 > A Kubernetes Service is an abstraction which defines a logical set of Pods and a policy by which to access them - sometimes called a micro-service. The set of Pods targeted by a Service is (usually) determined by a Label Selector.
 
-In the service we map the **NodePort** of the cluster to the port 3000 of the **Authors** service running in the **authors** Pod, as we can see in the following picture. 
+In the service we map the **NodePort** of the cluster to the port 3000 of the **Authors** service running in the **authors** Pod, as we can see in the following simplified picture. 
 
-![authors-java-service-pod-container](images/authors-java-service-pod-container.png)
+![service](images/lab-4-service.png)
 
 In the [service.yaml](../deployment/service-os.yaml) we find our selector to the Pod **authors**. If the service is deployed, it is possible that our **Articles** service can find the **Authors** service.
 
