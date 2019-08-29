@@ -1,4 +1,4 @@
-# Lab 4 - Deploying to OpenShift
+# Lab 4 - Deploying to OpenShift via 'oc' CLI
 
 
 ## Kubernetes deployment configuration
