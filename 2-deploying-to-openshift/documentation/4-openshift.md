@@ -121,8 +121,47 @@ spec:
 ---
 ```
 
-
 ## Container Registry in OpenShift
+
+> [OpenShift Container Platform](https://docs.openshift.com/container-platform/3.11/architecture/infrastructure_components/image_registry.html) provides an integrated container image registry called OpenShift Container Registry (OCR) that adds the ability to automatically provision new image repositories on demand. This provides users with a built-in location for their application builds to push the resulting images.
+
+Open the OpenShift Container Registry (OCR) in the IBM Cloud
+
+1. Logon to IBM Cloud web console
+
+2. Select **Open Shift** in the menu
+
+![Select Open Shift in the menu](images/os-registry-01.png)
+
+3. Chose **Clusters** and click on your **OpenShift cluster**
+
+[Chose Clusters and click on your OpenShift cluster](images/os-registry-02.png)
+
+4. Open the **OpenShift web console**
+
+[Open the OpenShift web console](images/os-registry-03.png)
+
+5. Select in **My Projects** the **default** project
+
+[Select in My Projects the default project](images/os-registry-04.png)
+
+6. Expand in **Overview** the **DEPLOYMENT registry-console** and click **Routes - External Traffic**
+
+[Expand in Overview the DEPLOYMENT registry-console and click Routes - External Traffic](images/os-registry-05.png)
+
+7. In the container registry you will find later the **authors** image and you can click on the latest label.
+
+[In the container registry you will find later the authors image](images/os-registry-06.png)
+
+8. In the image details you will find the command, how you can pull the docker image to your local PC ```sudo docker pull docker-registry.default.svc:5000/cloud-native-starter/authors:latest```
+
+[docker images details](images/os-registry-07.png)
+
+Expand in **Overview** the **DEPLOYMENT registry-console** and click **Routes - External Traffic**
+To access the OpenShift Container Registry (OCR) 
+
+In the follow image you can see the integrated docker registry in our Open Shift instance. (```docker-registry.default.svc:5000/cloud-native-starter/authors```)
+
 
 to be done: add description and screenshot
 
