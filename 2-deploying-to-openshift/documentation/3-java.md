@@ -104,9 +104,9 @@ In the following image we see a list of MicroProfiles and the red marked profile
 
 For the implementation of the **Authors** service to **expose** the REST API, we need basicly three classes:
 
-* **AuthorsApplication** class repesents our web application.
-* **Author** class repesents the data structure we use for the Author.
-* **GetAuthor** class repesents the REST API.
+* [AuthorsApplication](../src/main/java/com/ibm/authors/AuthorsApplication.java) class repesents our web application.
+* [Author](../src/main/java/com/ibm/authors/Author.java) class repesents the data structure we use for the Author.
+* [GetAuthor](../src/main/java/com/ibm/authors/GetAuthor.java) class repesents the REST API.
 
 ![class diagramm authors](images/authors-java-classdiagram-01.png)
 
@@ -131,7 +131,7 @@ public class AuthorsApplication extends Application {
 
 #### 3.2.2 **Class Author**
 
-This class simply repesents the data structure we use for the [Author](../authors-java-jee/src/main/java/com/ibm/authors/). No MircoProfile is used here.
+This class simply repesents the data structure we use for the [Author](../src/main/java/com/ibm/authors/Author.java). No MircoProfile is used here.
 
 ```java
 package com.ibm.authors;
@@ -160,7 +160,7 @@ Let's remember the **server.xml** configuration, where we added the **MicroProfi
 
 With the combination of the **server.xml** and our usage of **MicroProfile** in the **GetAuthor** class, we can access a **OpenAPI exlporer** with this URL ```http://host:http_port/openapi``` later.
 
-This is the source code of the [GetAuthors class](../authors-java-jee/src/main/java/com/ibm/authors/GetAuthor.java) with the used **MicroProfiles**.
+This is the source code of the [GetAuthors class](../src/main/java/com/ibm/authors/GetAuthor.java) with the used **MicroProfiles**.
 
 ```java
 @ApplicationScoped
@@ -220,8 +220,6 @@ We add the class **HealthEndpoint** into the **Authors** package  as you can see
 
 ![class diagramm HealthEndpoint](images/authors-java-classdiagram-02.png)
 
-** *** HOW THAT WORKS IN OPEN SHIFT *** **
-
 Let's understand what we want to support:
 
 > Kubernetes **provides liveness** and **readiness probes** that are used to check the health of your containers, you will work with readiness probes. These probes can check certain files in your containers, check a TCP socket, or make HTTP requests. **MicroProfile Health** exposes a **health endpoint** on your microservices. Kubernetes polls the endpoint as specified by the probes to react appropriately to any change in the microservice’s status. Read the Adding health reports to microservices guide to learn more about MicroProfile Health.
@@ -242,7 +240,7 @@ public class HealthEndpoint implements HealthCheck {
 }
 ```
 
-The usage of **HealthEndpoint** we can find in the deployment yaml, that we use for the deployment Kubernetes. In the following yaml extract, we see the ```livenessProbe``` definition.
+The usage of **HealthEndpoint** we find in the deployment yaml, that we use for the deployment Kubernetes. In the following yaml extract, we see the ```livenessProbe``` definition.
 
 ```yaml
 livenessProbe:
@@ -261,8 +259,9 @@ In [GetAuthor.java](../src/main/java/com/ibm/authors/GetAuthor.java) change the 
 
 ```
 $ cd ${ROOT_FOLDER}/2-deploying-to-openshift
-$ mvn package
 $ docker build -t authors .
 $ docker run -i --rm -p 3000:3000 authors
 $ open http://localhost:3000/openapi/ui/
 ```
+
+_Note:_ Remember, if you have choosen the **option one** for **Window 10** you  need to download or clone git clone ´´´https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git´´´ the project on your local PC.
