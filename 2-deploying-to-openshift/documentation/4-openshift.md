@@ -14,6 +14,9 @@ $ cd ${ROOT_FOLDER}/2-deploying-to-openshift
 $ oc new-project cloud-native-starter
 ```
 
+**Ensure** you are logged on to your **Open Shift** cluster.
+[See details](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/2-deploying-to-openshift/documentation/1-prereqs.md#verify-access-to-openshift-on-the-ibm-cloud)
+
 ## Step 2: Build and save the container the Open Shift registry
 
 Now we want to build and save the container the Open Shift registry.
