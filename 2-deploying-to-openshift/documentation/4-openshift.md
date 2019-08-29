@@ -23,8 +23,15 @@ $ oc new-project cloud-native-starter
 Now we want to build and save the container the Open Shift registry.
 We use these command to do that:
 
+1. Build the binary of the Docker image 
+
 ```
 $ oc new-build --name authors --binary --strategy docker
+````
+
+2. Upload the binary of the Docker image
+
+````
 $ oc start-build authors --from-dir=.
 ```
 
@@ -62,19 +69,10 @@ $ oc start-build authors --from-dir=.
 
 # 2. Apply the deployment.yaml
 
-Now we examine the **deployment**. 
-
-In the following image we see the relevant dependencies for this lab.
-
-![authors-java-service-pod-container](images/authors-java-service-pod-container.png)
-
-### 1. Deployment
-
 The deployment will deploy the container to a Pod in Kubernetes.
 For more details we use the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/) for Pods.
 
 > A Pod is the basic building block of Kubernetes–the smallest and simplest unit in the Kubernetes object model that you create or deploy. A Pod represents processes running on your Cluster .
-
 
 Let's start with the **deployment yaml**. For more details we use will the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) for deployments.
 
@@ -116,7 +114,7 @@ spec:
         livenessProbe:
 ```
 
-This is the full [deployment.yaml](../authors-java-jee/deployment/deployment.yaml) file.
+This is the full [deployment.yaml](../deployment/deployment.yaml) file.
 
 ```yaml
 kind: Deployment
@@ -147,14 +145,14 @@ spec:
       restartPolicy: Always
 ```
 
+## Step 1: Apply the deployment
+
 ```
 $ cd ${ROOT_FOLDER}/deploying-to-openshift/deployment
 $ oc apply -f deployment-os.yaml
 ```
 
-### 2. Service
-
-Now we examine the **deployment** and **service** yaml. The yamls do contain the deployment of the container to a **Pod** and creation of the **Services** to access the **Authors mircoservice** in the Kubernetes Cluster. 
+# 3. Apply the service.yaml
 
 After the definition of the **Pod** we need to define how to access the Pod, therefor we use a **service** in Kubernetes. For more details we use the [Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/service/) for service.
 
@@ -162,11 +160,9 @@ After the definition of the **Pod** we need to define how to access the Pod, the
 
 In the service we map the **NodePort** of the cluster to the port 3000 of the **Authors** service running in the **authors** Pod, as we can see in the following picture. 
 
-_Note:_ Later we get the actual port for the service using the command line: ```nodeport=$(kubectl get svc authors --ignore-not-found --output 'jsonpath={.spec.ports[*].nodePort}')```.
-
 ![authors-java-service-pod-container](images/authors-java-service-pod-container.png)
 
-In the [service.yaml](../authors-java-jee/deployment/service.yaml) we find our selector to the Pod **authors**. If the service is deployed, it is possible that our **Articles** service can find the **Authors** service.
+In the [service.yaml](../deployment/service.yaml) we find our selector to the Pod **authors**. If the service is deployed, it is possible that our **Articles** service can find the **Authors** service.
 
 ```yaml
 kind: Service
