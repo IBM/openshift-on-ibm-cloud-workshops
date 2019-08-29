@@ -84,7 +84,7 @@ For more details we use the [Kubernetes documentation](https://kubernetes.io/doc
 
 > A Pod is the basic building block of Kubernetes–the smallest and simplest unit in the Kubernetes object model that you create or deploy. A Pod represents processes running on your Cluster .
 
-Here is a simplified image for that topic. The Pod knows, because of the deployment, where the image is available he has to instantiate.
+Here is a simplified image for that topic. The Pod knows, because of the deployment, where the image is available, he has to instantiate.
 
 ![deployment](images/lab-4-deployment.png)
 
