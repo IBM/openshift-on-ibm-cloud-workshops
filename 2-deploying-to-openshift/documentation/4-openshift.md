@@ -245,9 +245,33 @@ The Swagger UI:
 
 ![Swagger UI](images/authors-swagger-ui.png)
 
-
+1. Exeute the command verify the output
 
 ```
 $ curl -X GET "http://$(oc get route authors -o jsonpath={.spec.host})/api/v1/getauthor?name=Niklas%20Heidloff" -H "accept: application/json"
 ```
+
+2. Output
+```
+$ {"name":"Niklas Heidloff","twitter":"https://twitter.com/nheidloff","blog":"http://heidloff.net"}
+```
+
+## Step 3: Inspect the service in OpenShift
+
+1. Logon to **IBM Cloud web console** and open your **OpenShift web console**
+
+2. Select the **Cloud-Native-Starter** project
+
+![Service](images/os-service-01.png)
+
+2. Chose **Application** and then **Services** 
+
+![Service](images/os-service-02.png)
+
+3. Click on **Authors**
+
+4. Examine the traffic and remember to simplified overview picture.
+
+![Service](images/os-service-03.png)
+
 
