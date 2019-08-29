@@ -202,6 +202,11 @@ project.project.openshift.io "blog" deleted
 
    This command takes a while to complete.
 
-Congratulation! You have completed this workshop!   
+Congratulation! You have completed this workshop!  
+
+
+
+__Continue with the second workshop__ in this series: "[Deploying Java Microservices to OpenShift on IBM Cloud](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/tree/master/2-deploying-to-openshift#deploying-java-microservices-to-openshift-on-ibm-cloud)".
+
 
 __Back to the [overview](README.md)__

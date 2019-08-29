@@ -34,4 +34,4 @@ __Note:__ This is not available with an IBM Cloud Lite Account!
 The creation of the cluster takes at least 20 minutes, __during this time continue with Part 3 of this workshop doing some hands-on exercises.__
 
 
-__Continue with [Part 3: Red Hat tutorials](Part3.md)__
+__Continue with [Part 3: Red Hat tutorials](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/1-understanding-openshift/Part3.md#part-3-red-hat-tutorials)__

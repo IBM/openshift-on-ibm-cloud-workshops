@@ -6,24 +6,26 @@ In this workshop we will show you how to create your own OpenShift cluster on th
 
 __IMPORTANT:__ An [IBM Cloud account](https://cloud.ibm.com/registration) is needed for this workshop! A free IBM Cloud Lite account is not sufficient, you cannot create an OpenShift cluster with a lite account.
 
+## Part 1: Introduction
+
+Our colleague Sai Vennam, IBM Cloud Developer Advocate, has created two videos about OpenShift on the IBM Cloud that you should watch:
+
+1. <a href="https://www.youtube.com/watch?v=hdwDMsDF9J8" target="blank">Intro to Red Hat OpenShift on IBM Cloud</a> (Duration: 2 mins)
+![Video 1](images/video1.png)
+   What is OpenShift? OpenShift on the IBM Cloud is a fully managed offering, with multiple deployment options, and certification. It is a Unified Hybrid Cloud platform.
+2. <a href="https://www.youtube.com/watch?v=l4Vrj7mkxhQ" target="blank">Guided Tour for Red Hat OpenShift on IBM Cloud</a> (Duration: 6 mins) 
+![Video 2](images/video2.png)
+   How to create an OpenShift cluster in IBM Cloud, how to create a project in the OpenShift Web Console.
+
 
 
 __Continue the Workshop here:__
 
-[Part 1: Introduction](Part1.md)
-[Part 2: Create an OpenShift cluster on the IBM Cloud](Part2.md)
-[Part 3: Red Hat tutorials](Part3.md)
-[Part 4: Deploy an application on OpenShift on the IBM Cloud](Part4.md)
+[Part 2: Create an OpenShift cluster on the IBM Cloud](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/1-understanding-openshift/Part2.md#part-2-create-an-openshift-cluster-on-the-ibm-cloud)
 
+[Part 3: Red Hat tutorials](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/1-understanding-openshift/Part3.md#part-3-red-hat-tutorials)
 
-## Next Steps and Resources
+[Part 4: Deploy an application on OpenShift on the IBM Cloud](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/1-understanding-openshift/Part4.md#part-4-deploy-an-application-on-openshift-on-the-ibm-cloud)
 
 __Continue with the second workshop__ in this series: "[Deploying Java Microservices to OpenShift on IBM Cloud](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/tree/master/2-deploying-to-openshift#deploying-java-microservices-to-openshift-on-ibm-cloud)".
 
-There are many good tutorials on the Red Hat OpenShift [Interactive Learning Portal](https://learn.openshift.com/).
-
-The IBM Developer Website has its own section on [Red Hat OpenShift on IBM Cloud](https://developer.ibm.com/components/redhat-openshift-ibm-cloud/).
-
-Check this IBM Cloud Solution Tutorial: [Scalable web application on OpenShift](https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-scalable-webapp-openshift).
-
-Our [Cloud Native Starter](https://github.com/IBM/cloud-native-starter) project on GitHub has a section on [how to deploy on OpenShift](https://github.com/IBM/cloud-native-starter/blob/master/documentation/OpenShiftIKSDeployment.md#deploy-cloud-native-starter-on-openshift-on-ibm-cloud).

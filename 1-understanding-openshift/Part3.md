@@ -36,4 +36,4 @@ This tutorial uses a code repository on Github that holds a Python application. 
    * Binary build from a local code repository
 
 
-__Continue with [Part 4: Deploy an application on OpenShift on the IBM Cloud](Part4.md)__
+__Continue with [Part 4: Deploy an application on OpenShift on the IBM Cloud](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/1-understanding-openshift/Part4.md#part-4-deploy-an-application-on-openshift-on-the-ibm-cloud)__
