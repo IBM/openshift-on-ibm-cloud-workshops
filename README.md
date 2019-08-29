@@ -21,7 +21,7 @@ This workshop demonstrates how to build a microservice with Java and how to depl
 
 The microservice is kept as simple as possible, so that it can be used as a starting point for other microservices. The microservice has been developed with Java EE and Eclipse MicroProfile.
 
-
+<kbd><img src="images/workshop-2.jpg" /></kbd>
 
 > __IMPORTANT: An [IBM Cloud account](https://cloud.ibm.com/registration) is needed for these workshops! A free IBM Cloud Lite account is not sufficient, you cannot create an OpenShift cluster with a lite account.__
 
