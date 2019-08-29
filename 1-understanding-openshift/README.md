@@ -21,7 +21,6 @@ Our colleague Sai Vennam, IBM Cloud Developer Advocate, has created two videos a
    How to create an OpenShift cluster in IBM Cloud, how to create a project in the OpenShift Web Console.
 
 
-
 __Continue the Workshop here:__
 
 [Part 2: Create an OpenShift cluster on the IBM Cloud](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/1-understanding-openshift/Part2.md#part-2-create-an-openshift-cluster-on-the-ibm-cloud)
