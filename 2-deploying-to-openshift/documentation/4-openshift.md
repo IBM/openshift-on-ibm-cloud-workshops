@@ -1,7 +1,7 @@
 # Lab 4 - Deploying to OpenShift
 
 
-We will work in the **OpenShift web console** and in the **OpenShift CLI**. The following image is an simplified overview of the topics of that lab. 
+In that lab we will work in the **OpenShift web console** and in the **OpenShift CLI**. The following image is an simplified overview of the topics of that lab. 
 
 ![overview](images/lab-4-overview.png)
 
@@ -273,5 +273,7 @@ $ {"name":"Niklas Heidloff","twitter":"https://twitter.com/nheidloff","blog":"ht
 4. Examine the traffic and remember to simplified overview picture.
 
 ![Service](images/os-service-03.png)
+
+__Continue with [Lab 5 - eploying existing Images from Docker Hub](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/2-deploying-to-openshift/documentation/5-existing-image.md)__
 
 
