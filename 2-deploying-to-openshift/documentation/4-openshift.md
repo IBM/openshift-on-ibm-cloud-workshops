@@ -60,9 +60,9 @@ $ oc start-build authors --from-dir=.
 
 ![docker images details](images/os-registry-07.png)
 
-# 2. Kubernetes deployment configuration
+# 2. Apply the deployment.yaml
 
-Now we examine the **deployment** and **service** yaml. The yamls do contain the deployment of the container to a **Pod** and creation of the **Services** to access the **Authors mircoservice** in the Kubernetes Cluster. 
+Now we examine the **deployment**. 
 
 In the following image we see the relevant dependencies for this lab.
 
@@ -100,8 +100,6 @@ spec:
 ```
 
 Then we define a ```name``` for the container and we provide the concret container ```image``` location, e.g. where the container can be found in the **Container Registry**. 
-
-_NOTE:_ We will replace ```authors:1``` later with the IBM Container Registry information. 
 
 The ```containerPort``` depends on the port definition inside our **Dockerfile** or better in our **server.xml**.
 
@@ -149,9 +147,14 @@ spec:
       restartPolicy: Always
 ```
 
-
+```
+$ cd ${ROOT_FOLDER}/deploying-to-openshift/deployment
+$ oc apply -f deployment-os.yaml
+```
 
 ### 2. Service
+
+Now we examine the **deployment** and **service** yaml. The yamls do contain the deployment of the container to a **Pod** and creation of the **Services** to access the **Authors mircoservice** in the Kubernetes Cluster. 
 
 After the definition of the **Pod** we need to define how to access the Pod, therefor we use a **service** in Kubernetes. For more details we use the [Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/service/) for service.
 
@@ -182,60 +185,11 @@ spec:
 ---
 ```
 
-## Container Registry in OpenShift
-
-> [OpenShift Container Platform](https://docs.openshift.com/container-platform/3.11/architecture/infrastructure_components/image_registry.html) provides an integrated container image registry called OpenShift Container Registry (OCR) that adds the ability to automatically provision new image repositories on demand. This provides users with a built-in location for their application builds to push the resulting images.
-
-Open the OpenShift Container Registry (OCR) in the IBM Cloud
-
-1. Logon to IBM Cloud web console
-
-2. Select **Open Shift** in the menu
-
-![Select Open Shift in the menu](images/os-registry-01.png)
-
-3. Chose **Clusters** and click on your **OpenShift cluster**
-
-![Chose Clusters and click on your OpenShift cluster](images/os-registry-02.png)
-
-4. Open the **OpenShift web console**
-
-![Open the OpenShift web console](images/os-registry-03.png)
-
-5. Select in **My Projects** the **default** project
-
-![Select in My Projects the default project](images/os-registry-04.png)
-
-6. Expand in **Overview** the **DEPLOYMENT registry-console** and click **Routes - External Traffic**
-
-![Expand in Overview the DEPLOYMENT registry-console and click Routes - External Traffic](images/os-registry-05.png)
-
-7. In the container registry you will find later the **authors** image and you can click on the latest label.
-
-![In the container registry you will find later the authors image](images/os-registry-06.png)
-
-8. In the container image details you will find the command, how you can pull the docker image to your local PC ```sudo docker pull docker-registry.default.svc:5000/cloud-native-starter/authors:latest```
-
-![docker images details](images/os-registry-07.png)
-
-## Deploy to OpenShift
-
-**Push code and build image**
 
 ```
-$ cd ${ROOT_FOLDER}/2-deploying-to-openshift
-$ oc new-project cloud-native-starter
-$ oc new-build --name authors --binary --strategy docker
-$ oc start-build authors --from-dir=.
-```
-
-**Deploy microservice**
-
-```
-$ cd ${ROOT_FOLDER}/deploying-to-openshift/deployment
-$ oc apply -f deployment-os.yaml
 $ oc apply -f service.yaml
 $ oc expose svc/authors
 $ open http://$(oc get route authors -o jsonpath={.spec.host})/openapi/ui/
 $ curl -X GET "http://$(oc get route authors -o jsonpath={.spec.host})/api/v1/getauthor?name=Niklas%20Heidloff" -H "accept: application/json"
 ```
+
