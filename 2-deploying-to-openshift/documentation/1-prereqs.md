@@ -36,6 +36,8 @@ $ cd openshift-on-ibm-cloud-workshops
 $ ROOT_FOLDER=$(pwd)
 ```
 
+_Note:_ For the docker and java lab you also need to download or clone the project on your local PC.
+
 ### Tools - Option 2: Prebuilt Image with local Code
 
 In order to use local IDEs and editors to modify code and configuraton files, Docker volumes can be used. This option  works only for Mac and Linux.
