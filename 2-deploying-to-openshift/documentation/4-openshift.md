@@ -5,7 +5,7 @@ In that lab we will work in the **OpenShift web console** and in the **OpenShift
 
 ![overview](images/lab-4-overview.png)
 
-1. Build and save the container
+1. Build and save the container image
 
   * We will create a OpenShift project
   * We will define a [build config](https://docs.openshift.com/container-platform/3.9/dev_guide/builds/index.html) for OpenShift
@@ -22,7 +22,7 @@ The following image is a animation of the simplified steps above.
 ![overview gif](images/lab-4-overview.gif)
 
 
-# 1. Build and save the container
+# 1. Build and save the container image
 
 ## Step 1: Create a Open Shift project
 
