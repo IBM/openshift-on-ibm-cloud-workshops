@@ -256,5 +256,6 @@ _Note:_ Remember, if you have choosen **Option 2** for **Window 10** you need to
 git clone https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git
 ```
 
+---
 
 __Continue with [Lab 4 - Deploying to OpenShift](./4-openshift.md#lab-4---deploying-to-openshift)__

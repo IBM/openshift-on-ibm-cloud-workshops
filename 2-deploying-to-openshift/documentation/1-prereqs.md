@@ -129,5 +129,6 @@ $ kubectl get pods
 
 ![Open the OpenShift web console](images/os-registry-03.png)
 
+---
 
 __Continue with [Lab 2 - Running the Java Microservice locally](./2-docker.md#lab-2---running-the-java-microservice-locally)__ 
