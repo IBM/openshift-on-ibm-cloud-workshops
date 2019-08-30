@@ -1,17 +1,28 @@
 # Lab 4 - Deploying to OpenShift
 
 
-In that lab we will work in the **OpenShift web console** and in the **OpenShift CLI**. The following image is an simplified overview of the topics of that lab. 
+In that lab we will work in the **OpenShift web console** and in the **OpenShift CLI**. The following image is an simplified overview of the topics of that lab. Have in mind, that [OpenShift](https://www.youtube.com/watch?v=5dwMrFxq8sU&feature=youtu.be) is a [Kubernetes](https://www.youtube.com/watch?v=4ht22ReBjno) platform.
 
 ![overview](images/lab-4-overview.png)
 
-1. We will create a OpenShift project
-2. We will build the container image
-3. We will upload the container image to the internal **OpenShift container registry**
-4. We will define and apply a deployment configuration to create a Pod with our microservice
-5. We will define a service which routes requests to the Pod with our microservice
+1. Build and save the container image
 
-# 1. Build and save the container
+  * We will create a OpenShift project
+  * We will define a [build config](https://docs.openshift.com/container-platform/3.9/dev_guide/builds/index.html) for OpenShift
+  * We will build with the build Pod inside OpenShift and save container image to the internal [OpenShift container registry](https://docs.openshift.com/container-platform/3.9/install_config/registry/index.html#install-config-registry-overview)
+
+2. Apply the yamls and expose the service
+
+  * We will define and apply a deployment configuration to create a Pod with our microservice
+  * We will define a service which routes requests to the Pod with our microservice
+  * We will expose the service
+
+The following image is a animation of the simplified steps above.
+
+![overview gif](images/lab-4-overview.gif)
+
+
+# 1. Build and save the container image
 
 ## Step 1: Create a Open Shift project
 
@@ -33,13 +44,13 @@ $ oc new-project cloud-native-starter
 Now we want to build and save the container in the **Open Shift Container Registry**.
 We use these command to do that:
 
-1. Build the binary of the Docker image 
+1. Defining a new build using binary and the Docker strategy ([more details](https://docs.openshift.com/container-platform/3.5/dev_guide/builds/build_inputs.html#binary-source) and [oc new-build documentation](https://docs.openshift.com/container-platform/3.9/cli_reference/basic_cli_operations.html#new-build))
 
 ```
 $ oc new-build --name authors --binary --strategy docker
 ```
 
-2. Upload the binary of the Docker image
+2. Starting the build process of OpenShift with our defined build configuration. ([oc start-build documentation](https://docs.openshift.com/container-platform/3.9/cli_reference/basic_cli_operations.html#start-build))
 
 ```
 $ oc start-build authors --from-dir=.
@@ -72,10 +83,6 @@ $ oc start-build authors --from-dir=.
 7. In the container registry you will find later the **authors** image and you can click on the latest label.
 
 ![In the container registry you will find later the authors image](images/os-registry-06.png)
-
-8. _Optional:_ Examine the container image details
-
-![docker images details](images/os-registry-07.png)
 
 # 2. Apply the deployment.yaml
 
@@ -128,7 +135,7 @@ spec:
         livenessProbe:
 ```
 
-This is the full [deployment.yaml](../deployment/deployment-os.yaml) file.
+This is the full [deployment.yaml](../deployment/deployment.yaml) file.
 
 ```yaml
 kind: Deployment
@@ -145,7 +152,7 @@ spec:
     spec:
       containers:
       - name: authors
-        image: authors:1
+        image: docker-registry.default.svc:5000/cloud-native-starter/authors:latest
         ports:
         - containerPort: 3000
         livenessProbe:
@@ -161,10 +168,10 @@ spec:
 
 ## Step 1: Apply the deployment
 
-1. Ensure you are in the ```{ROOT_FOLDER}/deploying-to-openshift/deployment```
+1. Ensure you are in the ```{ROOT_FOLDER}/2-deploying-to-openshift/deployment```
 
 ```
-$ cd ${ROOT_FOLDER}/deploying-to-openshift/deployment
+$ cd ${ROOT_FOLDER}/2-deploying-to-openshift/deployment
 ```
 
 2. Apply the deployment to **OpenShift**
@@ -195,7 +202,7 @@ After the definition of the **Pod** we need to define how to access the Pod, the
 
 > A Kubernetes Service is an abstraction which defines a logical set of Pods and a policy by which to access them - sometimes called a micro-service. The set of Pods targeted by a Service is (usually) determined by a Label Selector.
 
-In the service we map the **NodePort** of the cluster to the port 3000 of the **Authors** service running in the **authors** Pod, as we can see in the following simplified picture. 
+In the service we map the **NodePort** of the cluster to the port 3000 of the **Authors** service running in the **authors** Pod, as we can see in the following simplified overview picture. 
 
 ![service](images/lab-4-service.png)
 
@@ -226,7 +233,7 @@ spec:
 $ oc apply -f service.yaml
 ```
 
-2. With oc [expose](https://docs.openshift.com/container-platform/3.6/dev_guide/routes.html) we create a route to our service in the OpenShift cluster.
+2. With oc [expose](https://docs.openshift.com/container-platform/3.6/dev_guide/routes.html) we create a route to our service in the OpenShift cluster. ([oc expose documentation](https://docs.openshift.com/container-platform/3.9/cli_reference/basic_cli_operations.html#expose))
 
 ```
 $ oc expose svc/authors
@@ -234,14 +241,14 @@ $ oc expose svc/authors
 
 ## Step 2: Test the microservice
 
-1. Exeute the command and copy the URL and open the Swagger UI in browser
+1. Exeute the command, copy the URL and open the Swagger UI in browser
 
 ```
 $ echo http://$(oc get route authors -o jsonpath={.spec.host})/openapi/ui/
 $ http://authors-cloud-native-starter.openshift-devadv-eu-wor-160678-0001.us-south.containers.appdomain.cloud/openapi/ui/
 ```
 
-The Swagger UI:
+The Swagger UI in your browser:
 
 ![Swagger UI](images/authors-swagger-ui.png)
 
@@ -270,7 +277,7 @@ $ {"name":"Niklas Heidloff","twitter":"https://twitter.com/nheidloff","blog":"ht
 
 3. Click on **Authors**
 
-4. Examine the traffic and remember to simplified overview picture.
+4. Examine the traffic and remember the simplified overview picture.
 
 ![Service](images/os-service-03.png)
 
