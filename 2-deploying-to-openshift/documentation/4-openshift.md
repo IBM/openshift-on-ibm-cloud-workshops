@@ -1,14 +1,24 @@
 # Lab 4 - Deploying to OpenShift
 
 
-We will work in the **OpenShift web console** and in the **OpenShift CLI**.
+In that lab we will work in the **OpenShift web console** and in the **OpenShift CLI**. The following image is an simplified overview of the topics of that lab. 
+
+![overview](images/lab-4-overview.png)
+
+1. We will create a OpenShift project
+2. We will build the container image
+3. We will upload the container image to the internal **OpenShift container registry**
+4. We will define and apply a deployment configuration to create a Pod with our microservice
+5. We will define a service which routes requests to the Pod with our microservice
 
 # 1. Build and save the container
 
 ## Step 1: Create a Open Shift project
 
-To work inside OpenShift we need a OpenShift project.
+To work inside OpenShift we need a OpenShift project. 
 Let us create one.
+
+_Note:_ A [project allows](https://docs.openshift.com/container-platform/3.7/dev_guide/projects.html#overview) a community of users to organize and manage their content in isolation from other communities.
 
 ```
 $ cd ${ROOT_FOLDER}/2-deploying-to-openshift
@@ -18,17 +28,24 @@ $ oc new-project cloud-native-starter
 **Ensure** you are logged on to your **Open Shift** cluster.
 [See details](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/2-deploying-to-openshift/documentation/1-prereqs.md#verify-access-to-openshift-on-the-ibm-cloud)
 
-## Step 2: Build and save the container the Open Shift registry
+## Step 2: Build and save the container in the Open Shift Container Registry
 
-Now we want to build and save the container the Open Shift registry.
+Now we want to build and save the container in the **Open Shift Container Registry**.
 We use these command to do that:
+
+1. Build the binary of the Docker image 
 
 ```
 $ oc new-build --name authors --binary --strategy docker
+```
+
+2. Upload the binary of the Docker image
+
+```
 $ oc start-build authors --from-dir=.
 ```
 
-## Step 3: Verify the container image in the Open Shift registry UI
+## Step 3: Verify the container image in the Open Shift Container Registry UI
 
 1. Logon to IBM Cloud web console
 
@@ -56,25 +73,20 @@ $ oc start-build authors --from-dir=.
 
 ![In the container registry you will find later the authors image](images/os-registry-06.png)
 
-8. In the container image details you will find the command, how you can pull the docker image to your local PC ```sudo docker pull docker-registry.default.svc:5000/cloud-native-starter/authors:latest```
+8. _Optional:_ Examine the container image details
 
 ![docker images details](images/os-registry-07.png)
 
 # 2. Apply the deployment.yaml
-
-Now we examine the **deployment**. 
-
-In the following image we see the relevant dependencies for this lab.
-
-![authors-java-service-pod-container](images/authors-java-service-pod-container.png)
-
-### 1. Deployment
 
 The deployment will deploy the container to a Pod in Kubernetes.
 For more details we use the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/) for Pods.
 
 > A Pod is the basic building block of Kubernetes–the smallest and simplest unit in the Kubernetes object model that you create or deploy. A Pod represents processes running on your Cluster .
 
+Here is a simplified image for that topic. The Pod knows, because of the deployment, where the image is available, he has to instantiate.
+
+![deployment](images/lab-4-deployment.png)
 
 Let's start with the **deployment yaml**. For more details we use will the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) for deployments.
 
@@ -116,7 +128,7 @@ spec:
         livenessProbe:
 ```
 
-This is the full [deployment.yaml](../authors-java-jee/deployment/deployment.yaml) file.
+This is the full [deployment.yaml](../deployment/deployment-os.yaml) file.
 
 ```yaml
 kind: Deployment
@@ -147,26 +159,47 @@ spec:
       restartPolicy: Always
 ```
 
+## Step 1: Apply the deployment
+
+1. Ensure you are in the ```{ROOT_FOLDER}/deploying-to-openshift/deployment```
+
 ```
 $ cd ${ROOT_FOLDER}/deploying-to-openshift/deployment
-$ oc apply -f deployment-os.yaml
 ```
 
-### 2. Service
+2. Apply the deployment to **OpenShift**
 
-Now we examine the **deployment** and **service** yaml. The yamls do contain the deployment of the container to a **Pod** and creation of the **Services** to access the **Authors mircoservice** in the Kubernetes Cluster. 
+```
+$ oc apply -f deployment.yaml
+```
+
+## Step 2: Verify the deployment in **OpenShift**
+
+1. Logon to **IBM Cloud web console** and open your **OpenShift web console**
+
+2. Select the **Cloud-Native-Starter** project and examine the deployment
+
+![Select the Cloud-Native-Starter project and examine the deployment](images/os-deployment-01.png)
+
+3. Click on **#1** to open the details of the deployment
+
+![Click on #1 to open the details of the deployment](images/os-deployment-02.png)
+
+4. In the details you find the health check we defined before
+
+![In the details you find the health check we defined before](images/os-deployment-03.png)
+
+# 3. Apply the service.yaml
 
 After the definition of the **Pod** we need to define how to access the Pod, therefor we use a **service** in Kubernetes. For more details we use the [Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/service/) for service.
 
 > A Kubernetes Service is an abstraction which defines a logical set of Pods and a policy by which to access them - sometimes called a micro-service. The set of Pods targeted by a Service is (usually) determined by a Label Selector.
 
-In the service we map the **NodePort** of the cluster to the port 3000 of the **Authors** service running in the **authors** Pod, as we can see in the following picture. 
+In the service we map the **NodePort** of the cluster to the port 3000 of the **Authors** service running in the **authors** Pod, as we can see in the following simplified picture. 
 
-_Note:_ Later we get the actual port for the service using the command line: ```nodeport=$(kubectl get svc authors --ignore-not-found --output 'jsonpath={.spec.ports[*].nodePort}')```.
+![service](images/lab-4-service.png)
 
-![authors-java-service-pod-container](images/authors-java-service-pod-container.png)
-
-In the [service.yaml](../authors-java-jee/deployment/service.yaml) we find our selector to the Pod **authors**. If the service is deployed, it is possible that our **Articles** service can find the **Authors** service.
+In the [service.yaml](../deployment/service-os.yaml) we find our selector to the Pod **authors**. If the service is deployed, it is possible that our **Articles** service can find the **Authors** service.
 
 ```yaml
 kind: Service
@@ -185,11 +218,62 @@ spec:
 ---
 ```
 
+## Step 1: Apply the deployment
+
+1. Apply the service to **OpenShift**
 
 ```
 $ oc apply -f service.yaml
+```
+
+2. With oc [expose](https://docs.openshift.com/container-platform/3.6/dev_guide/routes.html) we create a route to our service in the OpenShift cluster.
+
+```
 $ oc expose svc/authors
-$ open http://$(oc get route authors -o jsonpath={.spec.host})/openapi/ui/
+```
+
+## Step 2: Test the microservice
+
+1. Exeute the command and copy the URL and open the Swagger UI in browser
+
+```
+$ echo http://$(oc get route authors -o jsonpath={.spec.host})/openapi/ui/
+$ http://authors-cloud-native-starter.openshift-devadv-eu-wor-160678-0001.us-south.containers.appdomain.cloud/openapi/ui/
+```
+
+The Swagger UI:
+
+![Swagger UI](images/authors-swagger-ui.png)
+
+1. Exeute the command verify the output
+
+```
 $ curl -X GET "http://$(oc get route authors -o jsonpath={.spec.host})/api/v1/getauthor?name=Niklas%20Heidloff" -H "accept: application/json"
 ```
+
+2. Output
+```
+$ {"name":"Niklas Heidloff","twitter":"https://twitter.com/nheidloff","blog":"http://heidloff.net"}
+```
+
+## Step 3: Inspect the service in OpenShift
+
+1. Logon to **IBM Cloud web console** and open your **OpenShift web console**
+
+2. Select the **Cloud-Native-Starter** project
+
+![Service](images/os-service-01.png)
+
+2. Chose **Application** and then **Services** 
+
+![Service](images/os-service-02.png)
+
+3. Click on **Authors**
+
+4. Examine the traffic and remember to simplified overview picture.
+
+![Service](images/os-service-03.png)
+
+__Continue with [Lab 5 - eploying existing Images from Docker Hub](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/2-deploying-to-openshift/documentation/5-existing-image.md)__
+
 
