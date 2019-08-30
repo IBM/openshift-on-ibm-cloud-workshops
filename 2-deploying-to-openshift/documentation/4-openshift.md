@@ -237,7 +237,7 @@ $ echo http://$(oc get route authors -o jsonpath={.spec.host})/openapi/ui/
 $ http://authors-cloud-native-starter.openshift-devadv-eu-wor-160678-0001.us-south.containers.appdomain.cloud/openapi/ui/
 ```
 
-The Swagger UI:
+The Swagger UI in your browser:
 
 ![Swagger UI](images/authors-swagger-ui.png)
 
