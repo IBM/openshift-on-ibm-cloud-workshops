@@ -85,4 +85,4 @@ _Note:_ Remember, if you have choosen **Tools - Option 2** for **Window 10** you
 git clone https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git
 ```
 
-__Continue with [Lab 3 - Understanding the Java Implementation](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/2-deploying-to-openshift/documentation/3-java.md#lab-3---understanding-the-java-implementation)__
+__Continue with [Lab 3 - Understanding the Java Implementation](./3-java.md#lab-3---understanding-the-java-implementation)__

@@ -287,6 +287,6 @@ $ {"name":"Niklas Heidloff","twitter":"https://twitter.com/nheidloff","blog":"ht
 
 ![Service](images/os-service-03.png)
 
-__Continue with [Lab 5 - eploying existing Images from Docker Hub](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/2-deploying-to-openshift/documentation/5-existing-image.md)__
+__Continue with [Lab 5 - eploying existing Images from Docker Hub](./5-existing-image.md)__
 
 
