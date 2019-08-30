@@ -58,37 +58,24 @@ $ oc start-build authors --from-dir=.
 
 ## Step 3: Verify the build in the OpenShift web console
 
-1. Logon to IBM Cloud web console
 
-2. Select **Open Shift** in the menu
-
-![Select Open Shift in the menu](images/os-registry-01.png)
-
-3. Chose **Clusters** and click on your **OpenShift cluster**
-
-![Chose Clusters and click on your OpenShift cluster](images/os-registry-02.png)
-
-4. Open the **OpenShift web console**
-
-![Open the OpenShift web console](images/os-registry-03.png)
-
-5. Select in **My Projects** the **default** project
+1. Select in **My Projects** the **default** project
 
 ![Select in My Projects the default project](images/os-registry-04.png)
 
-6. Open **Build** in the menu and click **Build**
+2. Open **Build** in the menu and click **Build**
 
 ![Open Build in the menu and click Build](images/os-build-01.png)
 
-7. Select **Last Build** 
+3. Select **Last Build** 
 
 ![Select Last Build ](images/os-build-02.png)
 
-8. Open **Logs** 
+4. Open **Logs** 
 
 ![Open Logs ](images/os-build-03.png)
 
-9. Inspect the **Logs** 
+5. Inspect the **Logs** 
 
 ![Inspect the **Logs**  ](images/os-build-04.png)
 

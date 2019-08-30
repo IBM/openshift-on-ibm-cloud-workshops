@@ -82,7 +82,25 @@ $ ROOT_FOLDER=$(pwd)
 
 ## Verify Access to OpenShift on the IBM Cloud
 
-After you've created a new cluster, open the OpenShift console. From the dropdown menu in the upper right of the page, click 'Copy Login Command'. Paste the copied command into your terminal.
+### Step 1: After you've created a new cluster, open the OpenShift console. 
+
+1. Logon to IBM Cloud web console
+
+2. Select **Open Shift** in the menu
+
+![Select Open Shift in the menu](images/os-registry-01.png)
+
+3. Chose **Clusters** and click on your **OpenShift cluster**
+
+![Chose Clusters and click on your OpenShift cluster](images/os-registry-02.png)
+
+4. Open the **OpenShift web console**
+
+![Open the OpenShift web console](images/os-registry-03.png)
+
+### Step 2: Get our access token for the 'oc' CLI. 
+
+From the dropdown menu in the upper right of the page, click 'Copy Login Command'. Paste the copied command into your terminal.
 
 1. Verify 'oc' CLI
 
@@ -96,5 +114,20 @@ $ oc get istag
 ```
 $ kubectl get pods
 ```
+
+1. Logon to IBM Cloud web console
+
+2. Select **Open Shift** in the menu
+
+![Select Open Shift in the menu](images/os-registry-01.png)
+
+3. Chose **Clusters** and click on your **OpenShift cluster**
+
+![Chose Clusters and click on your OpenShift cluster](images/os-registry-02.png)
+
+4. Open the **OpenShift web console**
+
+![Open the OpenShift web console](images/os-registry-03.png)
+
 
 __Continue with [Lab 2 - Running the Java Microservice locally](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/2-deploying-to-openshift/documentation/2-docker.md#lab-2---running-the-java-microservice-locally)__ 
