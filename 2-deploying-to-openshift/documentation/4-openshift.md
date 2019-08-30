@@ -191,7 +191,7 @@ After the definition of the **Pod** we need to define how to access the Pod, the
 
 > A Kubernetes Service is an abstraction which defines a logical set of Pods and a policy by which to access them - sometimes called a micro-service. The set of Pods targeted by a Service is (usually) determined by a Label Selector.
 
-In the service we map the **NodePort** of the cluster to the port 3000 of the **Authors** service running in the **authors** Pod, as we can see in the following simplified picture. 
+In the service we map the **NodePort** of the cluster to the port 3000 of the **Authors** service running in the **authors** Pod, as we can see in the following simplified overview picture. 
 
 ![service](images/lab-4-service.png)
 
@@ -266,7 +266,7 @@ $ {"name":"Niklas Heidloff","twitter":"https://twitter.com/nheidloff","blog":"ht
 
 3. Click on **Authors**
 
-4. Examine the traffic and remember to simplified overview picture.
+4. Examine the traffic and remember the simplified overview picture.
 
 ![Service](images/os-service-03.png)
 
