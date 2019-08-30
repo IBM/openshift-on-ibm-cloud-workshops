@@ -61,34 +61,34 @@ $ oc start-build authors --from-dir=.
 
 1. Select in **My Projects** the **default** project
 
-![Select in My Projects the default project](images/os-registry-04.png)
+  ![Select in My Projects the default project](images/os-registry-04.png)
 
 2. Open **Build** in the menu and click **Build**
 
-![Open Build in the menu and click Build](images/os-build-01.png)
+  ![Open Build in the menu and click Build](images/os-build-01.png)
 
 3. Select **Last Build** 
 
-![Select Last Build ](images/os-build-02.png)
+  ![Select Last Build ](images/os-build-02.png)
 
 4. Open **Logs** 
 
-![Open Logs ](images/os-build-03.png)
+  ![Open Logs ](images/os-build-03.png)
 
 5. Inspect the **Logs** 
 
-![Inspect the **Logs**  ](images/os-build-04.png)
+  ![Inspect the **Logs**  ](images/os-build-04.png)
 
 ## Step 4: Verify the container image in the Open Shift Container Registry UI
 
 
 1. Expand in **Overview** the **DEPLOYMENT registry-console** and click **Routes - External Traffic**
 
-![Expand in Overview the DEPLOYMENT registry-console and click Routes - External Traffic](images/os-registry-05.png)
+  ![Expand in Overview the DEPLOYMENT registry-console and click Routes - External Traffic](images/os-registry-05.png)
 
 2. In the container registry you will find later the **authors** image and you can click on the latest label.
 
-![In the container registry you will find later the authors image](images/os-registry-06.png)
+  ![In the container registry you will find later the authors image](images/os-registry-06.png)
 
 # 2. Apply the deployment.yaml
 
@@ -176,15 +176,15 @@ spec:
 
 1. Ensure you are in the ```{ROOT_FOLDER}/2-deploying-to-openshift/deployment```
 
-```
-$ cd ${ROOT_FOLDER}/2-deploying-to-openshift/deployment
-```
+  ```
+  $ cd ${ROOT_FOLDER}/2-deploying-to-openshift/deployment
+  ```
 
 2. Apply the deployment to **OpenShift**
 
-```
-$ oc apply -f deployment.yaml
-```
+  ```
+  $ oc apply -f deployment.yaml
+  ```
 
 ## Step 2: Verify the deployment in **OpenShift**
 
@@ -192,15 +192,15 @@ $ oc apply -f deployment.yaml
 
 2. Select the **Cloud-Native-Starter** project and examine the deployment
 
-![Select the Cloud-Native-Starter project and examine the deployment](images/os-deployment-01.png)
+  ![Select the Cloud-Native-Starter project and examine the deployment](images/os-deployment-01.png)
 
 3. Click on **#1** to open the details of the deployment
 
-![Click on #1 to open the details of the deployment](images/os-deployment-02.png)
+  ![Click on #1 to open the details of the deployment](images/os-deployment-02.png)
 
 4. In the details you find the health check we defined before
 
-![In the details you find the health check we defined before](images/os-deployment-03.png)
+  ![In the details you find the health check we defined before](images/os-deployment-03.png)
 
 # 3. Apply the service.yaml
 
@@ -235,39 +235,40 @@ spec:
 
 1. Apply the service to **OpenShift**
 
-```
-$ oc apply -f service.yaml
-```
+  ```
+  $ oc apply -f service.yaml
+  ```
 
 2. With oc [expose](https://docs.openshift.com/container-platform/3.6/dev_guide/routes.html) we create a route to our service in the OpenShift cluster. ([oc expose documentation](https://docs.openshift.com/container-platform/3.9/cli_reference/basic_cli_operations.html#expose))
 
-```
-$ oc expose svc/authors
-```
+  ```
+  $ oc expose svc/authors
+  ```
 
 ## Step 2: Test the microservice
 
 1. Exeute the command, copy the URL and open the Swagger UI in browser
 
-```
-$ echo http://$(oc get route authors -o jsonpath={.spec.host})/openapi/ui/
-$ http://authors-cloud-native-starter.openshift-devadv-eu-wor-160678-0001.us-south.containers.appdomain.cloud/openapi/ui/
-```
+  ```
+  $ echo http://$(oc get route authors -o jsonpath={.spec.host})/openapi/ui/
+  $ http://authors-cloud-native-starter.openshift-devadv-eu-wor-160678-0001.us-south.containers.appdomain.cloud/openapi/ui/
+  ```
 
 The Swagger UI in your browser:
 
-![Swagger UI](images/authors-swagger-ui.png)
+  ![Swagger UI](images/authors-swagger-ui.png)
 
 1. Exeute the command verify the output
 
-```
-$ curl -X GET "http://$(oc get route authors -o jsonpath={.spec.host})/api/v1/getauthor?name=Niklas%20Heidloff" -H "accept: application/json"
-```
+  ```
+  $ curl -X GET "http://$(oc get route authors -o jsonpath={.spec.host})/api/v1/getauthor?name=Niklas%20Heidloff" -H "accept: application/json"
+  ```
 
 2. Output
-```
-$ {"name":"Niklas Heidloff","twitter":"https://twitter.com/nheidloff","blog":"http://heidloff.net"}
-```
+
+  ```
+  $ {"name":"Niklas Heidloff","twitter":"https://twitter.com/nheidloff","blog":"http://heidloff.net"}
+  ```
 
 ## Step 3: Inspect the service in OpenShift
 
@@ -275,17 +276,17 @@ $ {"name":"Niklas Heidloff","twitter":"https://twitter.com/nheidloff","blog":"ht
 
 2. Select the **Cloud-Native-Starter** project
 
-![Service](images/os-service-01.png)
+  ![Service](images/os-service-01.png)
 
-2. Chose **Application** and then **Services** 
+3. Chose **Application** and then **Services** 
 
-![Service](images/os-service-02.png)
+  ![Service](images/os-service-02.png)
 
-3. Click on **Authors**
+4. Click on **Authors**
 
-4. Examine the traffic and remember the simplified overview picture.
+5. Examine the traffic and remember the simplified overview picture.
 
-![Service](images/os-service-03.png)
+  ![Service](images/os-service-03.png)
 
 ---
 
