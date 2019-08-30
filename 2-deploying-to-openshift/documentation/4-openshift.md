@@ -6,8 +6,8 @@ In that lab we will work in the **OpenShift web console** and in the **OpenShift
 ![overview](images/lab-4-overview.png)
 
 1. We will create a OpenShift project
-2. We will build the container image
-3. We will upload the container image to the internal **OpenShift container registry**
+2. We will define a [build config](https://docs.openshift.com/container-platform/3.9/dev_guide/builds/index.html) for OpenShift
+3. We will build with the build Pod inside OpenShift and save container image to the internal [OpenShift container registry](https://docs.openshift.com/container-platform/3.9/install_config/registry/index.html#install-config-registry-overview)
 4. We will define and apply a deployment configuration to create a Pod with our microservice
 5. We will define a service which routes requests to the Pod with our microservice
 
@@ -39,7 +39,7 @@ We use these command to do that:
 $ oc new-build --name authors --binary --strategy docker
 ```
 
-2. Upload the binary of the Docker image
+2. Starting the build process of OpenShift with our defined build configuration. [oc start-build](https://docs.openshift.com/container-platform/3.9/cli_reference/basic_cli_operations.html#start-build) 
 
 ```
 $ oc start-build authors --from-dir=.
@@ -141,7 +141,7 @@ spec:
     spec:
       containers:
       - name: authors
-        image: authors:1
+        image: docker-registry.default.svc:5000/cloud-native-starter/authors:latest
         ports:
         - containerPort: 3000
         livenessProbe:
@@ -222,7 +222,7 @@ spec:
 $ oc apply -f service.yaml
 ```
 
-2. With oc [expose](https://docs.openshift.com/container-platform/3.6/dev_guide/routes.html) we create a route to our service in the OpenShift cluster.
+2. With oc [expose](https://docs.openshift.com/container-platform/3.6/dev_guide/routes.html) we create a route to our service in the OpenShift cluster. [oc expose documentation](https://docs.openshift.com/container-platform/3.9/cli_reference/basic_cli_operations.html#expose)
 
 ```
 $ oc expose svc/authors
@@ -230,7 +230,7 @@ $ oc expose svc/authors
 
 ## Step 2: Test the microservice
 
-1. Exeute the command and copy the URL and open the Swagger UI in browser
+1. Exeute the command, copy the URL and open the Swagger UI in browser
 
 ```
 $ echo http://$(oc get route authors -o jsonpath={.spec.host})/openapi/ui/
