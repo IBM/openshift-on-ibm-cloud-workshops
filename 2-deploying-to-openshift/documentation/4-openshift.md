@@ -73,10 +73,6 @@ $ oc start-build authors --from-dir=.
 
 ![In the container registry you will find later the authors image](images/os-registry-06.png)
 
-8. _Optional:_ Examine the container image details
-
-![docker images details](images/os-registry-07.png)
-
 # 2. Apply the deployment.yaml
 
 The deployment will deploy the container to a Pod in Kubernetes.
@@ -164,7 +160,7 @@ spec:
 1. Ensure you are in the ```{ROOT_FOLDER}/deploying-to-openshift/deployment```
 
 ```
-$ cd ${ROOT_FOLDER}/deploying-to-openshift/deployment
+$ cd ${ROOT_FOLDER}/2-deploying-to-openshift/deployment
 ```
 
 2. Apply the deployment to **OpenShift**
