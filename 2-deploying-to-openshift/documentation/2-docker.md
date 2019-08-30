@@ -1,6 +1,6 @@
 # Lab 2 - Running the Java Microservice locally
 
-In this workshop we implement a microservice that has been implemented with Java EE and [Eclipse MicroProfile](https://microprofile.io/).
+In this workshop we create a microservice that has been implemented with Java EE and [Eclipse MicroProfile](https://microprofile.io/).
 
 The microservice has been kept as simple as possible, so that it can be used as a starting point for other microservices. It contains the following functionality:
 
@@ -13,15 +13,11 @@ The microservice has been kept as simple as possible, so that it can be used as 
 
 This service provides a REST API 'getauthor'. Normally we would use a database but in this example we just simulate with local sample data. With this small example we touch the following topics:
 
-•	Usage of [Maven](https://maven.apache.org/) for Java 
-
-•	Configuration of an [OpenLiberty Server](https://openliberty.io)
-
-•	Implementation of a [REST GET endpoint with MicroProfile](https://openliberty.io/blog/2018/01/31/mpRestClient.html)
-
-•	[Health check](https://openliberty.io/guides/kubernetes-microprofile-health.html#adding-a-health-check-to-the-inventory-microservice) implementation using a MicroProfile for Kubernetes 
-
-•	Definition of a [Dockerfile](https://docs.docker.com/engine/reference/builder/) with the reuse for existing containers from [Dockerhub](https://hub.docker.com)
+* Usage of [Maven](https://maven.apache.org/) for Java 
+* Configuration of an [OpenLiberty Server](https://openliberty.io)
+* Implementation of a [REST GET endpoint with MicroProfile](https://openliberty.io/blog/2018/01/31/mpRestClient.html)
+* [Health check](https://openliberty.io/guides/kubernetes-microprofile-health.html#adding-a-health-check-to-the-inventory-microservice) implementation using a MicroProfile for Kubernetes 
+* Definition of a [Dockerfile](https://docs.docker.com/engine/reference/builder/) with the reuse for existing containers from [Dockerhub](https://hub.docker.com)
 
 ## Definition of the Image
 
