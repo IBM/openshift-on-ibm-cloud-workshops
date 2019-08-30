@@ -33,13 +33,13 @@ $ oc new-project cloud-native-starter
 Now we want to build and save the container in the **Open Shift Container Registry**.
 We use these command to do that:
 
-1. Defining a new build using binary and the Docker strategy ([more details](https://docs.openshift.com/container-platform/3.5/dev_guide/builds/build_inputs.html#binary-source))
+1. Defining a new build using binary and the Docker strategy ([more details](https://docs.openshift.com/container-platform/3.5/dev_guide/builds/build_inputs.html#binary-source) and [oc new-build documentation](https://docs.openshift.com/container-platform/3.9/cli_reference/basic_cli_operations.html#new-build))
 
 ```
 $ oc new-build --name authors --binary --strategy docker
 ```
 
-2. Starting the build process of OpenShift with our defined build configuration. [oc start-build](https://docs.openshift.com/container-platform/3.9/cli_reference/basic_cli_operations.html#start-build) 
+2. Starting the build process of OpenShift with our defined build configuration. ([oc start-build documentation](https://docs.openshift.com/container-platform/3.9/cli_reference/basic_cli_operations.html#start-build))
 
 ```
 $ oc start-build authors --from-dir=.
@@ -222,7 +222,7 @@ spec:
 $ oc apply -f service.yaml
 ```
 
-2. With oc [expose](https://docs.openshift.com/container-platform/3.6/dev_guide/routes.html) we create a route to our service in the OpenShift cluster. [oc expose documentation](https://docs.openshift.com/container-platform/3.9/cli_reference/basic_cli_operations.html#expose)
+2. With oc [expose](https://docs.openshift.com/container-platform/3.6/dev_guide/routes.html) we create a route to our service in the OpenShift cluster. ([oc expose documentation](https://docs.openshift.com/container-platform/3.9/cli_reference/basic_cli_operations.html#expose))
 
 ```
 $ oc expose svc/authors
