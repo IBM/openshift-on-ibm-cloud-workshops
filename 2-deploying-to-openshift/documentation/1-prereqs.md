@@ -100,16 +100,19 @@ $ ROOT_FOLDER=$(pwd)
 
 ### Step 2: Get our access token for the 'oc' CLI. 
 
-From the dropdown menu in the upper right of the page, click 'Copy Login Command'. Paste the copied command into your terminal.
 
-1. Verify 'oc' CLI
+1. From the dropdown menu in the upper right of the page, click 'Copy Login Command'. Paste the copied command into your terminal.
+
+![Key](images/os-key-01.png)
+
+2. Verify 'oc' CLI
 
 ```
 $ oc login https://c1-e.us-east.containers.cloud.ibm.com:23967 --token=xxxxxx'
 $ oc get istag
 ```
 
-2. Verify 'kubectl' CLI
+3. Verify 'kubectl' CLI
 
 ```
 $ kubectl get pods
