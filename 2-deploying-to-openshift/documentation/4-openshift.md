@@ -56,7 +56,7 @@ $ oc new-build --name authors --binary --strategy docker
 $ oc start-build authors --from-dir=.
 ```
 
-## Step 3: Verify the container image in the Open Shift Container Registry UI
+## Step 3: Verify the build in the Open Shift Container Registry UI
 
 1. Logon to IBM Cloud web console
 
@@ -76,7 +76,28 @@ $ oc start-build authors --from-dir=.
 
 ![Select in My Projects the default project](images/os-registry-04.png)
 
-6. Expand in **Overview** the **DEPLOYMENT registry-console** and click **Routes - External Traffic**
+6. Open **Build** in the menu and click **Build**
+
+![Open Build in the menu and click Build](images/os-build-01.png)
+
+7. Select **Last Build** 
+
+![Select Last Build ](images/os-build-02.png)
+
+8. Open **Logs** 
+
+![Open Logs ](images/os-build-03.png)
+
+9. Inspect the **Logs** 
+
+![Inspect the **Logs**  ](images/os-build-04.png)
+
+## Step 4: Verify the container image in the Open Shift Container Registry UI
+
+
+
+
+2. Expand in **Overview** the **DEPLOYMENT registry-console** and click **Routes - External Traffic**
 
 ![Expand in Overview the DEPLOYMENT registry-console and click Routes - External Traffic](images/os-registry-05.png)
 
