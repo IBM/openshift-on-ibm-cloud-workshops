@@ -119,6 +119,7 @@ $ kubectl get pods
 ```
 
 _Note:_ [Back to lab 4 '1. Build and Save the container image' in 'Step 1'](./4-openshift.md#step-1-create-an-open-shift-project)
+
 ---
 
 __Continue with [Lab 2 - Running the Java Microservice locally](./2-docker.md#lab-2---running-the-java-microservice-locally)__ 
