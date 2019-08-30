@@ -84,9 +84,9 @@ $ ROOT_FOLDER=$(pwd)
 
 ### Step 1: After you've created a new cluster, open the OpenShift console. 
 
-1. Logon to IBM Cloud web console
+1. Logon to the IBM Cloud web console
 
-2. Select **Open Shift** in the menu
+2. Select **OpenShift** in the menu
 
 ![Select Open Shift in the menu](images/os-registry-01.png)
 
