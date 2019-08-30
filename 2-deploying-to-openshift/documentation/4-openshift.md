@@ -260,7 +260,7 @@ This is the Swagger UI in your browser:
 
   ![Swagger UI](images/authors-swagger-ui.png)
 
-1. In a command shell execute this command verify the output (requires 'curl' on your workstation):
+1. Execute this command to verify the output:
 
   ```
   $ curl -X GET "http://$(oc get route authors -o jsonpath={.spec.host})/api/v1/getauthor?name=Niklas%20Heidloff" -H "accept: application/json"
