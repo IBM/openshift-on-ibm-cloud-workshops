@@ -15,5 +15,5 @@ This workshop has four labs. It should take between 60 and 90 minutues to comple
 3. [Understanding the Java implementation](documentation/3-java.md)
 4. [Deploying to OpenShift via 'oc' CLI](documentation/4-openshift.md)
 5. [Deploying existing Images to OpenShift](documentation/5-existing-image.md)
-6. Deploying via Source to Images: to be done
-7. Deploying from GitHub: to be done
+6. [Deployments of Code in GitHub Repos](documentation/6-github.md)
+7. [Source to Image Deployments](documentation/7-source-to-image.md)
