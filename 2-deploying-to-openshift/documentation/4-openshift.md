@@ -199,7 +199,7 @@ spec:
 
   ![Click on #1 to open the details of the deployment](images/os-deployment-02.png)
 
-4. In the details you find the health check we defined before
+4. In the details you find the 'health check' we defined before
 
   ![In the details you find the health check we defined before](images/os-deployment-03.png)
 
