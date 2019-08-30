@@ -14,23 +14,13 @@ Access the OpenShift Web Console via the button (1) in this dialog.
 
 You have seen and used this Web Console in the interactive tutorials in Part 3. But notice the User ID (1) and the down arrow to right of it. If you click on it you will see an important option: "Copy Login Command". This allows you to login to your OpenShift cluster on IBM Cloud with the `oc`CLI. But first you need to install the CLI.
 
-### Install OpenShift `oc` CLI
+This part of the workshop is divided in two sections:
 
-Go back to the IBM Cloud Dashboard where you created the OpenShift cluster. In the "Access" section is detailed information about installing the `oc`CLI and and the different methods to get access to your cluster.
+  A. Working with the OpenShift Web Console 
+  B. Working with the `oc`command line tool
 
-![OS Access](images/os_access.png)
 
-Once `oc` is installed, copy the login command from the OpenShift Web Console and paste it into a command window (shell). It will look similar to this:
-
-```
-$ oc login https://c100-e.us-south.containers.cloud.ibm.com:30*** --token=z5cuqxABC-9QdqE1ivXYZ1z_Y6Tghj1qxN-abCWc1Bg
-```
-
-If login is successfull you will see all the projects on OpenShift that you have access to. 
-
-Keep the command line open but go back to the OpenShift Web Console.
-
-### Deploy an application from the Web Console
+### A. Deploy an application from the Web Console
 
 1. In the OpenShift Web Console, click "+ Create Project" and give your project a name, e.g. "blog". Click "Create".
 
@@ -58,9 +48,36 @@ If you want, scale the deployment up and down (3).
 
 ![OS Deploy 4](images/os_deploy_4.png)
 
-8. Go back to your command line where you used `oc`to logon to your OpenShift cluster.
+### B. Deploy an application with `oc` from the command line 
 
-9. Switch to your new project with:
+The OpenShift `oc` command line tool includes all the functionality of the Kubernetes native `kubectl` CLI but it has also all the function required for OpenShift specifics, e.g. a `login` command to access the OpenShift cluster.
+
+### Install the OpenShift `oc` CLI
+
+Go back to the IBM Cloud Dashboard and display your OpenShift cluster. If you closed the IBM Cloud Dashboard you can find OpenShift clusters [here](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift).
+
+In the "Access" section of your cluster is detailed information about installing the `oc`CLI and and the different methods to get access to your cluster.
+
+![OS Access](images/os_access.png)
+
+### Login to the OpenShift Cluster
+
+Once `oc` is installed, copy the login command from the OpenShift Web Console and paste it into a command window (shell). It will look similar to this:
+
+```
+$ oc login https://c100-e.us-south.containers.cloud.ibm.com:30*** --token=z5cuqxABC-9QdqE1ivXYZ1z_Y6Tghj1qxN-abCWc1Bg
+```
+
+If login is successfull you will see all the projects on OpenShift that you have access to. 
+
+Keep the command line open but go back to the OpenShift Web Console.
+
+### Working with the `oc` CLI
+
+
+1. Go back to your command line where you used `oc`to logon to your OpenShift cluster.
+
+2. Switch to the project you created in the Web Console with:
 
 ```
 $ oc project blog
@@ -68,7 +85,7 @@ $ oc project blog
 Now using project "blog" on server "https://c100-e.us-south.containers.cloud.ibm.com:30***".
 ```
 
-10. Display all objects that belong to your project:
+3. Display all objects that belong to your project:
 
 ```
 $ oc get all -o name
@@ -81,7 +98,7 @@ imagestream.image.openshift.io/blog-django-py
 route.route.openshift.io/blog-django-py
 ```
 
-11. Display all objects that are labeled with your app name, the list should be the same as before:
+4. Display all objects that are labeled with your app name, the list should be the same as before:
 
 ```
 $ oc get all -l app=blog-django-py -o name
@@ -94,7 +111,7 @@ imagestream.image.openshift.io/blog-django-py
 route.route.openshift.io/blog-django-py
 ```
 
-12. Delete them with:
+5. Delete them with:
 
 ```
 $ oc delete all -l app=blog-django-py -o name
@@ -193,16 +210,19 @@ blog-django-py   blog-django-py-blog.harald-uebele-openshift-5290c8c8e5797924dc1
 You can see the very long URL. If you want, copy it and open it in your browser.
 
 6. Cleanup. This deletes everything including your project!
+   This command takes a while to complete.
 
 ```
 $ oc delete project blog
 
 project.project.openshift.io "blog" deleted
 ```
+You can also delete a complete project from the Web Console.
 
-   This command takes a while to complete.
+---
 
-Congratulation! You have completed this workshop!  
+
+Congratulations! You have completed this workshop!  
 
 
 
