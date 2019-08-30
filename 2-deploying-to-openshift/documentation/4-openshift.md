@@ -124,7 +124,7 @@ spec:
         livenessProbe:
 ```
 
-This is the full [deployment.yaml](../deployment/deployment-os.yaml) file.
+This is the full [deployment.yaml](../deployment/deployment.yaml) file.
 
 ```yaml
 kind: Deployment
@@ -157,7 +157,7 @@ spec:
 
 ## Step 1: Apply the deployment
 
-1. Ensure you are in the ```{ROOT_FOLDER}/deploying-to-openshift/deployment```
+1. Ensure you are in the ```{ROOT_FOLDER}/2-deploying-to-openshift/deployment```
 
 ```
 $ cd ${ROOT_FOLDER}/2-deploying-to-openshift/deployment
