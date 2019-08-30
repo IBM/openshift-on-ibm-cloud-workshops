@@ -115,20 +115,6 @@ $ oc get istag
 $ kubectl get pods
 ```
 
-1. Logon to IBM Cloud web console
-
-2. Select **Open Shift** in the menu
-
-![Select Open Shift in the menu](images/os-registry-01.png)
-
-3. Chose **Clusters** and click on your **OpenShift cluster**
-
-![Chose Clusters and click on your OpenShift cluster](images/os-registry-02.png)
-
-4. Open the **OpenShift web console**
-
-![Open the OpenShift web console](images/os-registry-03.png)
-
 ---
 
 __Continue with [Lab 2 - Running the Java Microservice locally](./2-docker.md#lab-2---running-the-java-microservice-locally)__ 
