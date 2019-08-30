@@ -49,15 +49,6 @@ The image builder expects a certain directory structure of Open Liberty projects
 * server.xml in the root directory
 * *.war file in the target directory
 
-Since in this example the server.xml file is in a subdirectory, we need to copy it first into the root directory.
-
-```
-$ cd ${ROOT_FOLDER}/2-deploying-to-openshift
-$ cp liberty/server.xml server.xml
-```
-
-### Step 6
-
 Before the code can be pushed to OpenShift, the 'war' file (Java web archive with microservice) needs to be built with Maven.
 
 The tools image 'nheidloff/openshift-workshop-tools:v1' comes with Maven installed. Run the tools image from the root directory.
@@ -85,7 +76,7 @@ $ cd ${ROOT_FOLDER}/2-deploying-to-openshift
 $ mvn package
 ```
 
-### Step 7
+### Step 6
 
 Next we create a new OpenShift application (our microservice) in our 'source-to-image' project.
 
@@ -101,7 +92,7 @@ After this you should see this:
 
 <kbd><img src="images/lab-7-step-7.png" /></kbd>
 
-### Step 8
+### Step 7
 
 Before the microservice can be deployed with the image builder, the code (or more previously 'authors.jar' and 'server.xml') need to be uploaded to OpenShift. This is done via 'oc start-build'.
 
@@ -115,9 +106,9 @@ After a couple of seconds you can see the successful build in the OpenShift Web 
 
 <kbd><img src="images/lab-7-step-8.jpg" /></kbd>
 
-Note that at this point the pods is not running yet as indicated by 'Rolling deployment is running ...'. After you've waited another minute, the pod will be ready the the grey circle will turn blue.
+Note that at this point the pod is not running yet as indicated by 'Rolling deployment is running ...'. After you've waited another minute, the pod will be ready and the grey circle will turn blue.
 
-### Step 9
+### Step 8
 
 In the last step the route has to be created as in the previous labs.
 
@@ -126,3 +117,4 @@ $ oc expose svc/authors
 $ oc get route/authors
 ```
 
+To test the deployment, append '/openapi/ui' to the URL in the output of 'oc get route/authors' and open it in a browser.
