@@ -60,7 +60,7 @@ $ oc start-build authors --from-dir=.
 ## Step 3: Verify the build in the OpenShift web console
 
 
-1. Select the 'default' project in 'My Projects'
+1. Select the 'cloud-native-starter' project in 'My Projects'
 
   ![Select in My Projects the default project](images/os-registry-04.png)
 
