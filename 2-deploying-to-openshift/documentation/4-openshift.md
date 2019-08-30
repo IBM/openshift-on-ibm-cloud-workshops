@@ -60,7 +60,7 @@ $ oc start-build authors --from-dir=.
 ## Step 3: Verify the build in the OpenShift web console
 
 
-1. Select the 'default' project in 'My Projects'
+1. Select the 'cloud-native-starter' project in 'My Projects'
 
   ![Select in My Projects the default project](images/os-registry-04.png)
 
@@ -82,12 +82,13 @@ $ oc start-build authors --from-dir=.
 
 ## Step 4: Verify the container image in the Open Shift Container Registry UI
 
+1. Select the 'default' project
 
-1. Expand DEPLOYMENT 'registry-console' in 'Overview' and click on the URL in 'Routes - External Traffic'
+2. Expand DEPLOYMENT 'registry-console' in 'Overview' and click on the URL in 'Routes - External Traffic'
 
   ![Expand in Overview the DEPLOYMENT registry-console and click Routes - External Traffic](images/os-registry-05.png)
 
-2. In the container registry you will find the 'authors' image and you can click on the latest label.
+3. In the container registry you will find the 'authors' image and you can click on the latest label.
 
   ![In the container registry you will find later the authors image](images/os-registry-06.png)
 
@@ -259,7 +260,7 @@ This is the Swagger UI in your browser:
 
   ![Swagger UI](images/authors-swagger-ui.png)
 
-1. In a command shell execute this command verify the output (requires 'curl' on your workstation):
+1. Execute this command to verify the output:
 
   ```
   $ curl -X GET "http://$(oc get route authors -o jsonpath={.spec.host})/api/v1/getauthor?name=Niklas%20Heidloff" -H "accept: application/json"
