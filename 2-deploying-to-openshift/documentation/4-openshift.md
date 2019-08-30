@@ -82,12 +82,13 @@ $ oc start-build authors --from-dir=.
 
 ## Step 4: Verify the container image in the Open Shift Container Registry UI
 
+1. Select the 'default' project
 
-1. Expand DEPLOYMENT 'registry-console' in 'Overview' and click on the URL in 'Routes - External Traffic'
+2. Expand DEPLOYMENT 'registry-console' in 'Overview' and click on the URL in 'Routes - External Traffic'
 
   ![Expand in Overview the DEPLOYMENT registry-console and click Routes - External Traffic](images/os-registry-05.png)
 
-2. In the container registry you will find the 'authors' image and you can click on the latest label.
+3. In the container registry you will find the 'authors' image and you can click on the latest label.
 
   ![In the container registry you will find later the authors image](images/os-registry-06.png)
 
