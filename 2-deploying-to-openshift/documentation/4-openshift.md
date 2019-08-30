@@ -7,15 +7,17 @@ In that lab we will work in the **OpenShift web console** and in the **OpenShift
 
 1. Build and save the container
 
-* We will create a OpenShift project
-* We will define a [build config](https://docs.openshift.com/container-platform/3.9/dev_guide/builds/index.html) for OpenShift
+  * We will create a OpenShift project
+  * We will define a [build config](https://docs.openshift.com/container-platform/3.9/dev_guide/builds/index.html) for OpenShift
+  * We will build with the build Pod inside OpenShift and save container image to the internal [OpenShift container registry](https://docs.openshift.com/container-platform/3.9/install_config/registry/index.html#install-config-registry-overview)
 
 2. Apply the yamls and expose the service
 
-* We will build with the build Pod inside OpenShift and save container image to the internal [OpenShift container registry](https://docs.openshift.com/container-platform/3.9/install_config/registry/index.html#install-config-registry-overview)
-* We will define and apply a deployment configuration to create a Pod with our microservice
-* We will define a service which routes requests to the Pod with our microservice
-* We will expose the service
+  * We will define and apply a deployment configuration to create a Pod with our microservice
+  * We will define a service which routes requests to the Pod with our microservice
+  * We will expose the service
+
+The following image is a animation of the simplified steps above.
 
 ![overview gif](images/lab-4-overview.gif)
 
