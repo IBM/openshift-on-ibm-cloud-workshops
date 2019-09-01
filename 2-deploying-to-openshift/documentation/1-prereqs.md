@@ -56,7 +56,7 @@ $ cd openshift-on-ibm-cloud-workshops
 $ ROOT_FOLDER=$(pwd)
 ```
 
-_Note:_ If you using Windows you also need to download or clone the project to your local workstation for the upcoming Docker and Java lab.
+_Note:_ If you using Windows you also need to download or clone the project to your local workstation for the upcoming Docker and Java lab, because you can't use Docker in the 'openshift-workshop-tools' Docker image.
 
 
 ### Tools - Option 3: Install Tools on your Notebook

@@ -76,3 +76,7 @@ $ docker login
 $ docker build -t $DOCKER_ACCOUNT/authors:v1 .
 $ docker push $DOCKER_ACCOUNT/authors:v1
 ```
+
+---
+
+__Continue with [Lab 6 - Deployments of Code in GitHub Repos](./6-github.md)__

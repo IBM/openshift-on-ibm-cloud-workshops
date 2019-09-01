@@ -13,3 +13,7 @@ $ oc new-app https://github.com/nheidloff/cloud-native-starter --context-dir=aut
 $ oc expose svc/server-side-build
 $ curl -X GET "http://cloud-native-starter-server-side-build.$(minishift ip).nip.io/api/v1/getauthor?name=Niklas%20Heidloff" -H "accept: application/json"
 ```
+
+---
+
+__Continue with [Lab 7 - Source to Image Deployments](./7-soure-to-image.md)__
