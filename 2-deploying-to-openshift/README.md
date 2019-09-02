@@ -18,7 +18,7 @@ This workshop has seven labs. It should take between 60 and 90 minutues to compl
 6. [Deployments of Code in GitHub Repos](documentation/6-github.md)
 7. [Source to Image Deployments](documentation/7-source-to-image.md)
 
-The first lab describes how to install all required prerequisites. In this easiest this is only Docker Desktop and an image with all other tools.
+The first lab describes how to install all required prerequisites. In the easiest case this is only Docker Desktop and an image with all other tools.
 
 Lab 2 and 3 describe how to develop a microservice with Java EE and Eclipse MicroProfile.
 
