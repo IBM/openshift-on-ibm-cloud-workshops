@@ -17,11 +17,13 @@ In order to complete the workshop, you need to install [Docker Desktop](https://
 
 Several other tools are needed. There are different options to install these tools.
 
+---
+
 ### Tools - Option 1: Prebuilt Image with local Code
 
 There is an image on DockerHub with all required tools. In order to use local IDEs and editors to modify code and configuraton files a Docker volume is used. This option  works only for Mac and Linux.
 
-Run these commands in a terminal:
+#### Step 1: Run these commands in a terminal
 
 ```
 $ git clone https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git
@@ -29,7 +31,9 @@ $ cd openshift-on-ibm-cloud-workshops
 $ ROOT_FOLDER=$(pwd)
 $ docker run -v $ROOT_FOLDER/:/cloud-native-starter -it --rm nheidloff/openshift-workshop-tools:v1
 ```
-Inside your running Docker image you can access your the local project 
+
+#### Step 2: Inside your running Docker image you can access your the local project 
+
 ```
 root@3f46c41f7303:/usr/local/bin# cd /cloud-native-starter/
 root@3f46c41f7303:/cloud-native-starter# ls
@@ -37,18 +41,21 @@ root@3f46c41f7303:/cloud-native-starter# ls
 
 _Note:_ With the `--rm` option in the docker run command the container is deleted once you exit. This is intended.
 
+### Step 3: Move on with [Verify Access to OpenShift on the IBM Cloud](./1-prereqs.md#verify-access-to-openshift-on-the-ibm-cloud)
+
+---
 
 ### Tools - Option 2: Prebuilt Image with Code in Container
 
 There is an image on DockerHub with all required tools. This option works for Mac, Linux and Windows. To get started as quickly as possible, use this image.
 
-Run this command in a terminal:
+### Step 1: Run this command in a terminal
 
 ```
 $ docker run -ti nheidloff/openshift-workshop-tools:v1
 ```
 
-After the container has been started, run these commands in the container to get the lastest version of the workshop:
+### Step 2: After the container has been started, run these commands in the container to get the lastest version of the workshop:
 
 ```
 $ git clone https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git
@@ -58,6 +65,9 @@ $ ROOT_FOLDER=$(pwd)
 
 _Note:_ If you using Windows you also need to download or clone the project to your local workstation for the upcoming Docker and Java lab, because you can't use Docker in the 'openshift-workshop-tools' Docker image.
 
+### Step 3: Move on with [Verify Access to OpenShift on the IBM Cloud](./1-prereqs.md#verify-access-to-openshift-on-the-ibm-cloud)
+
+---
 
 ### Tools - Option 3: Install Tools on your Notebook
 
@@ -79,6 +89,8 @@ $ git clone https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git
 $ cd openshift-on-ibm-cloud-workshops
 $ ROOT_FOLDER=$(pwd)
 ```
+
+---
 
 ## Verify Access to OpenShift on the IBM Cloud
 
