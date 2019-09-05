@@ -85,7 +85,7 @@ _Note_: Here are some additional instructions based on your choosen setup.
 #### Step 1: You need to download or clone the project onto your local PC, first.
 
 ```
-$ git clone https://github.com/nheidloff/ openshift-on-ibm-cloud-workshops.git
+$ git clone https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git
 ```
 
 #### Step 2: Open a new terminal and navigate tp your local project folder ```openshift-on-ibm-cloud-workshops/2-deploying-to-openshift``.
