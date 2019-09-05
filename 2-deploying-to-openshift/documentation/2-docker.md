@@ -79,7 +79,7 @@ $ docker run -i --rm -p 3000:3000 authors
 $ open http://localhost:3000/openapi/ui/
 ```
 
-_Note:_ Remember, if you have choosen **[Tools - Option 2](./1-prereqs.md#tools---option-2-prebuilt-image-with-code-in-container)** for **Window 10** you need to download or clone the project onto your local PC, first.
+_Note:_ Remember, if you have choosen **[Tools - Option 2](./1-prereqs.md#tools---option-2-prebuilt-image-with-code-in-container)** for **Window 10** you need to download or clone the project onto your local PC, first and open a new terminal to execute the command locally. For **[Tools - Option 1](./1-prereqs.md#tools---option-1-prebuilt-image-with-local-code)** you need to open a new local terminal to execute the command.
 
 ```
 git clone https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git
