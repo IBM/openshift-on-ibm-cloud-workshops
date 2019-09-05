@@ -241,20 +241,48 @@ This HealthEndpoint is configured in the Kubernetes deployment yaml. In the foll
 
 ## Change the REST API Data and run the Container locally
 
-In [GetAuthor.java](../src/main/java/com/ibm/authors/GetAuthor.java) change the returned author name to something else.
+_Note_: Here are some additinal instructions based on your choosen setup.
+
+* For **[Tools - Option 1](./1-prereqs.md#tools---option-1-prebuilt-image-with-local-code)** you need to open a new local terminal and navigate to the project ```${ROOT_FOLDER}/2-deploying-to-openshift``` to execute the command.
+
+* **[Tools - Option 2](./1-prereqs.md#tools---option-2-prebuilt-image-with-code-in-container)** for **Window 10** you need to download or clone the project onto your local PC, first and open a new terminal to execute the command locally. 
+
+```
+$ git clone https://github.com/nheidloff/ openshift-on-ibm-cloud-workshops.git
+$ cd /openshift-on-ibm-cloud-workshops/2-deploying-to-openshift
+```
+
+### Step 1: In [GetAuthor.java](../src/main/java/com/ibm/authors/GetAuthor.java) change the returned author name to something else like "MY NAME".
+
+``` java
+public Response getAuthor(@Parameter(
+            description = "The unique name of the author",
+            required = true,
+            example = "MY NAME",
+            schema = @Schema(type = SchemaType.STRING))
+			@QueryParam("name") String name) {
+		
+			Author author = new Author();
+			author.name = "MY NAME";
+			author.twitter = "https://twitter.com/MY NAME";
+			author.blog = "http://MY NAME.net";
+
+			return Response.ok(this.createJson(author)).build();
+	}
+```
+
+### Step 2: To test and see how the code works you can run the code locally as a Docker container:
 
 ```
 $ cd ${ROOT_FOLDER}/2-deploying-to-openshift
 $ docker build -t authors .
 $ docker run -i --rm -p 3000:3000 authors
-$ open http://localhost:3000/openapi/ui/
 ```
 
-_Note:_ Remember, if you have choosen **[Tools - Option 2](./1-prereqs.md#tools---option-2-prebuilt-image-with-code-in-container)** for **Window 10** you need to download or clone the project onto your local PC, first and open a new terminal to execute the command locally. For **[Tools - Option 1](./1-prereqs.md#tools---option-1-prebuilt-image-with-local-code)** you need to open a new local terminal to execute the command.
+### Step 3: Open the swagger UI of the mircoservice in a browser.
 
-```
-git clone https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git
-```
+```http://localhost:3000/openapi/ui/```
+
 
 ---
 
