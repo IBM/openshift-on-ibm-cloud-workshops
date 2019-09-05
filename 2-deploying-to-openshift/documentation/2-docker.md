@@ -80,7 +80,7 @@ _Note_: Here are some additional instructions based on your choosen setup.
 
 #### Step 3: [Move on with the lab](./2-docker.md#step-1-to-test-and-see-how-the-code-works-you-can-run-the-code-locally-as-a-docker-container).
 
-### [Tools - Option 2](./1-prereqs.md#tools---option-2-prebuilt-image-with-code-in-container)** for **Window 10** 
+### [Tools - Option 2](./1-prereqs.md#tools---option-2-prebuilt-image-with-code-in-container)
 
 #### Step 1: You need to download or clone the project onto your local PC, first.
 
