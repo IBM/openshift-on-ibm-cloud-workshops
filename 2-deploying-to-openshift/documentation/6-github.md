@@ -51,4 +51,4 @@ This is the deployed application with the route.
 
 ---
 
-__Continue with [Lab 7 - Source to Image Deployments](./7-soure-to-image.md)__
+__Continue with [Lab 7 - Source to Image Deployments](./7-source-to-image.md)__
