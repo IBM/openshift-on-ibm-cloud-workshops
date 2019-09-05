@@ -243,9 +243,9 @@ This HealthEndpoint is configured in the Kubernetes deployment yaml. In the foll
 
 _Note_: Here are some additional instructions based on your choosen setup.
 
-* For **[Tools - Option 1](./1-prereqs.md#tools---option-1-prebuilt-image-with-local-code)** you need to open a new local terminal and navigate to the project ```${ROOT_FOLDER}/2-deploying-to-openshift``` to execute the command.
+* For **[Tools - Option 1](./1-prereqs.md#tools---option-1-prebuilt-image-with-local-code)** you need to open a new local terminal and navigate to the project ```${ROOT_FOLDER}/2-deploying-to-openshift``` to execute the commands locally.
 
-* **[Tools - Option 2](./1-prereqs.md#tools---option-2-prebuilt-image-with-code-in-container)** for **Window 10** you need to download or clone the project onto your local PC, first and open a new terminal to execute the command locally. 
+* **[Tools - Option 2](./1-prereqs.md#tools---option-2-prebuilt-image-with-code-in-container)** for **Window 10** you need to download or clone the project onto your local PC, first and open a new terminal to execute the commands locally. 
 
 ```
 $ git clone https://github.com/nheidloff/ openshift-on-ibm-cloud-workshops.git
