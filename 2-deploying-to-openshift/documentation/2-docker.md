@@ -70,7 +70,7 @@ COPY --from=BUILD /usr/src/app/target/authors.war /config/apps/
 
 ## Run the Container locally
 
-_Note_: Here are some additinal instructions based on your choosen setup.
+_Note_: Here are some additional instructions based on your choosen setup.
 
 * For **[Tools - Option 1](./1-prereqs.md#tools---option-1-prebuilt-image-with-local-code)** you need to open a new local terminal and navigate to the project ```${ROOT_FOLDER}/2-deploying-to-openshift``` to execute the command.
 
