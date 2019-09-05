@@ -96,10 +96,11 @@ $ cd /openshift-on-ibm-cloud-workshops/2-deploying-to-openshift
 
 #### Step 3: [Move on with the lab](./2-docker.md#step-1-to-test-and-see-how-the-code-works-you-can-run-the-code-locally-as-a-docker-container).
 
+---
 
-### Lab
+### Run the container locally
 
-### Step 1: To test and see how the code works you can run the code locally as a Docker container
+#### Step 1: To test and see how the code works you can run the code locally as a Docker container
 
 ```
 $ cd ${ROOT_FOLDER}/2-deploying-to-openshift
@@ -107,7 +108,7 @@ $ docker build -t authors .
 $ docker run -i --rm -p 3000:3000 authors
 ```
 
-### Step 2: Open the Swagger UI of the mircoservice in a browser.
+#### Step 2: Open the Swagger UI of the mircoservice in a browser.
 
 ```
 http://localhost:3000/openapi/ui/
