@@ -37,6 +37,8 @@ $ docker run -v $ROOT_FOLDER/:/cloud-native-starter -it --rm nheidloff/openshift
 ```
 root@3f46c41f7303:/usr/local/bin# cd /cloud-native-starter/
 root@3f46c41f7303:/cloud-native-starter# ls
+root@3f46c41f7303:/cloud-native-starter# cd /openshift-on-ibm-cloud-workshops/
+root@3f46c41f7303:/cloud-native-starter# ROOT_FOLDER=$(pwd)
 ```
 
 _Note:_ With the `--rm` option in the docker run command the container is deleted once you exit. This is intended.
