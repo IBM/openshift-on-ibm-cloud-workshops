@@ -90,11 +90,13 @@ $ docker build -t authors .
 $ docker run -i --rm -p 3000:3000 authors
 ```
 
-### Step 2: Open the swagger UI of the mircoservice in a browser.
+### Step 2: Open the Swagger UI of the mircoservice in a browser.
 
 ```
 http://localhost:3000/openapi/ui/
 ```
+
+![Swagger UI](images/authors-swagger-ui.png)
 
 
 ---
