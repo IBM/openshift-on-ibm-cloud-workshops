@@ -72,15 +72,32 @@ COPY --from=BUILD /usr/src/app/target/authors.war /config/apps/
 
 _Note_: Here are some additional instructions based on your choosen setup.
 
-* For **[Tools - Option 1](./1-prereqs.md#tools---option-1-prebuilt-image-with-local-code)** you need to open a new local terminal and navigate to the project ```${ROOT_FOLDER}/2-deploying-to-openshift``` to execute the commands locally.
+### [Tools - Option 1](./1-prereqs.md#tools---option-1-prebuilt-image-with-local-code)
 
-* **[Tools - Option 2](./1-prereqs.md#tools---option-2-prebuilt-image-with-code-in-container)** for **Window 10** you need to download or clone the project onto your local PC, first and open a new terminal to execute the commands locally. 
+#### Step 1: You need to open a new local terminal 
+
+#### Step 2: Navigate to your local project folder ```openshift-on-ibm-cloud-workshops/2-deploying-to-openshift``` 
+
+#### Step 3: [Move on with the lab](./2-docker.md#step-1-to-test-and-see-how-the-code-works-you-can-run-the-code-locally-as-a-docker-container).
+
+### [Tools - Option 2](./1-prereqs.md#tools---option-2-prebuilt-image-with-code-in-container)** for **Window 10** 
+
+#### Step 1: You need to download or clone the project onto your local PC, first.
 
 ```
 $ git clone https://github.com/nheidloff/ openshift-on-ibm-cloud-workshops.git
+```
+
+#### Step 2: Open a new terminal and navigate tp your local project folder ```openshift-on-ibm-cloud-workshops/2-deploying-to-openshift``.
+
+```
 $ cd /openshift-on-ibm-cloud-workshops/2-deploying-to-openshift
 ```
 
+#### Step 3: [Move on with the lab](./2-docker.md#step-1-to-test-and-see-how-the-code-works-you-can-run-the-code-locally-as-a-docker-container).
+
+
+### Lab
 
 ### Step 1: To test and see how the code works you can run the code locally as a Docker container
 
