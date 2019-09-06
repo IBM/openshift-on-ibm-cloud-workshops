@@ -17,6 +17,7 @@ You have seen and used this Web Console in the interactive tutorials in Part 3. 
 This part of the workshop is divided in two sections:
 
   A. Working with the OpenShift Web Console 
+  
   B. Working with the `oc`command line tool
 
 
