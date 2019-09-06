@@ -27,7 +27,7 @@ In this workshop we will show you how to create your own OpenShift cluster on th
 3. Getting started with OpenShift for developers: [lab](https://learn.openshift.com/introduction/getting-started/) and video
 4. Deploying applications from images: [lab](https://learn.openshift.com/introduction/deploying-images/) and video
 5. Deploying applications from source: [lab](https://learn.openshift.com/introduction/deploying-python/) and video
-6. Deploy an application on OpenShift on the IBM Cloud: [lab](1-understanding-openshift/Part4.md) and video
+6. Deploy an application on OpenShift on the IBM Cloud: [lab](1-understanding-openshift/Part4.md) and [video](https://www.youtube.com/watch?v=gxq2qfWLwNU&feature=youtu.be)
 
 ---
 
