@@ -19,6 +19,17 @@ In this workshop we will show you how to create your own OpenShift cluster on th
 
 <kbd><img src="images/workshop-1.png" /></kbd>
 
+**Labs**
+
+0. [Overview](https://youtu.be/cotKSI-S1Ng)
+1. Introduction: [video](https://www.youtube.com/watch?v=hdwDMsDF9J8) and [video](https://www.youtube.com/watch?v=l4Vrj7mkxhQ)
+2. Create an OpenShift cluster on the IBM Cloud: [lab](1-understanding-openshift/Part2.md) and [video](https://youtu.be/9xgqDP2B3WI)
+3. Getting started with OpenShift for developers: [lab](https://learn.openshift.com/introduction/getting-started/) and video
+4. Deploying applications from images: [lab](https://learn.openshift.com/introduction/deploying-images/) and video
+5. Deploying applications from source: [lab](https://learn.openshift.com/introduction/deploying-python/) and video
+6. Deploy an application on OpenShift on the IBM Cloud: [lab](1-understanding-openshift/Part4.md) and video
+
+---
 
 ## Workshop 2: [Deploying Java Microservices to OpenShift on IBM Cloud](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/tree/master/2-deploying-to-openshift#deploying-java-microservices-to-openshift-on-ibm-cloud)
 
@@ -30,6 +41,19 @@ The microservice is kept as simple as possible, so that it can be used as a star
 * Audience: Intermediate
 
 <kbd><img src="images/workshop-2.png" /></kbd>
+
+**Labs**
+
+0. [Overview](https://youtu.be/8361HGR_O_s)
+1. Installing rerequisites: [lab](2-deploying-to-openshift/documentation/1-prereqs.md) and [video](https://youtu.be/c5CtqijWXL4)
+2. Running the Java microservice locally: [lab](2-deploying-to-openshift/documentation/2-docker.md) and video
+3. Understanding the Java implementation: [lab](2-deploying-to-openshift/documentation/3-java.md) and video
+4. Deploying to OpenShift via 'oc' CLI: [lab](2-deploying-to-openshift/documentation/4-openshift.md) and [video](https://youtu.be/4MDfalo2Fg0)
+5. Deploying existing images to OpenShift: [lab](2-deploying-to-openshift/documentation/5-existing-image.md) and video
+6. Deployments of code in GitHub repos: [lab](2-deploying-to-openshift/documentation/6-github.md) and video
+7. Source to Image deployments: [lab](2-deploying-to-openshift/documentation/7-source-to-image.md) and video
+
+---
 
 ## Resources and next Steps
 
