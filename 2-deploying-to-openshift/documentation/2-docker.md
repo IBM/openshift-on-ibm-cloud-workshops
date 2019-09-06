@@ -89,14 +89,6 @@ Step |  |
 2 |  Open a new terminal and navigate tp your local project folder ```openshift-on-ibm-cloud-workshops/2-deploying-to-openshift```
 3 | [Move on with the lab](./2-docker.md#step-1-to-test-and-see-how-the-code-works-you-can-run-the-code-locally-as-a-docker-container).
 
-#### Step 1: You need to download or clone the project onto your local PC, first.
-
-```
-$ git clone https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git
-```
-
-#### Step 2: Open a new terminal and navigate to your local project folder ```openshift-on-ibm-cloud-workshops/2-deploying-to-openshift```.
-
 ---
 
 ### Run the container locally
