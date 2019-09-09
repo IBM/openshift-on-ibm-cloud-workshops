@@ -45,7 +45,7 @@ The microservice is kept as simple as possible, so that it can be used as a star
 **Labs**
 
 0. [Overview](https://youtu.be/8361HGR_O_s)
-1. Installing rerequisites: [lab](2-deploying-to-openshift/documentation/1-prereqs.md) and [video](https://youtu.be/c5CtqijWXL4)
+1. Installing prerequisites: [lab](2-deploying-to-openshift/documentation/1-prereqs.md) and [video](https://youtu.be/c5CtqijWXL4)
 2. Running the Java microservice locally: [lab](2-deploying-to-openshift/documentation/2-docker.md) and [video](https://youtu.be/4dT2jg6wGF4)
 3. Understanding the Java implementation: [lab](2-deploying-to-openshift/documentation/3-java.md) and video
 4. Deploying to OpenShift via 'oc' CLI: [lab](2-deploying-to-openshift/documentation/4-openshift.md) and [video](https://youtu.be/4MDfalo2Fg0)
