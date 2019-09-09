@@ -6,6 +6,8 @@ This deployment option checks whether a Dockerfile exist. With the Dockerfile a 
 
 Note that the yaml files are ignored with this approach.
 
+Read the [documentation](https://docs.openshift.com/enterprise/3.0/dev_guide/new_app.html#specifying-source-code) for more details.
+
 ### Step 1
 
 Create a new project 'deployment-from-github'.
