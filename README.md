@@ -51,7 +51,7 @@ The microservice is kept as simple as possible, so that it can be used as a star
 4. Deploying to OpenShift via 'oc' CLI: [lab](2-deploying-to-openshift/documentation/4-openshift.md) and [video](https://youtu.be/4MDfalo2Fg0)
 5. Deploying existing images to OpenShift: [lab](2-deploying-to-openshift/documentation/5-existing-image.md) and [video](https://youtu.be/JhxsS7l6DhA)
 6. Deployments of code in GitHub repos: [lab](2-deploying-to-openshift/documentation/6-github.md) and [video](https://youtu.be/b3upMuZOpsY)
-7. Source to Image deployments: [lab](2-deploying-to-openshift/documentation/7-source-to-image.md) and video
+7. Source to Image deployments: [lab](2-deploying-to-openshift/documentation/7-source-to-image.md) and [video](https://youtu.be/p6lVc6MDrcM)
 
 ---
 
