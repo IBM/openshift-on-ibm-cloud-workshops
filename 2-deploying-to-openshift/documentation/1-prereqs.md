@@ -55,12 +55,13 @@ There is an image on DockerHub with all required tools. This option works for Ma
 $ docker run -ti nheidloff/openshift-workshop-tools:v1
 ```
 
-#### Step 2: After the container has been started, run these commands in the container to get the lastest version of the workshop:
+#### Step 2: After the container has been started, run these commands inside your running Docker image to get the lastest version of the workshop:
 
 ```
-$ git clone https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git
-$ cd openshift-on-ibm-cloud-workshops
-$ ROOT_FOLDER=$(pwd)
+root@3f46c41f7303:/usr/local/bin# cd /
+root@3f46c41f7303:/usr/local/bin# git clone https://github.com/nheidloff/root@3f46c41f7303:/usr/local/bin# openshift-on-ibm-cloud-workshops.git
+root@3f46c41f7303:/usr/local/bin# cd openshift-on-ibm-cloud-workshops
+root@3f46c41f7303:/usr/local/bin# ROOT_FOLDER=$(pwd)
 ```
 
 _Note:_ If you using Windows you also need to download or clone the project to your local workstation for the upcoming Docker and Java lab, because you can't use Docker in the 'openshift-workshop-tools' Docker image.
