@@ -10,13 +10,14 @@ There are [various ways to deploy applications to OpenShift](http://heidloff.net
 
 This workshop has seven labs. It should take between 60 and 90 minutues to complete the workshop.
 
-1. [Installing prerequisites](documentation/1-prereqs.md)
-2. [Running the Java microservice locally](documentation/2-docker.md)
-3. [Understanding the Java implementation](documentation/3-java.md)
-4. [Deploying to OpenShift via 'oc' CLI](documentation/4-openshift.md)
-5. [Deploying existing Images to OpenShift](documentation/5-existing-image.md)
-6. [Deployments of Code in GitHub Repos](documentation/6-github.md)
-7. [Source to Image Deployments](documentation/7-source-to-image.md)
+0. [Overview video (1:41 mins)](https://youtu.be/8361HGR_O_s)
+1. Installing prerequisites: [lab](2-deploying-to-openshift/documentation/1-prereqs.md) and [video (2:58 mins)](https://youtu.be/c5CtqijWXL4)
+2. Running the Java microservice locally: [lab](2-deploying-to-openshift/documentation/2-docker.md) and [video (3:51 mins)](https://youtu.be/4dT2jg6wGF4)
+3. Understanding the Java implementation: [lab](2-deploying-to-openshift/documentation/3-java.md) and [video (9:09 mins)](https://www.youtube.com/watch?v=ugpYSPV9jAs)
+4. Deploying to OpenShift via 'oc' CLI: [lab](2-deploying-to-openshift/documentation/4-openshift.md) and [video (14:32 mins)](https://youtu.be/4MDfalo2Fg0)
+5. Deploying existing images to OpenShift: [lab](2-deploying-to-openshift/documentation/5-existing-image.md) and [video (7:09 mins)](https://youtu.be/JhxsS7l6DhA)
+6. Deployments of code in GitHub repos: [lab](2-deploying-to-openshift/documentation/6-github.md) and [video (3:52 mins)](https://youtu.be/b3upMuZOpsY)
+7. Source to Image deployments: [lab](2-deploying-to-openshift/documentation/7-source-to-image.md) and [video (7:06 mins)](https://youtu.be/p6lVc6MDrcM)
 
 The first lab describes how to install all required prerequisites. In the easiest case this is only Docker Desktop and an image with all other tools.
 

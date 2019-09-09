@@ -44,14 +44,14 @@ The microservice is kept as simple as possible, so that it can be used as a star
 
 **Labs**
 
-0. [Overview](https://youtu.be/8361HGR_O_s)
-1. Installing prerequisites: [lab](2-deploying-to-openshift/documentation/1-prereqs.md) and [video](https://youtu.be/c5CtqijWXL4)
-2. Running the Java microservice locally: [lab](2-deploying-to-openshift/documentation/2-docker.md) and [video](https://youtu.be/4dT2jg6wGF4)
-3. Understanding the Java implementation: [lab](2-deploying-to-openshift/documentation/3-java.md) and video
-4. Deploying to OpenShift via 'oc' CLI: [lab](2-deploying-to-openshift/documentation/4-openshift.md) and [video](https://youtu.be/4MDfalo2Fg0)
-5. Deploying existing images to OpenShift: [lab](2-deploying-to-openshift/documentation/5-existing-image.md) and [video](https://youtu.be/JhxsS7l6DhA)
-6. Deployments of code in GitHub repos: [lab](2-deploying-to-openshift/documentation/6-github.md) and [video](https://youtu.be/b3upMuZOpsY)
-7. Source to Image deployments: [lab](2-deploying-to-openshift/documentation/7-source-to-image.md) and [video](https://youtu.be/p6lVc6MDrcM)
+0. [Overview video (1:41 mins)](https://youtu.be/8361HGR_O_s)
+1. Installing prerequisites: [lab](2-deploying-to-openshift/documentation/1-prereqs.md) and [video (2:58 mins)](https://youtu.be/c5CtqijWXL4)
+2. Running the Java microservice locally: [lab](2-deploying-to-openshift/documentation/2-docker.md) and [video (3:51 mins)](https://youtu.be/4dT2jg6wGF4)
+3. Understanding the Java implementation: [lab](2-deploying-to-openshift/documentation/3-java.md) and [video (9:09 mins)](https://www.youtube.com/watch?v=ugpYSPV9jAs)
+4. Deploying to OpenShift via 'oc' CLI: [lab](2-deploying-to-openshift/documentation/4-openshift.md) and [video (14:32 mins)](https://youtu.be/4MDfalo2Fg0)
+5. Deploying existing images to OpenShift: [lab](2-deploying-to-openshift/documentation/5-existing-image.md) and [video (7:09 mins)](https://youtu.be/JhxsS7l6DhA)
+6. Deployments of code in GitHub repos: [lab](2-deploying-to-openshift/documentation/6-github.md) and [video (3:52 mins)](https://youtu.be/b3upMuZOpsY)
+7. Source to Image deployments: [lab](2-deploying-to-openshift/documentation/7-source-to-image.md) and [video (7:06 mins)](https://youtu.be/p6lVc6MDrcM)
 
 ---
 
