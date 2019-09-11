@@ -134,7 +134,7 @@ public String blog;
 
 This class implements the REST API response for our Authors microservice. We implement the REST client using the [MicroProfile REST Client](https://github.com/eclipse/microprofile-rest-client/blob/master/README.adoc). We use  `@Path` and `@Get` statements from [JAX-RS](https://jcp.org/en/jsr/detail?id=339) and for the [OpenAPI](https://www.openapis.org/) documentation `@OpenAPIDefinition` statements from [MicroProfile OpenAPI](https://github.com/eclipse/microprofile-open-api) which automatically creates an OpenAPI explorer.
 
-Remember the server.xml configuration where we added MicroProfile to the server as you can see in the code below.
+_REMEMBER:_ In the server.xml configuration we added **MicroProfile** to the Open Liberty server as a feature, as you see in the code below.
 
 ```xml
 <featureManager>
