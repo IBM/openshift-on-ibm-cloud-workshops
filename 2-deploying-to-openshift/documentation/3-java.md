@@ -265,7 +265,7 @@ Step |  |
 2 |  Open a new terminal and navigate tp your local project folder ```openshift-on-ibm-cloud-workshops/2-deploying-to-openshift```
 3 | [Move on with the lab](./3-java.md#step-1-in-getauthorjava-change-the-returned-author-name-to-something-else-like-my-name).
 
-### Step 1: In [GetAuthor.java](../src/main/java/com/ibm/authors/GetAuthor.java) change the returned author name to something else like "MY NAME".
+### Step 1: In [GetAuthor.java](../src/main/java/com/ibm/authors/GetAuthor.java) change the returned author name to something similar like "MY NAME".
 
 ``` java
 public Response getAuthor(@Parameter(
