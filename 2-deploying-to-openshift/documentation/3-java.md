@@ -1,7 +1,5 @@
 # Lab 3 - Understanding the Java Implementation
 
-[![Understanding the Java Implementation](https://img.youtube.com/vi/ugpYSPV9jAs/0.jpg)](https://www.youtube.com/watch?v=ugpYSPV9jAs "Click play on youtube")
-
 
 ## 1. Usage of Maven for Java
 
