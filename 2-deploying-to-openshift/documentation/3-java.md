@@ -102,7 +102,12 @@ For the Authors service to expose the REST API we need to implement three classe
 
 #### 3.2.1 **Class AuthorsApplication**
 
-Our web application does not implement any business or other logic, it simply needs to run on a server with no UI. The AuthorsApplication class extends the [javax.ws.rs.core.Application](https://www.ibm.com/support/knowledgecenter/en/SSEQTP_9.0.0/com.ibm.websphere.base.doc/ae/twbs_jaxrs_configjaxrs11method.html) class to do this. With this extension the `AuthorsApplication` class provides access to the classes from the `com.ibm.authors` package at runtime. With `@ApplicationPath` from MicroProfile we define the base path of the application.
+Our web application does not implement any business or other logic, it simply needs to run on a server with no UI. The AuthorsApplication class extends the [javax.ws.rs.core.Application](https://www.ibm.com/support/knowledgecenter/en/SSEQTP_9.0.0/com.ibm.websphere.base.doc/ae/twbs_jaxrs_configjaxrs11method.html) class to do this. 
+
+The `AuthorsApplication` class provides access to the classes from the `com.ibm.authors` package at runtime.
+The implementation of the interface class _Application_ enables the usage of easy REST implementation provided by MircoProfile. 
+
+With `@ApplicationPath` from MicroProfile we define the base path of the application.
 
 ```java
 package com.ibm.authors;
