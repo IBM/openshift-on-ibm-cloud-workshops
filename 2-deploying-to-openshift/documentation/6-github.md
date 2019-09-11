@@ -1,5 +1,7 @@
 # Lab 6 - Deployments of Code in GitHub Repos
 
+[![Deployments of Code in GitHub Repos](https://img.youtube.com/vi/b3upMuZOpsY/0.jpg)](https://www.youtube.com/watch?v=b3upMuZOpsY "Click play on youtube")
+
 This lab shows how to deploy applications from Git repositories.
 
 This deployment option checks whether a Dockerfile exist. With the Dockerfile a build on OpenShift is initiated. Since we use a Dockerfile with two stages, both the Java code is built as well as the Docker image.

@@ -1,5 +1,7 @@
 # Lab 4 - Deploying to OpenShift
 
+[![Deploying to OpenShift](https://img.youtube.com/vi/4MDfalo2Fg0/0.jpg)](https://www.youtube.com/watch?v=4MDfalo2Fg0 "Click play on youtube")
+
 
 In this lab we will work in the OpenShift Web Console and with the OpenShift CLI. The following image is a simplified overview of the topics of that lab. Have in mind that [OpenShift](https://www.youtube.com/watch?v=5dwMrFxq8sU&feature=youtu.be) is a [Kubernetes](https://www.youtube.com/watch?v=4ht22ReBjno) platform.
 

@@ -1,5 +1,8 @@
 # Lab 1 - Install Prerequisites
 
+
+[![Install Prerequisites](https://img.youtube.com/vi/53XccO3NNn8/0.jpg)](https://www.youtube.com/watch?v=53XccO3NNn8 "Click play on youtube")
+
 ## Access to the IBM Cloud
 
 An [IBM Cloud account](https://cloud.ibm.com/registration) is needed. 
