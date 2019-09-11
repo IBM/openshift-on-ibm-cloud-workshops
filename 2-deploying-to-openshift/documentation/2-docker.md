@@ -62,10 +62,12 @@ We copy the Authors service code together with the server.xml for the OpenLibert
 _REMEMBER:_ The service.xml contains the ports we use for our Authors service.
 
 ```dockerfile
-FROM openliberty/open-liberty:microProfile2-java8-openj9 
+FROM open-liberty:microProfile2-java11
 
 COPY liberty/server.xml /config/
 COPY --from=BUILD /usr/src/app/target/authors.war /config/apps/
+
+EXPOSE 3000
 ```
 
 ## Run the Container locally
