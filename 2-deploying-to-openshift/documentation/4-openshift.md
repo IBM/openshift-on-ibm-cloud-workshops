@@ -18,7 +18,7 @@ This lab has two parts:
   * We will define a service which routes requests to the Pod with our microservice
   * We will expose the service
 
-The following image is an animation of the simplified steps above.
+The following gif is an animation of the simplified steps above in a sequence.
 
 ![overview gif](images/lab-4-overview.gif)
 
