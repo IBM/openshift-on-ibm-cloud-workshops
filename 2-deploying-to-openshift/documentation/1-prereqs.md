@@ -59,7 +59,7 @@ $ docker run -ti nheidloff/openshift-workshop-tools:v1
 
 ```
 root@3f46c41f7303:/usr/local/bin# cd /
-root@3f46c41f7303:/usr/local/bin# git clone https://github.com/nheidloff/root@3f46c41f7303:/usr/local/bin# openshift-on-ibm-cloud-workshops.git
+root@3f46c41f7303:/usr/local/bin# git clone https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git
 root@3f46c41f7303:/usr/local/bin# cd openshift-on-ibm-cloud-workshops
 root@3f46c41f7303:/usr/local/bin# ROOT_FOLDER=$(pwd)
 ```
