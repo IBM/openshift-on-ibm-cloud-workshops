@@ -1,3 +1,5 @@
+[日本語はこちら - Japanese version](./README-ja.md)
+
 # Understanding OpenShift
 
 If you have only worked with "plain" Kubernetes you will be very surprised when you see the OpenShift Web Console (Dashboard) for the first time. It takes a bit to get used to it but then you realize that this is not an afterthought but a very well designed tool specifically for developers and for administrators, too. The same is true for `oc`, the OpenShift command line tool. It includes all the functions of the `kubectl` CLI and adds the special capabilities of OpenShift.  
