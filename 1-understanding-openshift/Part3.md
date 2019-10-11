@@ -1,3 +1,6 @@
+[日本語はこちら - Japanese version](./Part3-ja.md)
+
+
 ## Part 3: Red Hat tutorials 
 
 We will use the time while you are waiting for your OpenShift cluster to get ready. There is a lot of really good material at the Red Hat OpenShift [Interactive Learning Portal](https://learn.openshift.com/). You get access to a real OpenShift system during these tutorials.
