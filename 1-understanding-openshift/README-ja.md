@@ -31,5 +31,5 @@ __ワークショップを続けるにはこちら:__
 
 [Part 4: Deploy an application on OpenShift on the IBM Cloud](./Part4-ja.md)
 
-このシリーズの __次のワークショップへ進む__ : "[JavaマイクロサービスをIBM Cloud上のOpenShiftへデプロイする](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/tree/master/2-deploying-to-openshift#deploying-java-microservices-to-openshift-on-ibm-cloud)"
+このシリーズの __次のワークショップへ進む__ : "[JavaマイクロサービスをIBM Cloud上のOpenShiftへデプロイする](../2-deploying-to-openshift#deploying-java-microservices-to-openshift-on-ibm-cloud)"
 
