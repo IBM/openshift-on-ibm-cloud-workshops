@@ -229,6 +229,6 @@ Webコンソールからプロジェクト全体を削除することもでき�
 おめでとうございます！ このワークショップを完了しました！
 
 
-このシリーズの __次のワークショップへ進む__ : "[JavaマイクロサービスをIBM Cloud上のOpenShiftへデプロイする](../../../2-deploying-to-openshift#deploying-java-microservices-to-openshift-on-ibm-cloud)"
+このシリーズの __次のワークショップへ進む__ : "[JavaマイクロサービスをIBM Cloud上のOpenShiftへデプロイする](../2-deploying-to-openshift#deploying-java-microservices-to-openshift-on-ibm-cloud)"
 
 __[概要](../../../../openshift-on-ibm-cloud-workshops#openshift-on-ibm-cloud-workshops) へ戻る__
