@@ -33,7 +33,7 @@ IBM Cloud上のRed Hat OpenShiftを使用すると、開発者はエンタープ
 
 ---
 
-## ワークショップ 2: [IBM Cloud上のOpenShiftへのJavaマイクロサービスのデプロイ](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/tree/master/2-deploying-to-openshift#deploying-java-microservices-to-openshift-on-ibm-cloud)
+## ワークショップ 2: [IBM Cloud上のOpenShiftへのJavaマイクロサービスのデプロイ](./2-deploying-to-openshift#deploying-java-microservices-to-openshift-on-ibm-cloud)
 
 このワークショップでは、Javaを使用してマイクロサービスを構築する方法と、IBMクラウドのOpenShiftにデプロイする方法を解説します。
 
