@@ -25,7 +25,7 @@ IBM Cloud Developer AdvocateのSai Vennamは、IBM CloudでOpenShiftに関する
 
 __ワークショップを続けるにはこちら:__
 
-[Part 2: Create an OpenShift cluster on the IBM Cloud](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/1-understanding-openshift/Part2.md#part-2-create-an-openshift-cluster-on-the-ibm-cloud)
+[Part 2: Create an OpenShift cluster on the IBM Cloud](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/1-understanding-openshift/Part2-ja.md#part-2-create-an-openshift-cluster-on-the-ibm-cloud)
 
 [Part 3: Red Hat tutorials](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/1-understanding-openshift/Part3.md#part-3-red-hat-tutorials)
 
