@@ -36,4 +36,4 @@ __Note:__ こちらは無料のIBM Cloud Liteアカウントでは利用でき�
 クラスターの作成には少なくとも20分かかります。__この間、このワークショップのパート3で実践的な演習を行います。__
 
 
-__次のワークショップ [Part 3: Red Hat tutorials](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/1-understanding-openshift/Part3-ja.md#part-3-red-hat-tutorials) へ進む__
+__次のワークショップ [Part 3: Red Hat tutorials](./Part3-ja.md#part-3-red-hat-tutorials) へ進む__
