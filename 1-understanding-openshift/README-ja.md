@@ -25,11 +25,11 @@ IBM Cloud Developer AdvocateのSai Vennamは、IBM CloudでOpenShiftに関する
 
 __ワークショップを続けるにはこちら:__
 
-[Part 2: Create an OpenShift cluster on the IBM Cloud](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/1-understanding-openshift/Part2-ja.md#part-2-create-an-openshift-cluster-on-the-ibm-cloud)
+[Part 2: Create an OpenShift cluster on the IBM Cloud](./Part2-ja.md#part-2-create-an-openshift-cluster-on-the-ibm-cloud)
 
-[Part 3: Red Hat tutorials](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/1-understanding-openshift/Part3.md#part-3-red-hat-tutorials)
+[Part 3: Red Hat tutorials](./Part3.md#part-3-red-hat-tutorials)
 
-[Part 4: Deploy an application on OpenShift on the IBM Cloud](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/1-understanding-openshift/Part4.md#part-4-deploy-an-application-on-openshift-on-the-ibm-cloud)
+[Part 4: Deploy an application on OpenShift on the IBM Cloud](./Part4.md#part-4-deploy-an-application-on-openshift-on-the-ibm-cloud)
 
 このシリーズの __次のワークショップへ進む__ : "[JavaマイクロサービスをIBM Cloud上のOpenShiftへデプロイする](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/tree/master/2-deploying-to-openshift#deploying-java-microservices-to-openshift-on-ibm-cloud)"
 
