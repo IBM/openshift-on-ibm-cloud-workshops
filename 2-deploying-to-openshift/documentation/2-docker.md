@@ -114,4 +114,4 @@ http://localhost:3000/openapi/ui/
 
 ---
 
-:star: __Continue with [Lab 3 - Understanding the Java Implementation](./3-java.md#lab-3---understanding-the-java-implementation)__ or you are not a developer __move with [Lab 4 - Deploying to OpenShift](./4-openshift.md#lab-4---deploying-to-openshift)__ 
+:star: __Continue with [Lab 3 - Understanding the Java Implementation](./3-java.md#lab-3---understanding-the-java-implementation)__ or if you are not a developer you can __move on with [Lab 4 - Deploying to OpenShift](./4-openshift.md#lab-4---deploying-to-openshift)__ 
