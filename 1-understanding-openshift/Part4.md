@@ -1,3 +1,5 @@
+[日本語はこちら - Japanese version](./Part4-ja.md)
+
 ## Part 4: Deploy an application on OpenShift on the IBM Cloud
 
 The setup of the OpenShift cluster must be completed to finish this workshop. It is completely set up when the worker node(s) show a status of "Normal" in the "Worker Nodes" section __AND__
