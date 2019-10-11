@@ -1,3 +1,5 @@
+[See this in English](./Part2.md)
+
 ## Part 2: OpenShiftクラスターをIBM Cloudの上に作成する
 
 IBM Cloud上に自分のOpenShiftクラスターを作成するには、次の手順に従います。 
