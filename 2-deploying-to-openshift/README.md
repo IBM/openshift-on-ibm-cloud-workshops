@@ -1,3 +1,5 @@
+[日本語はこちら - Japanese version](./README-ja.md)
+
 # Deploying Java Microservices to OpenShift on IBM Cloud
 
 This workshop demonstrates how to build a microservice with Java and how to deploy it to OpenShift on the IBM Cloud.
