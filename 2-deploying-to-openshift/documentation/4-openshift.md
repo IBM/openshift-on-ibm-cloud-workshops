@@ -291,6 +291,6 @@ This is the Swagger UI in your browser:
 
 ---
 
-__Continue with [Lab 5 - Deploying existing Images from Docker Hub](./5-existing-image.md)__
+:star: __Continue with [Lab 5 - Deploying existing Images from Docker Hub](./5-existing-image.md)__
 
 

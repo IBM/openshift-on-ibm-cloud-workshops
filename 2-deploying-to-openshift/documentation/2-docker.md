@@ -74,7 +74,7 @@ EXPOSE 3000
 
 _Note_: Here are some additional instructions based on your choosen setup.
 
-### [Tools - Option 1](./1-prereqs.md#tools---option-1-prebuilt-image-with-local-code)
+### [Tools - Option 1 (prefered for Mac and Linux)]](./1-prereqs.md#tools---option-1-prebuilt-image-with-local-code)
 
 Step |  |
 --- | --- 
@@ -83,7 +83,7 @@ Step |  |
 3 | [Move on with the lab](./2-docker.md#step-1-to-test-and-see-how-the-code-works-you-can-run-the-code-locally-as-a-docker-container).
 
 
-### [Tools - Option 2](./1-prereqs.md#tools---option-2-prebuilt-image-with-code-in-container)
+### [Tools - Option 2 (prefered for Windows)](./1-prereqs.md#tools---option-2-prebuilt-image-with-code-in-container)
 
 Step |  |
 --- | --- 
@@ -114,4 +114,4 @@ http://localhost:3000/openapi/ui/
 
 ---
 
-__Continue with [Lab 3 - Understanding the Java Implementation](./3-java.md#lab-3---understanding-the-java-implementation)__
+:star: __Continue with [Lab 3 - Understanding the Java Implementation](./3-java.md#lab-3---understanding-the-java-implementation)__ or you are not a developer __move with [Lab 4 - Deploying to OpenShift](./4-openshift.md#lab-4---deploying-to-openshift)__ 

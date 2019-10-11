@@ -79,4 +79,4 @@ $ docker push $DOCKER_ACCOUNT/authors:v1
 
 ---
 
-__Continue with [Lab 6 - Deployments of Code in GitHub Repos](./6-github.md)__
+:star: __Continue with [Lab 6 - Deployments of Code in GitHub Repos](./6-github.md)__

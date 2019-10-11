@@ -118,3 +118,7 @@ $ oc get route/authors
 ```
 
 To test the deployment, append '/openapi/ui' to the URL in the output of 'oc get route/authors' and open it in a browser.
+
+---
+
+:star:  Awesome you did it!

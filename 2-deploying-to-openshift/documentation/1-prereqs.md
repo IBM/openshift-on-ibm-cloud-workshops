@@ -1,5 +1,3 @@
-# Lab 1 - Install Prerequisites
-
 ## Access to the IBM Cloud
 
 An [IBM Cloud account](https://cloud.ibm.com/registration) is needed. 
@@ -19,7 +17,7 @@ Several other tools are needed. There are different options to install these too
 
 ---
 
-### Tools - Option 1: Prebuilt Image with local Code
+### Tools - Option 1 (prefered for Mac and Linux): Prebuilt Image with local Code
 
 There is an image on DockerHub with all required tools. In order to use local IDEs and editors to modify code and configuraton files a Docker volume is used. This option  works only for Mac and Linux.
 
@@ -45,7 +43,7 @@ _Note:_ With the `--rm` option in the docker run command the container is delete
 #### Step 3: Move on with [Verify Access to OpenShift on the IBM Cloud](./1-prereqs.md#verify-access-to-openshift-on-the-ibm-cloud)
 
 
-### Tools - Option 2: Prebuilt Image with Code in Container
+### Tools - Option 2 (prefered for Windows): Prebuilt Image with Code in Container
 
 There is an image on DockerHub with all required tools. This option works for Mac, Linux and Windows. To get started as quickly as possible, use this image.
 
@@ -59,7 +57,8 @@ $ docker run -ti nheidloff/openshift-workshop-tools:v1
 
 ```
 root@3f46c41f7303:/usr/local/bin# cd /
-root@3f46c41f7303:/usr/local/bin# git clone https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git
+root@3f46c41f7303:/usr/local/bin# git clone https://github.com/IBM/openshift-on-ibm-cloud-workshops.git
+root@3f46c41f7303:/usr/local/bin# openshift-on-ibm-cloud-workshops.git
 root@3f46c41f7303:/usr/local/bin# cd openshift-on-ibm-cloud-workshops
 root@3f46c41f7303:/usr/local/bin# ROOT_FOLDER=$(pwd)
 ```
@@ -136,4 +135,4 @@ _Note:_ [Back to lab 4 '1. Build and Save the container image' in 'Step 1'](./4-
 
 ---
 
-__Continue with [Lab 2 - Running the Java Microservice locally](./2-docker.md#lab-2---running-the-java-microservice-locally)__ 
+:star: __Continue with [Lab 2 - Running the Java Microservice locally](./2-docker.md#lab-2---running-the-java-microservice-locally)__ 
