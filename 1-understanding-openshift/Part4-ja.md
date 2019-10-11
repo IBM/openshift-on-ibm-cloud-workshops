@@ -52,36 +52,36 @@ Create a Route（2）を選択し、デフォルトでacceptします。その�
 
 ![OS Deploy 4](images/os_deploy_4.png)
 
-### B. Deploy an application with `oc` from the command line 
+### B. アプリケーションを `oc` コマンドラインを使ってデプロイする
 
-The OpenShift `oc` command line tool includes all the functionality of the Kubernetes native `kubectl` CLI but it has also all the function required for OpenShift specifics, e.g. a `login` command to access the OpenShift cluster.
+OpenShift `oc`コマンドラインツールには、Kubernetesネイティブの` kubectl` CLIのすべての機能が含まれていますが、OpenShiftの仕様に必要なすべての機能も備えています。
 
-### Install the OpenShift `oc` CLI
+### OpenShift `oc` CLIをインストールする
 
-Go back to the IBM Cloud Dashboard and display your OpenShift cluster. If you closed the IBM Cloud Dashboard you can find OpenShift clusters [here](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift).
+IBM Cloudダッシュボードに戻り、OpenShiftクラスターを表示します。 IBM Cloudダッシュボードを閉じた場合でも、OpenShiftクラスターを [こちら](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift) から見つけることができます。
 
-In the "Access" section of your cluster is detailed information about installing the `oc`CLI and and the different methods to get access to your cluster.
+クラスターの「アクセス」セクションには、 `oc`CLIのインストールに関する詳細情報と、クラスターにアクセスするためのさまざまな方法があります。
 
 ![OS Access](images/os_access.png)
 
-### Login to the OpenShift Cluster
+### OpenShift クラスターへログインする
 
-Once `oc` is installed, copy the login command from the OpenShift Web Console and paste it into a command window (shell). It will look similar to this:
+`oc`をインストールしたら、OpenShift Webコンソールからログインコマンドをコピーし、コマンドウィンドウ（シェル）に貼り付けます。 これは次のようになります：
 
 ```
 $ oc login https://c100-e.us-south.containers.cloud.ibm.com:30*** --token=z5cuqxABC-9QdqE1ivXYZ1z_Y6Tghj1qxN-abCWc1Bg
 ```
 
-If login is successfull you will see all the projects on OpenShift that you have access to. 
+ログインに成功すると、OpenShiftでアクセスできるすべてのプロジェクトが表示されます。
 
-Keep the command line open but go back to the OpenShift Web Console.
+コマンドラインは開いたままにして、OpenShift Webコンソールに戻ります。
 
-### Working with the `oc` CLI
+### `oc` CLIでの作業
 
 
-1. Go back to your command line where you used `oc`to logon to your OpenShift cluster.
+1. OpenShiftクラスターにログオンするために `oc`を使用したコマンドラインに戻ります。
 
-2. Switch to the project you created in the Web Console with:
+2. Webコンソールで作成したプロジェクトに切り替えます：
 
 ```
 $ oc project blog
@@ -89,7 +89,7 @@ $ oc project blog
 Now using project "blog" on server "https://c100-e.us-south.containers.cloud.ibm.com:30***".
 ```
 
-3. Display all objects that belong to your project:
+3. プロジェクトに属するすべてのオブジェクトを表示します：
 
 ```
 $ oc get all -o name
@@ -102,7 +102,7 @@ imagestream.image.openshift.io/blog-django-py
 route.route.openshift.io/blog-django-py
 ```
 
-4. Display all objects that are labeled with your app name, the list should be the same as before:
+4. アプリ名でラベル付けされたすべてのオブジェクトを表示します。リストは以前と同じである必要があります：
 
 ```
 $ oc get all -l app=blog-django-py -o name
@@ -115,7 +115,7 @@ imagestream.image.openshift.io/blog-django-py
 route.route.openshift.io/blog-django-py
 ```
 
-5. Delete them with:
+5. 削除するには以下のように行います：
 
 ```
 $ oc delete all -l app=blog-django-py -o name
@@ -128,11 +128,11 @@ imagestream.image.openshift.io/blog-django-py
 route.route.openshift.io/blog-django-py
 ```
 
-   If you go back to the Web Console you should see that it updated the Overview which now should be empty again.
+   Webコンソールに戻ると、概要が更新され、空になっているはずです。
 
-### Deploy an application from the command line
+### コマンドラインからアプリケーションをデプロイする
 
-1. Check if the image is available:
+1. イメージファイルが利用可能かどうかを確認します：
 
 ```
 $ oc new-app --search openshiftkatacoda/blog-django-py
@@ -145,7 +145,7 @@ openshiftkatacoda/blog-django-py
 
 ```
 
-2. Deploy the image as an application:
+2. イメージをアプリケーションとしてデプロイします：
 
 ```
 $ oc new-app openshiftkatacoda/blog-django-py
@@ -173,7 +173,7 @@ $ oc new-app openshiftkatacoda/blog-django-py
     Run 'oc status' to view your app.
 ```
 
-3. Check the status of your deployment:
+3. デプロイのステータスを確認します：
 
 ```
 $ oc status --suggest
@@ -194,7 +194,7 @@ Info:
 
 The --suggest options even gives you infos on things that are missing in your configuration.
 
-4. Your application needs a Route to expose it externally:
+4. アプリケーションには、外部に公開するためのルートが必要です：
 
 ```
 $ oc expose service/blog-django-py
@@ -202,7 +202,7 @@ $ oc expose service/blog-django-py
 route.route.openshift.io/blog-django-py exposed
 ```
 
-5. Display the URL of the Route:
+5. ルートのURLを表示：
 
 ```
 $ oc get route/blog-django-py
@@ -211,26 +211,26 @@ NAME             HOST/PORT                                                      
 blog-django-py   blog-django-py-blog.harald-uebele-openshift-5290c8c8e5797924dc1ad5d1bcdb37c0-0001.us-south.containers.appdomain.cloud             blog-django-py   8080-tcp                 None
 ```
 
-You can see the very long URL. If you want, copy it and open it in your browser.
+非常に長いURLが確認できます。 必要に応じて、コピーしてブラウザで開きます。
 
-6. Cleanup. This deletes everything including your project!
-   This command takes a while to complete.
+6. Cleanup。これにより、プロジェクトを含むすべてが削除されます！
+   このコマンドの完了には時間がかかります。
 
 ```
 $ oc delete project blog
 
 project.project.openshift.io "blog" deleted
 ```
-You can also delete a complete project from the Web Console.
+Webコンソールからプロジェクト全体を削除することもできます。
 
 ---
 
 
-Congratulations! You have completed this workshop!  
+おめでとうございます！ このワークショップを完了しました！
 
 
 
-__Continue with the second workshop__ in this series: "[Deploying Java Microservices to OpenShift on IBM Cloud](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/tree/master/2-deploying-to-openshift#deploying-java-microservices-to-openshift-on-ibm-cloud)".
+__次のワークショップはこちら__ : "[Deploying Java Microservices to OpenShift on IBM Cloud](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/tree/master/2-deploying-to-openshift#deploying-java-microservices-to-openshift-on-ibm-cloud)".
 
 
-__Back to the [overview](../../../../openshift-on-ibm-cloud-workshops#openshift-on-ibm-cloud-workshops)__
+__[概要](../../../../openshift-on-ibm-cloud-workshops#openshift-on-ibm-cloud-workshops) へ戻る__
