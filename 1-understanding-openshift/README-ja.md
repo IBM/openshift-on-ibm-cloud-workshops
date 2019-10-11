@@ -1,3 +1,5 @@
+[See this in English](./README.md)
+
 # Understanding OpenShift
 
 「プレーンな」Kubernetesのみを使用している場合、OpenShift Webコンソール（ダッシュボード）を初めて表示するときは少し驚くかもしれません。 慣れるには少し時間がかかりますが、これは開発者と管理者向けの非常によく設計されたツールであることがわかります。 OpenShiftコマンドラインツールである `oc`についても同様です。 これには、 `kubectl` CLIのすべての機能が含まれ、OpenShiftの特別な機能が追加されます。
