@@ -74,7 +74,7 @@ EXPOSE 3000
 
 _Note_: Here are some additional instructions based on your choosen setup.
 
-### [Tools - Option 1 (prefered for Mac and Linux)]](./1-prereqs.md#tools---option-1-prebuilt-image-with-local-code)
+### [Tools - Option 1 (prefered for Mac and Linux)](./1-prereqs.md#tools---option-1-prebuilt-image-with-local-code)
 
 Step |  |
 --- | --- 
