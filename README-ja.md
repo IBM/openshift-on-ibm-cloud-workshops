@@ -1,3 +1,5 @@
+[See this in English](./README.md)
+
 # OpenShift on IBM Cloud ワークショップ
 
 ![logo](images/os_logo.png)
