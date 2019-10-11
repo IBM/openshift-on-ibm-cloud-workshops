@@ -1,3 +1,5 @@
+[日本語はこちら - Japanese version](./Part2-ja.md)
+
 ## Part 2: Create an OpenShift cluster on the IBM Cloud
 
 To create your own OpenShift Cluster on IBM Cloud follow these steps. 
