@@ -116,7 +116,7 @@ http://localhost:3000/openapi/ui/
 ![Swagger UI](images/authors-swagger-ui.png)
 
 
-#### Step 3: If you can not open a browser, just use this curl command to access the microservice on you local machine.
+#### Step 3: If you can not open a browser, just use this curl command to access the microservice on your local machine.
 
 ```
   $ curl -X GET "http://localhost:3000/api/v1/getauthor?name=Niklas%20Heidloff" -H "accept: application/json"
