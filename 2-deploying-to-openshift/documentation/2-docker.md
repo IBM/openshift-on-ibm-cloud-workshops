@@ -1,5 +1,7 @@
 # Lab 2 - Running the Java Microservice locally
 
+_Note:_ If you are not a developer, you can directly jump into [lab 4 - Deploying to OpenShift](4-openshift.md).
+
 In this workshop we create a microservice that has been implemented with Java EE and [Eclipse MicroProfile](https://microprofile.io/).
 
 The microservice has been kept as simple as possible, so that it can be used as a starting point for other microservices. It contains the following functionality:
@@ -78,7 +80,7 @@ _Note_: Here are some additional instructions based on your choosen setup.
 
 Step |  |
 --- | --- 
-1 | You need to open a new local terminal |
+1 | You need to open a **new** local terminal |
 2 |  Navigate to your local project folder ```openshift-on-ibm-cloud-workshops/2-deploying-to-openshift```
 3 | [Move on with the lab](./2-docker.md#step-1-to-test-and-see-how-the-code-works-you-can-run-the-code-locally-as-a-docker-container).
 
@@ -87,7 +89,8 @@ Step |  |
 
 Step |  |
 --- | --- 
-1 | You need to download or clone the project onto your local PC, first. ```$ git clone https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git ``` 
+0 | Open a **new** local terminal session
+1 | You need to download or clone the project onto your local PC, first. ```$ git clone https://github.com/IBM/openshift-on-ibm-cloud-workshops.git ``` 
 2 |  Open a new terminal and navigate tp your local project folder ```openshift-on-ibm-cloud-workshops/2-deploying-to-openshift```
 3 | [Move on with the lab](./2-docker.md#step-1-to-test-and-see-how-the-code-works-you-can-run-the-code-locally-as-a-docker-container).
 
@@ -98,6 +101,7 @@ Step |  |
 #### Step 1: To test and see how the code works you can run the code locally as a Docker container
 
 ```
+$ ROOT_FOLDER=$(pwd)
 $ cd $ROOT_FOLDER/2-deploying-to-openshift
 $ docker build -t authors .
 $ docker run -i --rm -p 3000:3000 authors
@@ -112,6 +116,11 @@ http://localhost:3000/openapi/ui/
 ![Swagger UI](images/authors-swagger-ui.png)
 
 
+#### Step 3: If you can not open a browser, just use this curl command to access the microservice on you local machine.
+
+```
+  $ curl -X GET "http://localhost:3000/api/v1/getauthor?name=Niklas%20Heidloff" -H "accept: application/json"
+```
 ---
 
 :star: __Continue with [Lab 3 - Understanding the Java Implementation](./3-java.md#lab-3---understanding-the-java-implementation)__ or if you are not a developer you can __move on with [Lab 4 - Deploying to OpenShift](./4-openshift.md#lab-4---deploying-to-openshift)__ 

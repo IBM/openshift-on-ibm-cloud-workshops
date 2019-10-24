@@ -24,7 +24,7 @@ There is an image on DockerHub with all required tools. In order to use local ID
 #### Step 1: Run these commands in a terminal
 
 ```
-$ git clone https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git
+$ git clone https://github.com/IBM/openshift-on-ibm-cloud-workshops.git
 $ cd openshift-on-ibm-cloud-workshops
 $ ROOT_FOLDER=$(pwd)
 $ docker run -v $ROOT_FOLDER/:/cloud-native-starter -it --rm nheidloff/openshift-workshop-tools:v1
@@ -58,12 +58,11 @@ $ docker run -ti nheidloff/openshift-workshop-tools:v1
 ```
 root@3f46c41f7303:/usr/local/bin# cd /
 root@3f46c41f7303:/usr/local/bin# git clone https://github.com/IBM/openshift-on-ibm-cloud-workshops.git
-root@3f46c41f7303:/usr/local/bin# openshift-on-ibm-cloud-workshops.git
 root@3f46c41f7303:/usr/local/bin# cd openshift-on-ibm-cloud-workshops
 root@3f46c41f7303:/usr/local/bin# ROOT_FOLDER=$(pwd)
 ```
 
-_Note:_ If you using Windows you also need to download or clone the project to your local workstation for the upcoming Docker and Java lab, because you can't use Docker in the 'openshift-workshop-tools' Docker image.
+_Note:_ If you using Windows you also need to **download or clone the project to your local workstation** for the upcoming Docker and Java lab, because you can't use Docker in the 'openshift-workshop-tools' Docker image.
 
 #### Step 3: Move on with [Verify Access to OpenShift on the IBM Cloud](./1-prereqs.md#verify-access-to-openshift-on-the-ibm-cloud)
 
@@ -130,9 +129,11 @@ $ oc get istag
 ```
 $ kubectl get pods
 ```
-
-_Note:_ [Back to lab 4 '1. Build and Save the container image' in 'Step 1'](./4-openshift.md#step-1-create-an-open-shift-project)
-
 ---
 
 :star: __Continue with [Lab 2 - Running the Java Microservice locally](./2-docker.md#lab-2---running-the-java-microservice-locally)__ 
+
+---
+
+_Note:_ You can jump back to lab 4 '1. Build and Save the container image' in ['Step 1'](./4-openshift.md#step-1-create-an-open-shift-project), if you want.
+

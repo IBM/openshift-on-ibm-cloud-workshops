@@ -1,5 +1,6 @@
 # Lab 3 - Understanding the Java Implementation
 
+_Note:_ If you are not a developer, you can directly jump into [lab 4 - Deploying to OpenShift](4-openshift.md).
 
 ## 1. Usage of Maven for Java
 
@@ -247,21 +248,23 @@ This HealthEndpoint is configured in the Kubernetes deployment yaml. In the foll
 ## Change the REST API Data and run the Container locally
 
 _Note_: Here are some additional instructions based on your choosen setup.
+In case you have skipped lab 2 you have to follow this steps. Otherwise please work in your local terminal session.
 
-### [Tools - Option 1 (prefered for Mac and Linux)]](./1-prereqs.md#tools---option-1-prebuilt-image-with-local-code)
+### [Tools - Option 1 (prefered for Mac and Linux)](./1-prereqs.md#tools---option-1-prebuilt-image-with-local-code)
 
 Step |  |
 --- | --- 
-1 | You need to open a new local terminal |
-2 |  Navigate to your local project folder ```openshift-on-ibm-cloud-workshops/2-deploying-to-openshift```
+1 | You need to open a **new** local terminal session |
+2 | Navigate to your local project folder ```openshift-on-ibm-cloud-workshops/2-deploying-to-openshift```
 3 | [Move on with the lab](./3-java.md#step-1-in-getauthorjava-change-the-returned-author-name-to-something-else-like-my-name).
 
 
-### [Tools - Option 2 (prefered for Windows)]](./1-prereqs.md#tools---option-2-prebuilt-image-with-code-in-container)
+### [Tools - Option 2 (prefered for Windows)](./1-prereqs.md#tools---option-2-prebuilt-image-with-code-in-container)
 
 Step |  |
 --- | --- 
-1 | You need to download or clone the project onto your local PC, first. ```$ git clone https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git ``` 
+0 | Open a **new** local terminal session
+1 | You need to download or clone the project onto your local PC, first. ```$ git clone https://github.com/IBM/openshift-on-ibm-cloud-workshops.git ``` 
 2 |  Open a new terminal and navigate tp your local project folder ```openshift-on-ibm-cloud-workshops/2-deploying-to-openshift```
 3 | [Move on with the lab](./3-java.md#step-1-in-getauthorjava-change-the-returned-author-name-to-something-else-like-my-name).
 
@@ -287,6 +290,7 @@ public Response getAuthor(@Parameter(
 ### Step 2: To test and see how the code works you can run the code locally as a Docker container:
 
 ```
+$ ROOT_FOLDER=$(pwd)
 $ cd $ROOT_FOLDER/2-deploying-to-openshift
 $ docker build -t authors .
 $ docker run -i --rm -p 3000:3000 authors
