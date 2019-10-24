@@ -83,7 +83,7 @@ This approach works only for Mac and Linux (see this [article](https://suedbroec
 #### Step 2: Get the code:
 
 ```
-$ git clone https://github.com/nheidloff/openshift-on-ibm-cloud-workshops.git
+$ git clone https://github.com/IBM/openshift-on-ibm-cloud-workshops.git
 $ cd openshift-on-ibm-cloud-workshops
 $ ROOT_FOLDER=$(pwd)
 ```
