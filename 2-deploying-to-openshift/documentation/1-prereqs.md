@@ -15,7 +15,7 @@ In order to complete the workshop, you need to install [Docker Desktop](https://
 
 Several other tools are needed. There are different options to install these tools.
 
->The **developer labs** 2 and 3 will only run with your local docker installation and therefor you will be guided later to create a additional local terminal sessions. 
+>The **developer labs** 2 and 3 will only run with your local docker installation and therefor you will be guided later to create an additional local terminal session. 
 
 > The following tool options are only relevant from lab when we going to use the OpenShift oc CLI to deploy the microservice to OpenShift.
 
