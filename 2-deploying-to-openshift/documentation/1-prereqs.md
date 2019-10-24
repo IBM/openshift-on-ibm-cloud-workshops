@@ -1,5 +1,9 @@
 ## Access to the IBM Cloud
 
+> Installing prerequisites: [video (2:58 mins)](https://youtu.be/c5CtqijWXL4) and [video including windows (4:11 mins)](https://youtu.be/53XccO3NNn8)
+
+## Overview 
+
 An [IBM Cloud account](https://cloud.ibm.com/registration) is needed. 
 
 Note: In order to run this workshop an IBM Cloud Lite account is not sufficient. This tutorial may incur costs. Use the [Pricing Calculator](https://cloud.ibm.com/estimator/review) to generate a cost estimate based on your projected usage.

@@ -1,6 +1,10 @@
 # Lab 2 - Running the Java Microservice locally
 
-_Note:_ If you are not a developer, you can directly jump into [lab 4 - Deploying to OpenShift](4-openshift.md).
+_Note:_ If you are not a developer java, you can directly jump into [lab 4 - Deploying to OpenShift](4-openshift.md).
+
+> Running the Java microservice locally: [video (3:51 mins)](https://youtu.be/4dT2jg6wGF4)
+
+## Overview
 
 In this workshop we create a microservice that has been implemented with Java EE and [Eclipse MicroProfile](https://microprofile.io/).
 

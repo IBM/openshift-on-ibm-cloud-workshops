@@ -1,5 +1,9 @@
 # Lab 7 - Source to Image Deployments
 
+> Source to Image deployments: [video (7:06 mins)](https://youtu.be/p6lVc6MDrcM)
+
+## Overview
+
 OpenShift allows developers to deploy applications without having to understand Docker and Kubernetes in depth. Similarily to the Cloud Foundry 'cf push' experience, developers can deploy applications easily via terminal commands and without having to build Docker images. In order to do this [Source-to-Image](https://github.com/openshift/source-to-image) is used.
 
 Source-to-Image (S2I) is a toolkit for building reproducible container images from source code. S2I produces ready-to-run images by injecting source code into a container image.
