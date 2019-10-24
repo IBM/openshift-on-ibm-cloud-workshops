@@ -1,6 +1,6 @@
 # Lab 3 - Understanding the Java Implementation
 
-_Note:_ If you are not a java developer, you can directly jump into [lab 4 - Deploying to OpenShift](4-openshift.md).
+_Note:_ If you want to examine the java developer task you can do that lab, if not, just directly jump into [lab 4 - Deploying to OpenShift](4-openshift.md).
 
 > Understanding the Java implementation:[video (9:09 mins)](https://www.youtube.com/watch?v=ugpYSPV9jAs)
 

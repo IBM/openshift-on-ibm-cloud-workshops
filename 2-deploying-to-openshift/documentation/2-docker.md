@@ -1,6 +1,6 @@
 # Lab 2 - Running the Java Microservice locally
 
-_Note:_ If you are not a developer java, you can directly jump into [lab 4 - Deploying to OpenShift](4-openshift.md).
+_Note:_ If you want to examine the java developer task you can do that lab, if not, just directly jump into [lab 4 - Deploying to OpenShift](4-openshift.md).
 
 > Running the Java microservice locally: [video (3:51 mins)](https://youtu.be/4dT2jg6wGF4)
 
