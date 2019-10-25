@@ -13,7 +13,7 @@
 このワークショップは7つのLabです。 ワークショップを完了するには、60〜90分かかります。
 
 0. 概要: [動画 (1:41 mins)](https://youtu.be/8361HGR_O_s)
-1. 前提条件: [lab](documentation/1-prereqs.md) and [動画 (2:58 mins)](https://youtu.be/c5CtqijWXL4)
+1. 前提条件: [lab](documentation/1-prereqs.md) and [動画 (2:58 mins)](https://youtu.be/c5CtqijWXL4) and[Windowsを含む動画](https://youtu.be/53XccO3NNn8)
 2. Javaマイクロサービスをローカルで実行する: [lab](documentation/2-docker.md) and [動画 (3:51 mins)](https://youtu.be/4dT2jg6wGF4)
 3. Javaの実装を理解する: [lab](documentation/3-java.md) and [動画 (9:09 mins)](https://www.youtube.com/watch?v=ugpYSPV9jAs)
 4. 'oc' CLIを使ってOpenShiftへデプロイする: [lab](documentation/4-openshift.md) and [動画 (14:32 mins)](https://youtu.be/4MDfalo2Fg0)
