@@ -40,10 +40,12 @@ $ docker run -v $ROOT_FOLDER/:/cloud-native-starter -it --rm nheidloff/openshift
 
 #### Step 2: Inside your running Docker image you can access your the local project 
 
+You should see the prompt like this `root@3f46c41f7303:/usr/local/bin#`, now run the following instructions:
+
 ```
-root@3f46c41f7303:/usr/local/bin# cd /cloud-native-starter/
-root@3f46c41f7303:/cloud-native-starter# ls
-root@3f46c41f7303:/cloud-native-starter# ROOT_FOLDER=$(pwd)
+$ cd /cloud-native-starter/
+$ ls
+$ ROOT_FOLDER=$(pwd)
 ```
 
 _Note:_ With the `--rm` option in the docker run command the container is deleted once you exit. This is intended.
@@ -63,11 +65,13 @@ $ docker run -ti nheidloff/openshift-workshop-tools:v1
 
 #### Step 2: After the container has been started, run these commands inside your running Docker image to get the lastest version of the workshop:
 
+You should see the prompt like this `root@3f46c41f7303:/usr/local/bin#`, now run the following instructions:
+
 ```
-root@3f46c41f7303:/usr/local/bin# cd /
-root@3f46c41f7303:/usr/local/bin# git clone https://github.com/IBM/openshift-on-ibm-cloud-workshops.git
-root@3f46c41f7303:/usr/local/bin# cd openshift-on-ibm-cloud-workshops
-root@3f46c41f7303:/usr/local/bin# ROOT_FOLDER=$(pwd)
+$ cd /
+$ git clone https://github.com/IBM/openshift-on-ibm-cloud-workshops.git
+$ cd openshift-on-ibm-cloud-workshops
+$ ROOT_FOLDER=$(pwd)
 ```
 
 _Note:_ If you using Windows you also need to **download or clone the project to your local workstation** for the upcoming Docker and Java lab, because you can't use Docker in the 'openshift-workshop-tools' Docker image.
