@@ -25,7 +25,7 @@ $ oc new-project deployment-from-github
 Create a new application and refer to a subdirectory in the GitHub repo.
 
 ```
-$ oc new-app https://github.com/nheidloff/openshift-on-ibm-cloud-workshops --context-dir=2-deploying-to-openshift
+$ oc new-app https://github.com/IBM/openshift-on-ibm-cloud-workshops --context-dir=2-deploying-to-openshift
 ```
 
 As result you'll get this output.
