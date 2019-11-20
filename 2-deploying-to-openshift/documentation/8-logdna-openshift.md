@@ -2,7 +2,7 @@
 
 A cloud native application based on microservices contains many parts that create logs. A logging service that is able to collect all distributed logs in one place is a highly recommended tool. There are many logging solutions that you can install directly into your Kubernetes or OpenShift cluster. But then you have an additional application that needs to be maintained and one that needs persistent storage as well to store logs for a period of time. 
 
-IBM Cloud offers "Logging as a Service" in the form of "IBM Log Analysis with [LogDNA](https://logdna.com/)". It offers features to filter, search, and tail log data, define alerts, and design custom views to monitor application and system logs. You can test "IBM Log Analysis with LogDNA" for free with somewhat limited capabilities and we will show you in this lab how to connect your OpenShift cluster to an instance of it.
+IBM Cloud offers "Logging as a Service" in the form of [IBM Log Analysis with LogDNA](https://cloud.ibm.com/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started). It offers features to filter, search, and tail log data, define alerts, and design custom views to monitor application and system logs. You can test "IBM Log Analysis with LogDNA" for free with somewhat limited capabilities and we will show you in this lab how to connect your OpenShift cluster to an instance of it.
 
 ## Step 1 - Create a LogDNA service
 
@@ -20,7 +20,11 @@ Use the [Tools](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/bl
    ```
    $ ibmcloud resource service-instance-create logdna-openshift logdna lite <region>
    ```
-   Possible regions are kr-seo (= Korea), us-south (= US), au-syd (= Australia), eu-de (= Germany), eu-gb (= UK), jp-tok (= Japan). Use a region close to your OpenShift cluster.
+   Possible regions are kr-seo (= Korea), us-south (= US), au-syd (= Australia), eu-de (= Germany), eu-gb (= UK), jp-tok (= Japan). Use a region close to your OpenShift cluster, e.g. Germany:
+
+   ```
+   $ ibmcloud resource service-instance-create logdna-openshift logdna lite eu-de
+   ```
 
    Note the "ID:" line in the output, e.g. 
    
@@ -33,8 +37,14 @@ Use the [Tools](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/bl
    ```
    $ ibmcloud resource service-key-create logdna-openshift-key Administrator --instance-id <logdna_instance_ID>
    ```
-   
-   Note the "ingestion_key" line in the output, e.g.
+
+   Using our example above (including the two colons at the end):
+
+   ```
+   $ ibmcloud resource service-key-create logdna-openshift-key Administrator --instance-id crn:v1:bluemix:public:logdna:eu-de:a/d703c429f50c735762f10996893f3189:86763bbd-0c29-4f65-96f8-d9db394e8e86::
+   ```
+
+   You will need the "ingestion_key" line from the output in the nex step, e.g.
 
    ```
    a1ffd5dda2fabb87a7804943ef85de54
@@ -59,7 +69,8 @@ Use the [Tools](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/bl
    $  oc create secret generic logdna-agent-key --from-literal=logdna-agent-key=<logDNA_ingestion_key>
    ```
 
-   This is the ingestion_key from "Create an Ingestion key"
+   This is the ingestion_key from "Create an Ingestion key" (previous step).
+
 
 4. Create a LogDNA daemon set
 
@@ -106,7 +117,7 @@ Use the [Tools](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/bl
       ```
     Save the file (nano: Ctl-o, Ctl-x)
 
-These are the relevant parts, keep the YAML identations!
+These are the relevant parts, watch out for the YAML indentations!
 
 ```
 apiVersion: extensions/v1beta1
