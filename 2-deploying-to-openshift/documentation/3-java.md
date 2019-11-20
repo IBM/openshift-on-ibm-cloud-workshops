@@ -2,7 +2,9 @@
 
 _Note:_ If you want to examine the java developer task you can do that lab, if not, just directly jump into [lab 4 - Deploying to OpenShift](4-openshift.md).
 
-> Understanding the Java implementation:[video (9:09 mins)](https://www.youtube.com/watch?v=ugpYSPV9jAs)
+> Understanding the Java implementation:[ lab video (9:09 mins)](https://www.youtube.com/watch?v=ugpYSPV9jAs) 
+
+> optional video(18 mins) ["create one Mircroservice with Java, OpenLiberty and MicroProfile"](https://www.youtube.com/watch?v=jm0978rqTOc)
 
 ## 1. Usage of Maven for Java
 
