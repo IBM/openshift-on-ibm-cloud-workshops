@@ -125,4 +125,5 @@ To test the deployment, append '/openapi/ui' to the URL in the output of 'oc get
 
 ---
 
-:star:  Awesome you did it!
+:star: __Continue with [Distributed logging with LogDNA and OpenShift on IBM Cloud](8-logdna-openshift.md)__
+
