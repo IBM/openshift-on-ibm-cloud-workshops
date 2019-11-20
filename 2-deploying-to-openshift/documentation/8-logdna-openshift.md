@@ -50,7 +50,7 @@ Use the [Tools](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/bl
    a1ffd5dda2fabb87a7804943ef85de54
    ```
 
-## Step 2 - Configure the OpenShift clsuter for LogDNA
+## Step 2 - Configure the OpenShift cluster for LogDNA
 
 1. Log in to your OpenShift cluster with `oc`, instructions are [here](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/2-deploying-to-openshift/documentation/1-prereqs.md#step-2-get-our-access-token-for-the-oc-cli)  
 
@@ -78,8 +78,7 @@ Use the [Tools](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/bl
    $ oc create -f https://raw.githubusercontent.com/logdna/logdna-agent/master/logdna-agent-ds-os.yaml
    ```
 
-5. Edit the daemon set.
-   Download a local copy of the configuration, modify, then reapply
+5. Edit the daemon set. Download a local copy of the configuration, modify, then reapply:
 
    ```
    $ oc get ds logdna-agent -n logdna-agent -o yaml > logdna-ds.yaml
@@ -165,11 +164,13 @@ spec:
    $ oc get pods
    ```
 
-   This should show a LogDNA pod, to make sure that the changed configuration is really applied, delete this pod with
+   This should show a LogDNA pod. To make sure that the changed configuration is really applied, delete this pod with
 
    ```
    $ oc delete pod <logdna-agent-123456>
    ```
+
+   It will be recreated automatically.
 
 ## Step 3 - Use LogDNA
 
