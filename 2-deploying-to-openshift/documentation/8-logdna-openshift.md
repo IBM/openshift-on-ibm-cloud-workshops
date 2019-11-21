@@ -38,13 +38,14 @@ Use the [Tools](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/bl
    $ ibmcloud resource service-key-create logdna-openshift-key Administrator --instance-id <logdna_instance_ID>
    ```
 
-   Using our example above (including the two colons at the end):
+   Using our example above (including the two colons at the end) this command looks like this:
 
    ```
    $ ibmcloud resource service-key-create logdna-openshift-key Administrator --instance-id crn:v1:bluemix:public:logdna:eu-de:a/d703c429f50c735762f10996893f3189:86763bbd-0c29-4f65-96f8-d9db394e8e86::
    ```
-
-   You will need the "ingestion_key" line from the output in the nex step, e.g.
+   Result:
+   ![IngestionKey](images/ingestion_key.png)
+   You will need the "ingestion_key" line from the output in the next step, e.g.
 
    ```
    a1ffd5dda2fabb87a7804943ef85de54
