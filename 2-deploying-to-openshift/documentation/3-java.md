@@ -4,7 +4,7 @@ _Note:_ If you want to examine the java developer task you can do that lab, if n
 
 > Understanding the Java implementation:[ lab video (9:09 mins)](https://www.youtube.com/watch?v=ugpYSPV9jAs) 
 
-> optional video(18 mins) ["create one Mircroservice with Java, OpenLiberty and MicroProfile"](https://www.youtube.com/watch?v=jm0978rqTOc)
+> Additional information: _'create one Mircroservice with Java, OpenLiberty and MicroProfile'_[video(18 mins)](https://www.youtube.com/watch?v=jm0978rqTOc)
 
 ## 1. Usage of Maven for Java
 
