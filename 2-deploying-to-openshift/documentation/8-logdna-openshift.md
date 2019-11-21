@@ -181,6 +181,19 @@ spec:
 
 ![LogDNA](images/logdna.png)
 
+   This will open the LogDNA dashboard. 
+
+5. From the previous labs you should have an instance of the authors service running. Open the OpenAPI explorer for this instance (URL ending on openapi/ui) and execute the API several times.
+
+6. Refresh your browser tab with the LogDNA dashboard, open the  "All Apps" pulldown, and select "authors":
+
+![Filter Apps](images/logdna-filter-apps.png)
+
+  Note: If you don't see "authors" execute the REST API a few times more, then refresh the browser tab of the LofDNA dashboard again.
+
+7. You should now see messages from the authors service alone:
+
+![Authors LogDNA](images/logdna-authors.png)
 
 
 :star: __Congratulation! You completed the workshop!__
