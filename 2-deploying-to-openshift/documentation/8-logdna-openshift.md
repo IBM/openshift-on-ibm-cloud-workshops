@@ -184,17 +184,25 @@ spec:
 
    This will open the LogDNA dashboard. 
 
-5. From the previous labs you should have an instance of the authors service running. Open the OpenAPI explorer for this instance (URL ending on openapi/ui) and execute the API several times.
+5. In Lab 4 "[Deploying to OpenShift](4-openshift.md)" you have deployed an instance of the authors service. We will check LogDNA for output from this instance. Execute the following commands:
+
+   ```
+   $ oc project cloud-native-starter
+   $ watch curl -X GET "http://$(oc get route authors -o jsonpath={.spec.host})/api/v1/getauthor?name=Niklas%20Heidloff" -H "accept: application/json"
+   ```
+   
+The last command will constantly (every 2 seconds) request author information.
 
 6. Refresh your browser tab with the LogDNA dashboard, open the  "All Apps" pulldown, and select "authors":
 
 ![Filter Apps](images/logdna-filter-apps.png)
 
-  Note: If you don't see "authors" execute the REST API a few times more, then refresh the browser tab of the LofDNA dashboard again.
+  Note: If you don't see "authors" wait a little longer (more curls), then refresh the browser tab of the LogDNA dashboard again.
 
 7. You should now see messages from the authors service alone:
 
 ![Authors LogDNA](images/logdna-authors.png)
 
+8. Terminate the command from step 5 ("watch curl ...")
 
 :star: __Congratulation! You completed the workshop!__
