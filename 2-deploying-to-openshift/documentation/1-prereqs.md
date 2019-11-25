@@ -19,9 +19,9 @@ In order to complete the workshop, you need to install [Docker Desktop](https://
 
 Several other tools are needed. There are different options to install these tools.
 
->In the **java developer labs** 2 and 3 you need to your local docker installation and therefor you will be guided later to create an additional local terminal session. 
+>In the **Java developer labs** 2 and 3 you need a local docker installation and therefore you will be guided later to create an additional local terminal session. 
 
-> The following tool options are only relevant from lab 4, when we going to use the OpenShift **oc** CLI to deploy the microservice to OpenShift.
+> The following tool options are only relevant from lab 4 on when we are going to use the OpenShift **oc** and the **ibmcloud** CLI to deploy the microservice to OpenShift.
 
 ---
 
