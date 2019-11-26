@@ -4,52 +4,55 @@ A cloud native application based on microservices contains many parts that creat
 
 IBM Cloud offers "Logging as a Service" in the form of [IBM Log Analysis with LogDNA](https://cloud.ibm.com/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started). It offers features to filter, search, and tail log data, define alerts, and design custom views to monitor application and system logs. You can test "IBM Log Analysis with LogDNA" for free with somewhat limited capabilities and we will show you in this lab how to connect your OpenShift cluster to an instance of it.
 
+Official documentation for setting up the LogDNA agent for an OpenShift cluster is [here](https://cloud.ibm.com/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-config_agent_os_cluster).
+
+For the following instructions use the [Tools](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/2-deploying-to-openshift/documentation/1-prereqs.md#tools) environment created in Lab 1 - Prerequisites.
+
 ## Step 1 - Create a LogDNA service
 
-Use the [Tools](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/2-deploying-to-openshift/documentation/1-prereqs.md#tools) environment created in Lab 1 - Prerequisites.
+1. In your browser log in to the IBM Cloud dashboard
 
-1. Log in to the IBM Cloud
+   * Make sure you are using your own account.
 
-   ```
-   $ ibmcloud login -u <your_user>
-   $ ibmcloud target -g Default
-   ```
+   * From the "burger menu" select "Observability"
 
-2. Create an IBM Log Analysis with LogDNA instance
+   ![ldna-1](images/ldna-1.png)
 
-   ```
-   $ ibmcloud resource service-instance-create logdna-openshift logdna lite <region>
-   ```
-   Possible regions are kr-seo (= Korea), us-south (= US), au-syd (= Australia), eu-de (= Germany), eu-gb (= UK), jp-tok (= Japan). Use a region close to your OpenShift cluster, e.g. Germany:
 
-   ```
-   $ ibmcloud resource service-instance-create logdna-openshift logdna lite eu-de
-   ```
 
-   Note the "ID:" line in the output, e.g. 
+2. Create an "IBM Log Analysis with LogDNA" instance
+
+   * Select "Logging" on the left
    
-   ```
-   crn:v1:bluemix:public:logdna:eu-de:a/d703c429f50c735762f10996893f3189:86763bbd-0c29-4f65-96f8-d9db394e8e86::
-   ```
+   * Click "Create a logging instance"
 
-3. Create an "Ingestion" key
+   ![ldna-2](images/ldna-2.png)
 
-   ```
-   $ ibmcloud resource service-key-create logdna-openshift-key Administrator --instance-id <logdna_instance_ID>
-   ```
+   * Leave the default name or choose your own ("logdna-openshift")
 
-   Using our example above (including the two colons at the end) this command looks like this:
+   * Select a region close to your OpenShift cluster
 
-   ```
-   $ ibmcloud resource service-key-create logdna-openshift-key Administrator --instance-id crn:v1:bluemix:public:logdna:eu-de:a/d703c429f50c735762f10996893f3189:86763bbd-0c29-4f65-96f8-d9db394e8e86::
-   ```
-   Result:
-   ![IngestionKey](images/ingestion_key.png)
-   You will need the "ingestion_key" line from the output in the next step, e.g.
+   * Leave the "Default" resource group
 
-   ```
-   a1ffd5dda2fabb87a7804943ef85de54
-   ```
+   * Scroll down to the Pricing Plans and make sure that "Lite" is selected but take note of the other plans; those are the full featured plans. But you need a paid account to use those. We will use Lite for this lab.
+
+   * Click "Create".
+
+   ![ldna-3](images/ldna-3.png)
+  
+3. Obtain the Ingestion Key
+
+   This is the key that a LogDNA agent running in your OpenShift cluster needs to write data into your newly created LogDNA instance.
+
+   * In the Observability / Logging view click on the 3 dots on the right side of your newly created LogDNA service.
+
+   * Select "View Key"
+
+   ![ldna-4](images/ldna-4.png)
+
+   * In the "Ingestion Key" dialog, make the key visible, copy it to the clipboard, and save it somewhere. You will need it in Step 2. 
+
+   ![ldna-5](images/ldna-5.png)
 
 ## Step 2 - Configure the OpenShift cluster for LogDNA
 
@@ -58,120 +61,47 @@ Use the [Tools](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/bl
 2. Create an OpenShift project
 
    ```
-   $ oc adm new-project logdna-agent
-   $ oc project logdna-agent
-   $ oc create serviceaccount logdna-agent
-   $ oc adm policy add-scc-to-user privileged -n logdna-agent -z logdna-agent
+   $ oc adm new-project --node-selector='' ibm-observe
+   $ oc create serviceaccount logdna-agent -n ibm-observe
+   $ oc adm policy add-scc-to-user privileged system:serviceaccount:ibm-observe:logdna-agent
    ```
 
 3. Create a Kubernetes secret
 
-   ```
-   $  oc create secret generic logdna-agent-key --from-literal=logdna-agent-key=<logDNA_ingestion_key>
-   ```
-
-   This is the ingestion_key from "Create an Ingestion key" (previous step).
-
-
-4. Create a LogDNA daemon set
+   For the next command you need the LogDNA Ingestion Key you obtained (and saved) in the last step:
 
    ```
-   $ oc create -f https://raw.githubusercontent.com/logdna/logdna-agent/master/logdna-agent-ds-os.yaml
+   $ oc create secret generic logdna-agent-key --from-literal=logdna-agent-key=<Ingestion_Key> -n ibm-observe
    ```
 
-5. Edit the daemon set. Download a local copy of the configuration, modify, then reapply:
+4. Create a LogDNA Agent daemon set
+
+   A Kubernetes daemon set will deploy the LogDNA Agent on every worker node of your cluster.
+
+   You need to edit the file [logdna-agent-ds-os.yaml](../logdna-agent-ds-os.yaml). There is a copy in the root of this project (2-deploying-to-openshift). Edit the values of LDAPIHOST and LDLOGHOST to point to the region where your LogDNA instance is located, e.g.
+    au-syd = Sydney   
+    jp-tok = Tokyo   
+    kr-seo = Seoul   
+    eu-de = Frankfurt   
+    eu-gb = London   
+    us-south = Dallas   
+
+   ![ldna-os-2](images/ldna-os-2.png)
+
+   Save the file. Then create the daemon set:
 
    ```
-   $ oc get ds logdna-agent -n logdna-agent -o yaml > logdna-ds.yaml
+   $ oc create -f logdna-agent-ds-os.yaml -n ibm-observe
    ```
-
-   In the tools container, you can edit with nano:
-
-   ```
-   $ nano logdna-ds.yaml
-   ```
-
-   These are the required changes:
-   1. In the spec.spec.containers.env section:
-      - Add the LDAPIHOST and LDLOGHOST variables
-      ```
-      - name: LDAPIHOST
-        value: api.<region>.logging.cloud.ibm.com
-      - name: LDLOGHOST
-        value: logs.<region>.logging.cloud.ibm.com
-        ```
-      Specify the region of your LogDNA instance
-      - Change USEJOURNALD to 'stream'
-   2. In the spec.spec.containers.volumemounts section:
-      Add the /var/data/kubeletlogs entry  
-      ```
-       - mountPath: /var/data/kubeletlogs
-         name: vardatakubeletlogs
-      ```
-   3. In the spec.spec.volumes section:
-      Add the /var/data/kubeletlogs entry
-      ```
-      - hostPath:
-          path: /var/data/kubeletlogs
-        name: vardatakubeletlogs
-      ```
-    Save the file (nano: Ctl-o, Ctl-x)
-
-These are the relevant parts, watch out for the YAML indentations!
-
-```
-apiVersion: extensions/v1beta1
-kind: DaemonSet
-...
-spec:
-  ...
-    spec:
-      containers:
-      - env:
-        - name: LOGDNA_AGENT_KEY
-          valueFrom:
-            secretKeyRef:
-              key: logdna-agent-key
-              name: logdna-agent-key
-        - name: LDAPIHOST
-          value: api.us-south.logging.cloud.ibm.com
-        - name: LDLOGHOST
-          value: logs.us-south.logging.cloud.ibm.com
-        - name: LOGDNA_PLATFORM
-          value: k8s
-        - name: USEJOURNALD
-          value: stream
-  ...  
-        volumeMounts:
-        - mountPath: /var/data/kubeletlogs
-          name: vardatakubeletlogs
-        - mountPath: /var/log
-          name: varlog
-  ... 
-      volumes:
-      - hostPath:
-          path: /var/data/kubeletlogs
-        name: vardatakubeletlogs
-      - hostPath:
-          path: /var/log
-          type: ""
-        name: varlog
-  ...
-```
-6. Apply the changes
+4. Verify that the LogDNA Agent is deployed
 
    ```
-   $ oc apply -f logdna-ds.yaml
-   $ oc get pods
+   $ oc project ibm-observe
+   $ oc get pods -n ibm-observe
    ```
 
-   This should show a LogDNA pod. To make sure that the changed configuration is really applied, delete this pod with
+   You should see at least one LogDNA pod. The number of pods is equivalent to the number of worker nodes of your cluster.
 
-   ```
-   $ oc delete pod <logdna-agent-123456>
-   ```
-
-   It will be recreated automatically.
 
 ## Step 3 - Use LogDNA
 
