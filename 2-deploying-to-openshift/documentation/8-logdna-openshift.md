@@ -58,7 +58,7 @@ For the following instructions use the [Tools](https://github.com/nheidloff/open
 
 1. Log in to your OpenShift cluster with `oc`, instructions are [here](https://github.com/nheidloff/openshift-on-ibm-cloud-workshops/blob/master/2-deploying-to-openshift/documentation/1-prereqs.md#step-2-get-our-access-token-for-the-oc-cli)  
 
-2. Create an OpenShift project
+2. Create an OpenShift project for LogDNA and adjust permissions
 
    ```
    $ oc adm new-project --node-selector='' ibm-observe
@@ -121,7 +121,7 @@ For the following instructions use the [Tools](https://github.com/nheidloff/open
    $ watch curl -X GET "http://$(oc get route authors -o jsonpath={.spec.host})/api/v1/getauthor?name=Niklas%20Heidloff" -H "accept: application/json"
    ```
    
-The last command will constantly (every 2 seconds) request author information.
+The "watch" command will constantly (every 2 seconds) request author information.
 
 6. Refresh your browser tab with the LogDNA dashboard, open the  "All Apps" pulldown, and select "authors":
 
