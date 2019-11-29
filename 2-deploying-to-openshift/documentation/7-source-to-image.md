@@ -89,7 +89,7 @@ We define in the first parameter of the 'oc new-app' command that we want to use
 ```
 $ cd ${ROOT_FOLDER}/2-deploying-to-openshift
 $ oc project source-to-image
-$ oc new-app s2i-open-liberty:latest~/. --name=authors
+$ oc new-build s2i-open-liberty:latest~/. --name=authors
 ```
 
 After this you should see this:
