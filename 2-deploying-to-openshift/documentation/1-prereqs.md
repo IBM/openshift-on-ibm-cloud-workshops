@@ -133,7 +133,7 @@ $ ROOT_FOLDER=$(pwd)
 
 ```
 $ oc login https://c1-e.us-east.containers.cloud.ibm.com:23967 --token=xxxxxx'
-$ oc get istag
+$ oc projects
 ```
 
 3. Verify 'kubectl' CLI
