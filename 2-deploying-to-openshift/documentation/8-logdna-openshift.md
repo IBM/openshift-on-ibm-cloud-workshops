@@ -127,7 +127,7 @@ The "watch" command will constantly (every 2 seconds) request author information
 
 ![Filter Apps](images/logdna-filter-apps.png)
 
-  Note: If you don't see "authors" wait a little longer (more curls), then refresh the browser tab of the LogDNA dashboard again.
+  Note: If you don't see "authors" wait a little longer (with the free/lite version it can take several minutes before data shows up), then refresh the browser tab of the LogDNA dashboard again.
 
 7. You should now see messages from the authors service alone:
 

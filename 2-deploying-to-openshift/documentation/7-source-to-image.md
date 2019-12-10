@@ -98,7 +98,7 @@ After this you should see this:
 
 ### Step 7
 
-Before the microservice can be deployed with the image builder, the code (or more previously 'authors.jar' and 'server.xml') need to be uploaded to OpenShift. This is done via 'oc start-build'.
+Before the microservice can be deployed with the image builder, the code (or more precisely 'authors.jar' and 'server.xml') need to be uploaded to OpenShift. This is done via 'oc start-build'.
 
 In the 'oc start-build' command we refer to the code of our Java microservice in the current directory.
 
