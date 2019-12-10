@@ -53,7 +53,7 @@ The image builder expects a certain directory structure of Open Liberty projects
 * server.xml in the root directory
 * *.war file in the target directory
 
-Before the code can be pushed to OpenShift, the 'war' file (Java web archive with microservice) needs to be built with Maven.
+Before the code can be pushed to OpenShift, the 'war' file (Java web archive with microservice) needs to be built with Maven. Note: Maven is installed in the Cloud Shell. If you are using Cloud Shell, run Maven "locally" as instructed a little further down!
 
 The tools image 'nheidloff/openshift-workshop-tools:v1' comes with Maven installed. Run the tools image from the root directory.
 
@@ -73,7 +73,7 @@ $ mvn package
 
 After you've run these commands, the file 'authors.war' will appear in the 'target' directory.
 
-Alternatively you can also run Maven locally, if you've [installed](https://maven.apache.org/install.html) it. In this case invoke the commands on your local machine:
+Alternatively you can also run Maven locally or in the **Cloud Shell**, if you've [installed](https://maven.apache.org/install.html) it. In this case invoke the commands on your local machine:
 
 ```
 $ cd ${ROOT_FOLDER}/2-deploying-to-openshift
