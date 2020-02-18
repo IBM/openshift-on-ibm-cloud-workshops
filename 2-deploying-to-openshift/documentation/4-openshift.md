@@ -36,6 +36,7 @@ We need an OpenShift project, this is simply put equivalent to a Kubernetes name
 _Note:_ A [project allows](https://docs.openshift.com/container-platform/3.7/dev_guide/projects.html#overview) a community of users to organize and manage their content in isolation from other communities.
 
 ```
+$ ROOT_FOLDER=$(pwd)
 $ cd ${ROOT_FOLDER}/2-deploying-to-openshift
 $ oc new-project cloud-native-starter
 ```
