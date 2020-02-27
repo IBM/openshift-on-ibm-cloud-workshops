@@ -1,10 +1,5 @@
-.DS_Store
-2-deploying-to-openshift/deployment-template.yaml.1
-2-deploying-to-openshift/deployment-template.yaml.2
-2-deploying-to-openshift/target
-2-deploying-to-openshift/.settings/org.eclipse.m2e.core.prefs
-2-deploying-to-openshift/.classpath
-2-deploying-to-openshift/.project
-2-deploying-to-openshift/.settings/org.eclipse.core.resources.prefs
-2-deploying-to-openshift/.settings/org.eclipse.jdt.apt.core.prefs
-2-deploying-to-openshift/.settings/org.eclipse.jdt.core.prefs
+images.OLD
+.classpath
+.project
+.settings/
+*/target/**
