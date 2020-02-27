@@ -24,7 +24,7 @@ $ oc project
 Create a new application and refer to the GitHub repo of this workshop and to a subdirectory (deploying-to-openshift) within the repo:
 
 ```
-$ oc new-app https://github.com/IBM/openshift-on-ibm-cloud-workshop --context-dir=deploying-to-openshift --name=authors-git
+$ oc new-app https://github.com/IBM/openshift-on-ibm-cloud-workshops --context-dir=deploying-to-openshift --name=authors-git
 ```
 
 As result you'll get this output.

@@ -259,7 +259,7 @@ In case you have skipped lab 2 you have to follow this steps. Otherwise please w
 Step |  |
 --- | --- 
 1 | You need to open a **new** local terminal session |
-2 | Navigate to your local project folder ```openshift-on-ibm-cloud-workshops/2-deploying-to-openshift```
+2 | Navigate to your local project folder ```openshift-on-ibm-cloud-workshops/deploying-to-openshift```
 3 | [Move on with the lab](./3-java.md#step-1-in-getauthorjava-change-the-returned-author-name-to-something-else-like-my-name).
 
 
@@ -269,7 +269,7 @@ Step |  |
 --- | --- 
 0 | Open a **new** local terminal session
 1 | You need to download or clone the project onto your local PC, first. ```$ git clone https://github.com/IBM/openshift-on-ibm-cloud-workshops.git ``` 
-2 |  Open a new terminal and navigate tp your local project folder ```openshift-on-ibm-cloud-workshops/2-deploying-to-openshift```
+2 |  Open a new terminal and navigate tp your local project folder ```openshift-on-ibm-cloud-workshops/deploying-to-openshift```
 3 | [Move on with the lab](./3-java.md#step-1-in-getauthorjava-change-the-returned-author-name-to-something-else-like-my-name).
 
 ### Step 1: 
@@ -299,7 +299,7 @@ To test and see how the code works you can run the code locally as a Docker cont
 
 ```
 $ ROOT_FOLDER=$(pwd)
-$ cd $ROOT_FOLDER/2-deploying-to-openshift
+$ cd $ROOT_FOLDER/deploying-to-openshift
 $ docker build -t authors .
 $ docker run -i --rm -p 3000:3000 authors
 ```
