@@ -30,7 +30,7 @@ In the IBM Cloud Shell execute the following commands:
 
 ```
 $ git clone https://github.com/IBM/openshift-on-ibm-cloud-workshops.git
-$ cd workshop-openshift-on-ibm-cloud
+$ cd openshift-on-ibm-cloud-workshops
 $ ROOT_FOLDER=$(pwd)
 ```
 
