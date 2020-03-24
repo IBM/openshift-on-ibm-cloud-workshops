@@ -42,7 +42,7 @@ $ ROOT_FOLDER=$(pwd)
 
 1. Go back to the IBM Cloud Dashboard (https://cloud.ibm.com).
 
-2. Switch from your own account to the IBM account given to you by the instructor from the pulldown in the uper right corner.
+2. Switch from your **own** account to the **IBM account** given to you by the instructor from the pulldown in the uper right corner.
 
 3. Select **OpenShift** in the 'burger' menu
 
