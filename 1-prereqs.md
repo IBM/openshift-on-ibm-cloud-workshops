@@ -19,7 +19,7 @@ For the rest of the labs we will use the IBM Cloud Shell (Beta):
 
    ![](images/cloudshellicon.png)
 
-    Note: Cloud Shell includes 500 MB of temporary storage. Your session closes after 30 minutes of inactivity. If you’re inactive in Cloud Shell for over an hour, your workspace data is removed. It’s also removed if you reach the 4-hour continuous usage or 30-hour weekly usage limits. To track your usage, go to Usage quota in the Cloud Shell menu (3 vertical dots in the upper right corner).
+    Note: Your workspace includes 500 MB of temporary storage. Your session closes after 30 minutes of inactivity. If you’re inactive in Cloud Shell for over an hour, your workspace data is removed. It’s also removed if you reach the 4-hour continuous usage or 30-hour weekly usage limits. To track your usage, go to Usage quota in the Cloud Shell menu.
 
    ![](images/cloudshell.png)
 
