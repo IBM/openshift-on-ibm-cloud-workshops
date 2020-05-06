@@ -19,7 +19,7 @@ For the rest of the labs we will use the IBM Cloud Shell (Beta):
 
    ![](images/cloudshellicon.png)
 
-    Note: Your workspace includes 500 MB of temporary storage. Your session closes after 30 minutes of inactivity. If you’re inactive in Cloud Shell for over an hour, your workspace data is removed. It’s also removed if you reach the 4-hour continuous usage or 30-hour weekly usage limits. To track your usage, go to Usage quota in the Cloud Shell menu.
+    Note: Your workspace includes 500 MB of temporary storage. This session will close after an hour of inactivity. If you don't have any active sessions for an hour or you reach the 30-hour weekly usage limit, your workspace data is removed. To track your usage, go to Usage quota in the Cloud Shell menu.
 
    ![](images/cloudshell.png)
 
@@ -44,11 +44,11 @@ $ ROOT_FOLDER=$(pwd)
 
 2. Switch from your **own** account to the **IBM account** given to you by the instructor from the pulldown in the uper right corner.
 
-3. Select **OpenShift** in the 'burger' menu
+3. Select **OpenShift -> Clusters** in the 'burger' menu
 
     ![Select Open Shift in the menu](images/os-registry-01.png)
 
-4. Chose **Clusters** and click on your **OpenShift cluster**
+4. Click on your **OpenShift cluster**
 
     ![Chose Clusters and click on your OpenShift cluster](images/os-registry-02.png)
 

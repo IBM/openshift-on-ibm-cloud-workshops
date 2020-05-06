@@ -4,7 +4,7 @@
 
 With Red Hat OpenShift on IBM Cloud developers have a fast and secure way to containerize and deploy enterprise workloads in Kubernetes clusters. OpenShift clusters build on Kubernetes container orchestration that offers consistency and flexibility for your development lifecycle operations.
 
-This workshop covers **Red Hat OpenShift Version 4.3** which is currently in Beta.
+This workshop covers **Red Hat OpenShift Version 4.3**.
 
 If you are looking for the **OpenShift 3.11 version** of this workshop: It is a branch/release in this repository and you can still find it here: [https://github.com/IBM/openshift-on-ibm-cloud-workshops/tree/OpenShift3.11](https://github.com/IBM/openshift-on-ibm-cloud-workshops/tree/OpenShift3.11)
 
